@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toyota Paint Booth Environmental Control | Luísa Mendes</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<nav>
+  <a href="../index.html">Home</a>
+  <a href="../index.html#projects">Projects</a>
+  <a href="../index.html#skills">Skills</a>
+  <a href="../index.html#contact">Contact</a>
+</nav>
+
+<header>
+  <p class="eyebrow">OEM manufacturing · Controls · Simulation</p>
+  <h1>Automotive Paint Booth Environmental Control</h1>
+  <p class="subtitle">
+    MSc thesis focused on environmental control for electrostatic application
+    of solvent-based paint in an automotive paint booth.
+  </p>
+</header>
+
+<section>
+  <h2>Project Overview</h2>
+
+  <div class="skills">
+    <p><strong>Context:</strong> MSc thesis developed at Toyota Caetano Portugal, focused on environmental control for the electrostatic application of solvent-based paint in an automotive paint booth.</p>
+    <p><strong>Problem:</strong> The process required a structured engineering approach to diagnose environmental instability, define control requirements and assess the feasibility of improved monitoring and control logic for temperature and humidity.</p>
+    <p><strong>My Role:</strong> I defined the project methodology, performed the AS-IS diagnosis, used FMEA, SPC, measurements, observations and operator interviews, developed the requirements for environmental control, and built a Simulink/Simscape simulation to assess the feasibility of the sensor architecture and burner/humidifier control logic.</p>
+    <p><strong>Duration:</strong> MSc thesis project, developed during my final year of Mechanical Engineering.</p>
+    <p><strong>Tools:</strong> Simulink, Simscape, FMEA, SPC, process mapping, requirements definition, sensor architecture, control logic, industrial observations and technical interviews.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Engineering Approach</h2>
+
+  <div class="grid">
+    <article class="card">
+      <span>Step 1</span>
+      <h3>AS-IS Diagnosis</h3>
+      <p>Analysed the existing process, environmental measurements, system limitations and operational constraints.</p>
+    </article>
+
+    <article class="card">
+      <span>Step 2</span>
+      <h3>Risk Prioritisation</h3>
+      <p>Used FMEA and engineering reasoning to identify high-priority failure modes affecting environmental control.</p>
+    </article>
+
+    <article class="card">
+      <span>Step 3</span>
+      <h3>TO-BE Requirements</h3>
+      <p>Defined monitoring, sensor, alarm, control and operator-response requirements for improved process stability.</p>
+    </article>
+
+    <article class="card">
+      <span>Step 4</span>
+      <h3>Simulation-Based Assessment</h3>
+      <p>Built Simulink/Simscape models to assess burner and humidifier control logic for environmental stabilisation.</p>
+    </article>
+  </div>
+</section>
+
+<section>
+  <h2>Technical Evidence</h2>
+  <p>
+    The public version uses simplified and anonymised diagrams. Confidential
+    production data, internal layouts, supplier information and cost figures are excluded.
+  </p>
+
+  <img class="project-image" src="../images/toyota-diagram.png" alt="Simplified Toyota environmental control diagram">
+</section>
+
+<section>
+  <h2>Outcome</h2>
+  <p>
+    The project produced a structured environmental control improvement proposal,
+    connecting AS-IS diagnosis, FMEA, SPC, requirements definition, sensor
+    architecture, control logic and simulation-based feasibility assessment.
+  </p>
+</section>
+
+<section>
+  <h2>Recruiter Value</h2>
+  <div class="skills">
+    <p><strong>Systems engineering:</strong> connects process behaviour, sensors, control logic and operators.</p>
+    <p><strong>Manufacturing engineering:</strong> developed under real OEM constraints.</p>
+    <p><strong>Simulation:</strong> uses Simulink/Simscape to support engineering decisions.</p>
+    <p><strong>Automotive relevance:</strong> directly connected to paint process stability and production quality.</p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Luísa Mendes — Mechanical Engineering Portfolio</p>
+</footer>
+
+</body>
+</html>
