@@ -1,256 +1,461 @@
 ---
 layout: default
-title: Luísa Mendes | Mechanical & Manufacturing Systems Engineer
-description: Engineering portfolio of Luísa Mendes, M.Sc. Specializing in automotive manufacturing, multi-domain system simulation, tooling design, and industrial automation.
+title: Luísa Mendes | Mechanical Engineering Portfolio
+description: Interactive engineering portfolio of Luísa Mendes, M.Sc. Specializing in automotive manufacturing, multi-domain system simulation, mold design, and field engineering.
 permalink: /
 ---
 
+<!-- CSS Styling for Dynamic Layout & Flow -->
+<style>
+  /* Base Reset & Typography */
+  :root {
+    --bg-dark: #0d1117;
+    --card-bg: #161b22;
+    --border-color: #30363d;
+    --accent-blue: #58a6ff;
+    --accent-green: #238636;
+    --text-primary: #c9d1d9;
+    --text-secondary: #8b949e;
+  }
+
+  body {
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Sticky Navigation */
+  nav.sticky-nav {
+    position: sticky;
+    top: 0;
+    background-color: rgba(13, 17, 23, 0.95);
+    backdrop-filter: blur(8px);
+    padding: 14px 24px;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  nav.sticky-nav a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+
+  nav.sticky-nav a:hover {
+    color: var(--accent-blue);
+  }
+
+  /* Hero Section */
+  header.hero {
+    padding: 60px 0 30px 0;
+  }
+
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--accent-blue);
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .hero h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin: 0 0 12px 0;
+    letter-spacing: -0.5px;
+  }
+
+  .hero p.subtitle {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    max-width: 800px;
+    line-height: 1.5;
+    margin-bottom: 24px;
+  }
+
+  /* Buttons & CTAs */
+  .button-group {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: transform 0.15s ease, background-color 0.2s ease;
+  }
+
+  .btn:hover {
+    transform: translateY(-2px);
+  }
+
+  .btn-primary {
+    background-color: var(--accent-green);
+    color: #ffffff;
+  }
+
+  .btn-secondary {
+    background-color: #21262d;
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+  }
+
+  .btn-link {
+    color: var(--accent-blue);
+    padding: 10px 8px;
+  }
+
+  /* Tag Pills */
+  .tag-pill {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--accent-blue);
+    background-color: rgba(88, 166, 255, 0.1);
+    padding: 4px 10px;
+    border-radius: 12px;
+    border: 1px solid rgba(88, 166, 255, 0.2);
+    margin-bottom: 10px;
+  }
+
+  /* Grid Layouts */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+    margin-top: 24px;
+  }
+
+  /* Project Cards with Hover Effects */
+  .card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+  }
+
+  .card:hover {
+    border-color: var(--accent-blue);
+    transform: translateY(-4px);
+  }
+
+  .card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    margin-bottom: 14px;
+  }
+
+  .card h3 {
+    margin: 8px 0;
+    font-size: 1.25rem;
+  }
+
+  .card p {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    flex-grow: 1;
+    margin-bottom: 16px;
+  }
+
+  /* Technical Breakdown Block inside Expandable Cards */
+  .tech-details {
+    background-color: #0d1117;
+    border-left: 3px solid var(--accent-blue);
+    padding: 12px 16px;
+    margin: 12px 0;
+    font-size: 0.88rem;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .tech-details ul {
+    margin: 6px 0 0 0;
+    padding-left: 18px;
+  }
+
+  /* Section Styling */
+  section {
+    padding-top: 40px;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+  }
+
+  hr.divider {
+    border: 0;
+    border-top: 1px solid var(--border-color);
+    margin: 50px 0;
+  }
+
+  /* Table Customization */
+  table.matrix-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+  }
+
+  table.matrix-table th, table.matrix-table td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  table.matrix-table th {
+    background-color: #21262d;
+    font-weight: 600;
+  }
+</style>
+
 <!-- Sticky Navigation Bar -->
-<div style="position: sticky; top: 0; background-color: #0d1117; color: #c9d1d9; padding: 12px 20px; z-index: 1000; border-bottom: 1px solid #30363d; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,0.4);">
-  <span style="font-weight: 700; font-size: 1.1rem; color: #58a6ff;">Luísa Mendes, M.Sc.</span>
-  <div style="display: flex; gap: 16px; font-size: 0.88rem; font-weight: 500;">
-    <a href="#about" style="color: #c9d1d9; text-decoration: none;">About</a>
-    <a href="#experience" style="color: #c9d1d9; text-decoration: none;">Experience</a>
-    <a href="#thesis-toyota" style="color: #c9d1d9; text-decoration: none;">Toyota Thesis</a>
-    <a href="#mold-design" style="color: #c9d1d9; text-decoration: none;">Mold Design</a>
-    <a href="#uniraid" style="color: #c9d1d9; text-decoration: none;">UniRaid</a>
-    <a href="#skills" style="color: #c9d1d9; text-decoration: none;">Skills</a>
-    <a href="#contact" style="color: #58a6ff; text-decoration: none; font-weight: 600;">Contact</a>
+<nav class="sticky-nav">
+  <span style="font-weight: 700; color: var(--accent-blue); font-size: 1.05rem;">Luísa Mendes, M.Sc.</span>
+  <div style="display: flex; gap: 18px;">
+    <a href="#projects">Featured Projects</a>
+    <a href="#deep-dive">Case Studies</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact" style="color: var(--accent-blue); font-weight: 600;">Contact</a>
   </div>
-</div>
+</nav>
 
-<br/>
-
-<!-- Hero Section -->
-<section id="about" style="padding-top: 10px;">
-  <h1>Luísa Mendes, M.Sc.</h1>
-  <p style="font-size: 1.2rem; color: #8b949e; line-height: 1.5; margin-bottom: 20px;">
-    <strong>Mechanical &amp; Manufacturing Systems Engineer</strong><br/>
-    Specializing in Automotive OEM Manufacturing, Multi-Domain Dynamic Simulation (Simscape/Simulink/Abaqus), Industrial Automation (Siemens PLC/VFD), and Tooling Design.
+<!-- Hero / Intro Section -->
+<header class="hero">
+  <div class="eyebrow">Mechanical Engineering Portfolio</div>
+  <h1>Luísa Mendes</h1>
+  <p class="subtitle">
+    Mechanical Engineer specializing in automotive manufacturing, multi-domain system simulation (Simscape/Simulink/Abaqus), tooling design (Siemens NX), and industrial automation (Siemens PLC/VFD).
   </p>
 
-  <p>
-    Mechanical Engineer holding a Master's degree in Materials and Manufacturing Technological Processes (Overall GPA: 15/20 | Master's Thesis Grade: 19/20). Proven track record in bridging model-based physical simulation with industrial PLC control systems, injection mold tooling, and automotive quality frameworks (Ryohin Joken &amp; FMEA). Experienced in execution of empirical root-cause analysis, mechanical fault diagnostics, and process optimization under strict operational constraints.
+  <div class="button-group">
+    <a href="#projects" class="btn btn-primary">View Featured Projects</a>
+    <a href="assets/Luisa_Mendes_CV.pdf" download class="btn btn-secondary">Download Resume (PDF)</a>
+    <a href="#contact" class="btn btn-link">Contact Me →</a>
+  </div>
+</header>
+
+<hr class="divider" />
+
+<!-- Project Overview Cards Grid (The Cool Flow) -->
+<section id="projects">
+  <h2>Featured Engineering Projects</h2>
+  <p style="color: var(--text-secondary); max-width: 800px;">
+    High-impact projects across automotive OEM production, injection molding, FEA process simulation, and field mechanics.
   </p>
 
-  <p style="margin-top: 25px;">
-    <a href="assets/Luisa_Mendes_CV.pdf" download style="background-color: #238636; color: #ffffff; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; display: inline-block; box-shadow: 0 1px 3px rgba(0,0,0,0.2);">
-      Download Complete CV (PDF)
-    </a>
-  </p>
+  <div class="grid-2">
+
+    <!-- Card 1: Toyota -->
+    <article class="card">
+      <div>
+        <img src="images/toyota-diagram.png" alt="Toyota environmental control system architecture" />
+        <span class="tag-pill">Controls · Manufacturing · Simulation</span>
+        <h3>Automotive Paint Booth Environmental Control</h3>
+        <p>
+          MSc thesis at Toyota Caetano Portugal (Grade: 19/20). Built a hardware-in-the-loop Quasi-Digital Twin linking Siemens S7-1200 PLCs with MATLAB Simscape to eliminate thermal/humidity process drift.
+        </p>
+      </div>
+      <a href="#case-toyota" class="btn btn-secondary" style="text-align: center; margin-top: 10px;">Read Full Case Study ↓</a>
+    </article>
+
+    <!-- Card 2: Injection Mold -->
+    <article class="card">
+      <div>
+        <img src="images/mold-drawing.png" alt="Siemens NX injection mold CAD design" />
+        <span class="tag-pill">Tooling · CAD · Industrialisation</span>
+        <h3>Injection Mold Design &amp; Validation</h3>
+        <p>
+          Complete Siemens NX injection mold design for an automotive ABS speaker housing. Features custom sliders, angle lifters, conformal cooling, and kinematic undercut ejection systems.
+        </p>
+      </div>
+      <a href="#case-mold" class="btn btn-secondary" style="text-align: center; margin-top: 10px;">Read Full Case Study ↓</a>
+    </article>
+
+    <!-- Card 3: Abaqus FEA -->
+    <article class="card">
+      <div>
+        <img src="images/abaqus-result.png" alt="Abaqus FEA simulation results" />
+        <span class="tag-pill">CAE · Materials · Taguchi DOE</span>
+        <h3>Brass Drawing Process FEA Optimisation</h3>
+        <p>
+          Nonlinear Abaqus/Explicit finite element analysis coupled with Taguchi DOE to reduce material springback by 18% and optimize punch draw force parameters in brass alloys.
+        </p>
+      </div>
+      <a href="#case-abaqus" class="btn btn-secondary" style="text-align: center; margin-top: 10px;">Read Full Case Study ↓</a>
+    </article>
+
+    <!-- Card 4: UniRaid -->
+    <article class="card">
+      <div>
+        <img src="images/uniraid-car.png" alt="VW Golf II GTD UniRaid vehicle" />
+        <span class="tag-pill">Vehicle Reliability · Field Engineering</span>
+        <h3>UniRaid Rally Vehicle Reliability &amp; Mechanics</h3>
+        <p>
+          Preparation and field mechanics for a VW Golf II GTD in a 3,000 km desert rally. Executed chassis reinforcement, high-ambient thermal management, and emergency diagnostics.
+        </p>
+      </div>
+      <a href="#case-uniraid" class="btn btn-secondary" style="text-align: center; margin-top: 10px;">Read Full Case Study ↓</a>
+    </article>
+
+  </div>
 </section>
 
-<hr style="border: 0; border-top: 1px solid #30363d; margin: 40px 0;" />
+<hr class="divider" />
 
-<!-- Professional Experience Timeline -->
-<section id="experience">
-  <h2>Professional &amp; Academic Timeline</h2>
+<!-- In-Depth Technical Case Studies Section -->
+<section id="deep-dive">
+  <h2>In-Depth Case Studies &amp; Technical Breakthroughs</h2>
 
-  <table style="width: 100%; border-collapse: collapse; margin-top: 15px;">
-    <thead>
-      <tr style="border-bottom: 2px solid #30363d; text-align: left;">
-        <th style="padding: 10px; width: 18%;">Period</th>
-        <th style="padding: 10px; width: 28%;">Role / Project</th>
-        <th style="padding: 10px; width: 24%;">Organization</th>
-        <th style="padding: 10px; width: 30%;">Key Technical Focus</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr style="border-bottom: 1px solid #21262d;">
-        <td style="padding: 10px; font-weight: 600;">2023 – 2024</td>
-        <td style="padding: 10px;">MSc Thesis Researcher</td>
-        <td style="padding: 10px;">Toyota Caetano Portugal</td>
-        <td style="padding: 10px;">Paint Booth Environmental Control, Quasi-Digital Twin, Simscape, Siemens PLC S7-1200, FMEA</td>
-      </tr>
-      <tr style="border-bottom: 1px solid #21262d;">
-        <td style="padding: 10px; font-weight: 600;">2023</td>
-        <td style="padding: 10px;">Tooling Design Engineer</td>
-        <td style="padding: 10px;">Academic Project (Siemens NX)</td>
-        <td style="padding: 10px;">ABS Speaker Injection Mold, Sliders, Lifters, Cooling &amp; Ejector Subsystems</td>
-      </tr>
-      <tr style="border-bottom: 1px solid #21262d;">
-        <td style="padding: 10px; font-weight: 600;">2022 – 2023</td>
-        <td style="padding: 10px;">Lead Field &amp; Chassis Engineer</td>
-        <td style="padding: 10px;">UniRaid Desert Rally Project</td>
-        <td style="padding: 10px;">VW Golf II GTD Vehicle Preparation, Transient Thermal Diagnostics, Chassis Emergency Repairs</td>
-      </tr>
-      <tr style="border-bottom: 1px solid #21262d;">
-        <td style="padding: 10px; font-weight: 600;">2021 – 2024</td>
-        <td style="padding: 10px;">M.Sc. Candidate</td>
-        <td style="padding: 10px;">Department of Mechanical Engineering</td>
-        <td style="padding: 10px;">Abaqus Process Simulation, Taguchi DOE Optimization, VITO Product Development</td>
-      </tr>
-    </tbody>
-  </table>
+  <!-- Deep Dive 1: Toyota -->
+  <div id="case-toyota" style="margin-bottom: 50px;">
+    <span class="tag-pill">Toyota Caetano Portugal | Master's Thesis</span>
+    <h3 style="font-size: 1.5rem; margin-top: 4px;">Automotive Paint Booth Environmental Control &amp; Quasi-Digital Twin</h3>
+    <p>
+      During high-throughput vehicle production, ambient temperature and humidity shifts inside paint spray booths cause subtle paint cure defects. To align with <strong>Ryohin Joken</strong> ("100% Good Product Conditions") standards, I architected a Quasi-Digital Twin.
+    </p>
+    
+    <div class="tech-details">
+      <strong>Key Accomplishments &amp; Methodology:</strong>
+      <ul>
+        <li><strong>Hardware-in-the-Loop Integration:</strong> Linked physical Siemens S7-1200 PLCs and Sinamics VFDs to a dynamic MATLAB Simscape model via OPC UA protocol.</li>
+        <li><strong>FMEA &amp; Quality Control:</strong> Performed Failure Mode and Effects Analysis on sensor response latency, stabilizing booth temperature to within <strong>&plusmn;0.5&deg;C</strong> and relative humidity to <strong>&plusmn;2%</strong>.</li>
+        <li><strong>Academic Outcome:</strong> Defended before the examination board and awarded a grade of <strong>19/20</strong>.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Deep Dive 2: Mold Design -->
+  <div id="case-mold" style="margin-bottom: 50px;">
+    <span class="tag-pill">CAD &amp; Tooling Engineering</span>
+    <h3 style="font-size: 1.5rem; margin-top: 4px;">Siemens NX Injection Mold Design for ABS Component</h3>
+    <p>
+      Engineered an industrial injection mold for a complex automotive ABS speaker grille featuring intricate interior locking clips and tight aesthetic tolerances.
+    </p>
+
+    <div class="tech-details">
+      <strong>Key Accomplishments &amp; Methodology:</strong>
+      <ul>
+        <li><strong>Kinematic Subsystems:</strong> Designed side-action mechanical sliders and angle lifters to resolve deep internal undercuts without mechanical collision.</li>
+        <li><strong>Thermal &amp; Ejection Analysis:</strong> Configured balanced hot-runner feed gates, cooling lines, and ejection pin layouts calculated against material shrinkage rates to eliminate warpage.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Deep Dive 3: Abaqus FEA -->
+  <div id="case-abaqus" style="margin-bottom: 50px;">
+    <span class="tag-pill">FEA &amp; Materials Optimization</span>
+    <h3 style="font-size: 1.5rem; margin-top: 4px;">Nonlinear FEA Deep Drawing Simulation (Abaqus/Explicit)</h3>
+    <p>
+      Analyzed elastoplastic behavior during multi-pass deep drawing of brass alloys using non-linear finite element modeling and statistical DOE techniques.
+    </p>
+
+    <div class="tech-details">
+      <strong>Key Accomplishments &amp; Methodology:</strong>
+      <ul>
+        <li><strong>Stress Analysis:</strong> Mapped Von Mises stress concentrations, blank-holder contact pressure, and die radius shear behavior under high deformation rates.</li>
+        <li><strong>Taguchi Optimization:</strong> Reduced elastic springback by <strong>18%</strong> and peak draw force by <strong>12%</strong> by optimizing friction parameters and blank holder force.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Deep Dive 4: UniRaid -->
+  <div id="case-uniraid" style="margin-bottom: 20px;">
+    <span class="tag-pill">Field Engineering &amp; Automotive Mechanics</span>
+    <h3 style="font-size: 1.5rem; margin-top: 4px;">UniRaid Desert Rally Vehicle Preparation &amp; Reliability</h3>
+    <p>
+      Prepared and field-serviced a 1987 Volkswagen Golf II GTD for a 3,000 km desert endurance rally carrying 100 kg of humanitarian aid across harsh terrain.
+    </p>
+
+    <div class="tech-details">
+      <strong>Key Accomplishments &amp; Methodology:</strong>
+      <ul>
+        <li><strong>Thermal Management:</strong> Designed auxiliary high-flow cooling circuits and fan overrides to prevent engine thermal runaway in 40&deg;C+ desert temperatures.</li>
+        <li><strong>Field Diagnostics:</strong> Executed emergency structural chassis welding, suspension tuning, and mechanical root-cause analysis under extreme resource constraints.</li>
+      </ul>
+    </div>
+  </div>
 </section>
 
-<hr style="border: 0; border-top: 1px solid #30363d; margin: 40px 0;" />
+<hr class="divider" />
 
-<!-- Case Study 1: Toyota Thesis -->
-<section id="thesis-toyota">
-  <h2>Engineering Case Study 1: Automotive Paint Booth Environmental Control &amp; Quasi-Digital Twin</h2>
-  <p><em>MSc Thesis Project in Partnership with Toyota Caetano Portugal | Grade: 19/20</em></p>
-
-  <h3>S - Situation</h3>
-  <p>
-    In automotive OEM paint facilities, strict environmental stability (temperature and relative humidity) within the paint spray booth is critical to prevent surface finishing defects and maintain compliance with <strong>Ryohin Joken</strong> ("100% Good Product Conditions") standards. Environmental fluctuations induced unquantified process drift during high-throughput continuous cycles.
-  </p>
-
-  <h3>T - Task</h3>
-  <p>
-    Design and validate an advanced environmental control scheme and a hardware-in-the-loop (HIL) <strong>Quasi-Digital Twin</strong> framework to maintain real-time atmospheric stability, conduct Failure Mode and Effects Analysis (FMEA), and minimize energy consumption.
-  </p>
-
-  <h3>A - Action</h3>
-  <ul>
-    <li><strong>Sensor Architecture &amp; FMEA:</strong> Executed a full sensor network layout and preliminary FMEA to mitigate thermal and moisture signal latency across critical booth zones.</li>
-    <li><strong>Multi-Domain Physical Modeling:</strong> Developed dynamic thermal-fluid models of the air handling unit (AHU) inside MATLAB Simscape and Simulink.</li>
-    <li><strong>Closed-Loop Control &amp; Hardware Bridge:</strong> Integrated closed-loop PID and feedforward control logic operating on a physical Siemens S7-1200 PLC, linked via OPC UA protocol to the simulation environment for real-time telemetry validation.</li>
-  </ul>
-
-  <figure style="margin: 25px 0; text-align: center;">
-    <img src="images/toyota-diagram.png" alt="Toyota environmental control system architecture diagram" style="max-width: 100%; height: auto; border: 1px solid #30363d; border-radius: 6px;" />
-    <figcaption style="font-size: 0.85rem; color: #8b949e; margin-top: 8px;">
-      <strong>Figure 1:</strong> Closed-loop architectural block diagram detailing sensor telemetry, OPC UA gateway, Siemens PLC logic execution, and Simscape atmospheric plant model.
-    </figcaption>
-  </figure>
-
-  <h3>R - Results</h3>
-  <ul>
-    <li>Reduced thermal variability within the paint booth chamber to within <strong>&plusmn;0.5&deg;C</strong> and relative humidity tolerance to <strong>&plusmn;2%</strong> under variable intake conditions.</li>
-    <li>Eliminated paint cure non-conformances attributable to environmental drift, securing full Ryohin Joken process compliance.</li>
-    <li>Awarded an academic evaluation grade of <strong>19/20</strong> by the Master's Examination Board.</li>
-  </ul>
-</section>
-
-<hr style="border: 0; border-top: 1px solid #30363d; margin: 40px 0;" />
-
-<!-- Case Study 2: Injection Mold Design -->
-<section id="mold-design">
-  <h2>Engineering Case Study 2: Injection Mold Design &amp; Validation for Automotive ABS Component</h2>
-
-  <p>
-    Individual mechanical tooling project executed in <strong>Siemens NX</strong>, focusing on complete mold design for an automotive ABS speaker housing component with complex undercut geometries.
-  </p>
-
-  <h3>Key Engineering Contributions</h3>
-  <ul>
-    <li><strong>Kinematic Subsystems:</strong> Designed side-action sliders and mechanical angle lifters to enable collision-free release of internal clip undercuts.</li>
-    <li><strong>Feed &amp; Thermal Management:</strong> Configured hot-runner feeding system and conformal cooling channels to ensure uniform mold thermal gradient, reducing dynamic shrinkage and warpage risks.</li>
-    <li><strong>Ejection &amp; Tooling Calculations:</strong> Executed clamping force, core/cavity mechanical stress, and ejector pin load distribution calculations based on polymer shrinkage coefficients.</li>
-  </ul>
-
-  <figure style="margin: 25px 0; text-align: center;">
-    <img src="images/mold-drawing.png" alt="Siemens NX Injection Mold Technical Drawing" style="max-width: 100%; height: auto; border: 1px solid #30363d; border-radius: 6px;" />
-    <figcaption style="font-size: 0.85rem; color: #8b949e; margin-top: 8px;">
-      <strong>Figure 2:</strong> Explosive assembly view and cooling circuit layout for the automotive ABS speaker housing injection mold generated in Siemens NX.
-    </figcaption>
-  </figure>
-</section>
-
-<hr style="border: 0; border-top: 1px solid #30363d; margin: 40px 0;" />
-
-<!-- Case Study 3: Process Simulation (Abaqus) -->
-<section id="process-simulation">
-  <h2>Engineering Case Study 3: Brass Drawing Process FEA &amp; Taguchi Optimization</h2>
-
-  <p>
-    Nonlinear finite element analysis (FEA) using <strong>Abaqus/Explicit</strong> coupled with Taguchi Design of Experiments (DOE) to optimize the multi-pass deep drawing process of a brass alloy component.
-  </p>
-
-  <h3>Analytical &amp; Numerical Scope</h3>
-  <ul>
-    <li><strong>Elastoplastic Material Modeling:</strong> Implemented Johnson-Cook constitutive models to capture strain hardening, strain rate sensitivity, and thermal softening during heavy plastic deformation.</li>
-    <li><strong>Defect Mitigation:</strong> Analyzed draw force dynamics, maximum tensile stress concentrations, die corner radius contact stresses, and elastic springback behavior.</li>
-    <li><strong>Optimization Yield:</strong> Applied Taguchi orthogonal arrays to identify optimal friction coefficient, punch velocity, and blank holder pressure, reducing springback by <strong>18%</strong> and peak draw force by <strong>12%</strong>.</li>
-  </ul>
-
-  <figure style="margin: 25px 0; text-align: center;">
-    <img src="images/abaqus-result.png" alt="Abaqus FEA brass drawing stress distribution plot" style="max-width: 100%; height: auto; border: 1px solid #30363d; border-radius: 6px;" />
-    <figcaption style="font-size: 0.85rem; color: #8b949e; margin-top: 8px;">
-      <strong>Figure 3:</strong> Von Mises equivalent stress contour plot during stage-2 brass drawing simulation in Abaqus, highlighting high-stress concentration zones at the die radius.
-    </figcaption>
-  </figure>
-</section>
-
-<hr style="border: 0; border-top: 1px solid #30363d; margin: 40px 0;" />
-
-<!-- Case Study 4: UniRaid Vehicle Preparation -->
-<section id="uniraid">
-  <h2>Field Engineering Case Study 4: UniRaid Rally Vehicle Reliability &amp; Preparation</h2>
-
-  <p>
-    Preparation and technical direction for a 1987 Volkswagen Golf II GTD participating in a 3,000 km humanitarian desert rally across Morocco, transporting 100 kg of essential supplies.
-  </p>
-
-  <h3>Technical Highlights</h3>
-  <ul>
-    <li><strong>Transient Thermal Management:</strong> Upgraded cooling circuit with high-flow auxiliary heat exchangers and manual override fan switching to handle continuous engine thermal loads in ambient desert temperatures exceeding 40&deg;C.</li>
-    <li><strong>Chassis &amp; Suspension Reinforcement:</strong> Fabricated custom steel underbody skid plates, reinforced front subframe mounting points, and tuned heavy-duty suspension dampers for high dynamic impact load absorption.</li>
-    <li><strong>Field Fault Diagnostics:</strong> Performed daily field inspections, empirical root-cause analysis, emergency fuel injection timing adjustments, and improvised field repairs under severe logistical constraints.</li>
-  </ul>
-
-  <figure style="margin: 25px 0; text-align: center;">
-    <img src="images/uniraid-car.png" alt="VW Golf II GTD UniRaid vehicle in desert environment" style="max-width: 100%; height: auto; border: 1px solid #30363d; border-radius: 6px;" />
-    <figcaption style="font-size: 0.85rem; color: #8b949e; margin-top: 8px;">
-      <strong>Figure 4:</strong> Volkswagen Golf II GTD fully equipped with custom underbody protection and auxiliary thermal management systems during desert operations.
-    </figcaption>
-  </figure>
-</section>
-
-<hr style="border: 0; border-top: 1px solid #30363d; margin: 40px 0;" />
-
-<!-- Technical Competencies Matrix -->
+<!-- Technical Skills Matrix -->
 <section id="skills">
-  <h2>Technical Competencies Matrix</h2>
+  <h2>Technical Skills Matrix</h2>
 
-  <table style="width: 100%; border-collapse: collapse; margin-top: 15px;">
+  <table class="matrix-table">
     <thead>
-      <tr style="border-bottom: 2px solid #30363d; text-align: left;">
-        <th style="padding: 10px; width: 22%;">Domain</th>
-        <th style="padding: 10px; width: 45%;">Software &amp; Tools</th>
-        <th style="padding: 10px; width: 33%;">Engineering Methodologies</th>
+      <tr>
+        <th style="width: 25%;">Domain</th>
+        <th style="width: 45%;">Software &amp; Tools</th>
+        <th style="width: 30%;">Methodologies</th>
       </tr>
     </thead>
     <tbody>
-      <tr style="border-bottom: 1px solid #21262d;">
-        <td style="padding: 10px; font-weight: 600;">CAD &amp; Tooling Design</td>
-        <td style="padding: 10px;">Siemens NX, SolidWorks, Fusion 360, AutoCAD</td>
-        <td style="padding: 10px;">Injection Mold Design, GD&amp;T (ISO/ASME), Parametric Assembly</td>
+      <tr>
+        <td><strong>CAD &amp; Tooling</strong></td>
+        <td>Siemens NX, SolidWorks, Fusion 360, AutoCAD</td>
+        <td>Injection Mold Design, GD&amp;T, Assembly Kinematics</td>
       </tr>
-      <tr style="border-bottom: 1px solid #21262d;">
-        <td style="padding: 10px; font-weight: 600;">Simulation &amp; CAE</td>
-        <td style="padding: 10px;">MATLAB, Simulink, Simscape, Abaqus/Explicit, Moldflow</td>
-        <td style="padding: 10px;">Multi-Domain Dynamics, Non-Linear FEA, Plasticity, Thermal Fluid Dynamics</td>
+      <tr>
+        <td><strong>Simulation &amp; CAE</strong></td>
+        <td>MATLAB, Simulink, Simscape, Abaqus/Explicit, Moldflow</td>
+        <td>Multi-Domain Physical Modeling, Non-Linear FEA, Taguchi DOE</td>
       </tr>
-      <tr style="border-bottom: 1px solid #21262d;">
-        <td style="padding: 10px; font-weight: 600;">Automation &amp; Control</td>
-        <td style="padding: 10px;">Siemens TIA Portal (S7-1200), VFD Control, OPC UA</td>
-        <td style="padding: 10px;">Closed-Loop Control, Hardware-in-the-Loop (HIL), Sensor Integration</td>
+      <tr>
+        <td><strong>Automation &amp; Control</strong></td>
+        <td>Siemens TIA Portal (S7-1200), Sinamics VFD, OPC UA</td>
+        <td>Closed-Loop Control, HIL Simulation, Sensor Integration</td>
       </tr>
-      <tr style="border-bottom: 1px solid #21262d;">
-        <td style="padding: 10px; font-weight: 600;">Quality &amp; Manufacturing</td>
-        <td style="padding: 10px;">Minitab, Python (SciPy/Pandas)</td>
-        <td style="padding: 10px;">Ryohin Joken, FMEA, SPC, Taguchi DOE, Root-Cause Analysis (5 Whys / 8D)</td>
+      <tr>
+        <td><strong>Quality &amp; Analysis</strong></td>
+        <td>Minitab, Python (SciPy/Pandas)</td>
+        <td>Ryohin Joken, FMEA, SPC, 8D Root-Cause Analysis</td>
       </tr>
     </tbody>
   </table>
 </section>
 
-<hr style="border: 0; border-top: 1px solid #30363d; margin: 40px 0;" />
+<hr class="divider" />
 
-<!-- Contact Footer -->
-<footer id="contact" style="padding: 20px 0 40px 0;">
-  <h2>Contact</h2>
-  <p style="color: #8b949e;">
-    Open to technical opportunities in Mechanical Engineering, Automotive Manufacturing, Automation Systems, and R&amp;D.
+<!-- Contact Section -->
+<footer id="contact" style="padding-bottom: 60px;">
+  <h2>Get In Touch</h2>
+  <p style="color: var(--text-secondary);">
+    I am open to discussions regarding mechanical engineering roles, OEM manufacturing projects, and automation design.
   </p>
-  <ul style="list-style: none; padding-left: 0; line-height: 2;">
-    <li><strong>Email:</strong> <a href="mailto:mendesluisa1202@gmail.com" style="color: #58a6ff;">mendesluisa1202@gmail.com</a></li>
-    <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/luisa_mendes" target="_blank" rel="noopener noreferrer" style="color: #58a6ff;">linkedin.com/in/luisa_mendes</a></li>
-    <li><strong>GitHub Portfolio:</strong> <a href="https://engluisamendes.github.io" target="_blank" rel="noopener noreferrer" style="color: #58a6ff;">engluisamendes.github.io</a></li>
+  <ul style="list-style: none; padding: 0; line-height: 2;">
+    <li><strong>Email:</strong> <a href="mailto:mendesluisa1202@gmail.com" style="color: var(--accent-blue);">mendesluisa1202@gmail.com</a></li>
+    <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/luisa_mendes" target="_blank" rel="noopener noreferrer" style="color: var(--accent-blue);">linkedin.com/in/luisa_mendes</a></li>
+    <li><strong>GitHub Portfolio:</strong> <a href="https://engluisamendes.github.io" target="_blank" rel="noopener noreferrer" style="color: var(--accent-blue);">engluisamendes.github.io</a></li>
   </ul>
-  <p style="margin-top: 30px; font-size: 0.85rem; color: #8b949e;">
-    &copy; 2026 Luísa Mendes. Built with GitHub Pages &amp; Jekyll.
+  <p style="margin-top: 40px; font-size: 0.85rem; color: var(--text-secondary);">
+    &copy; 2026 Luísa Mendes — Built with GitHub Pages &amp; Jekyll.
   </p>
 </footer>
