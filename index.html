@@ -1,25 +1,25 @@
 ---
 layout: default
-title: Luísa Mendes, M.Sc. | Mechanical Engineer & Tooling Specialist
-description: Professional engineering portfolio of Luísa Mendes, M.Sc. Specializing in Automotive Tooling Design (Siemens NX), Industrial Process Quality (Toyota Caetano), and Non-Linear FEA Simulation.
+title: Luísa Mendes, M.Sc. | Mechanical Engineer
+description: Professional engineering portfolio of Luísa Mendes, M.Sc. Automotive Tooling Design (Siemens NX), Industrial Quality & SPC (Toyota Caetano), and Non-Linear FEA Simulation.
 permalink: /
 ---
 
 <style>
-  /* --- Executive Modern Design System --- */
+  /* --- Editorial Engineering Design System --- */
   :root {
-    --bg-main: #f8fafc;
+    --bg-main: #fafafa;
     --bg-card: #ffffff;
+    --bg-accent: #f1f5f9;
     --border-subtle: #e2e8f0;
-    --border-focus: #0f172a;
+    --border-dark: #0f172a;
     
     --text-primary: #0f172a;
     --text-secondary: #475569;
     --text-muted: #94a3b8;
     
-    --accent-emerald: #059669;
     --accent-blue: #0284c7;
-    --glass-bg: rgba(255, 255, 255, 0.85);
+    --accent-emerald: #059669;
   }
 
   body {
@@ -30,16 +30,24 @@ permalink: /
     padding: 0;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
-    scroll-behavior: smooth;
   }
 
-  /* --- Glass Navigation --- */
+  .mono-label {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  /* --- Glass Navbar --- */
   nav.navbar {
     position: sticky;
     top: 0;
-    background: rgba(248, 250, 252, 0.88);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: rgba(250, 250, 250, 0.9);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--border-subtle);
     padding: 16px 40px;
     z-index: 1000;
@@ -48,35 +56,42 @@ permalink: /
     align-items: center;
   }
 
-  nav.navbar .brand {
-    font-weight: 800;
-    font-size: 1.1rem;
-    letter-spacing: -0.02em;
-  }
-
-  nav.navbar .brand span {
-    color: var(--text-muted);
-    font-weight: 400;
-    margin-left: 4px;
-  }
-
+  nav.navbar .brand { font-weight: 800; font-size: 1.1rem; }
+  nav.navbar .brand span { color: var(--text-muted); font-weight: 400; }
   nav.navbar .nav-links a {
     color: var(--text-secondary);
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     font-weight: 600;
     margin-left: 28px;
     transition: color 0.2s;
   }
-
   nav.navbar a:hover { color: var(--text-primary); }
 
   /* --- Hero Architecture --- */
   .hero-wrapper {
     max-width: 1080px;
     margin: 0 auto;
-    padding: 80px 24px 40px 24px;
+    padding: 70px 24px 40px 24px;
+    display: flex;
+    gap: 48px;
+    align-items: center;
   }
+
+  .hero-text-content { flex: 1; }
+
+  .hero-avatar-wrap {
+    flex-shrink: 0;
+    width: 220px;
+    height: 220px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border-subtle);
+    background-color: var(--bg-accent);
+    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.06);
+  }
+
+  .hero-avatar-wrap img { width: 100%; height: 100%; object-fit: cover; }
 
   .status-badge {
     display: inline-flex;
@@ -89,32 +104,24 @@ permalink: /
     border-radius: 30px;
     font-size: 0.82rem;
     font-weight: 600;
-    margin-bottom: 24px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    margin-bottom: 20px;
   }
 
-  .status-badge .dot {
-    width: 7px;
-    height: 7px;
-    background-color: var(--accent-emerald);
-    border-radius: 50%;
-  }
+  .status-badge .dot { width: 7px; height: 7px; background-color: var(--accent-emerald); border-radius: 50%; }
 
   .hero-title {
-    font-size: 3.5rem;
+    font-size: 3.2rem;
     font-weight: 800;
     letter-spacing: -0.03em;
     line-height: 1.1;
-    margin: 0 0 20px 0;
-    color: var(--text-primary);
+    margin: 12px 0 18px 0;
   }
 
   .hero-subtitle {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     color: var(--text-secondary);
-    max-width: 820px;
     line-height: 1.6;
-    margin-bottom: 36px;
+    margin-bottom: 30px;
   }
 
   .cta-group { display: flex; gap: 16px; flex-wrap: wrap; }
@@ -123,14 +130,12 @@ permalink: /
     background: var(--text-primary);
     color: #ffffff;
     padding: 12px 26px;
-    border-radius: 10px;
+    border-radius: 8px;
     font-weight: 600;
-    font-size: 0.92rem;
+    font-size: 0.9rem;
     text-decoration: none;
-    transition: all 0.2s;
-    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.15);
+    transition: transform 0.2s;
   }
-
   .btn-primary:hover { transform: translateY(-2px); }
 
   .btn-secondary {
@@ -138,65 +143,36 @@ permalink: /
     border: 1px solid var(--border-subtle);
     color: var(--text-primary);
     padding: 12px 26px;
-    border-radius: 10px;
+    border-radius: 8px;
     font-weight: 600;
-    font-size: 0.92rem;
+    font-size: 0.9rem;
     text-decoration: none;
-    transition: all 0.2s;
   }
 
-  .btn-secondary:hover { border-color: var(--border-focus); }
-
-  /* --- Key Metric Showcase Ribbon --- */
+  /* --- Key Metric Ribbon --- */
+  .metrics-ribbon-wrapper { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
   .metrics-ribbon {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 16px;
-    margin-top: 50px;
-    padding-top: 40px;
+    padding-top: 30px;
     border-top: 1px solid var(--border-subtle);
   }
 
   .metric-card {
     background: var(--bg-card);
     border: 1px solid var(--border-subtle);
-    border-radius: 14px;
+    border-radius: 12px;
     padding: 22px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.02);
-    transition: all 0.25s ease;
+    transition: border-color 0.2s;
   }
+  .metric-card:hover { border-color: var(--border-dark); }
+  .metric-card .value { font-size: 1.9rem; font-weight: 800; letter-spacing: -0.03em; }
+  .metric-card .label { font-size: 0.85rem; color: var(--text-muted); font-weight: 500; margin-top: 4px; }
 
-  .metric-card:hover {
-    transform: translateY(-3px);
-    border-color: var(--border-focus);
-  }
-
-  .metric-card .value {
-    font-size: 1.9rem;
-    font-weight: 800;
-    letter-spacing: -0.03em;
-  }
-
-  .metric-card .label {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    font-weight: 500;
-    margin-top: 4px;
-  }
-
-  /* --- Visual Portfolio Grid Architecture --- */
-  .section-wrapper {
-    max-width: 1080px;
-    margin: 0 auto;
-    padding: 60px 24px 80px 24px;
-  }
-
-  .filter-bar {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 36px;
-    flex-wrap: wrap;
-  }
+  /* --- Section Wrapper & Cards --- */
+  .section-wrapper { max-width: 1080px; margin: 0 auto; padding: 60px 24px 80px 24px; }
+  .filter-bar { display: flex; gap: 10px; margin-bottom: 36px; flex-wrap: wrap; }
 
   .filter-chip {
     background: #ffffff;
@@ -207,14 +183,8 @@ permalink: /
     font-size: 0.85rem;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.2s;
   }
-
-  .filter-chip:hover, .filter-chip.active {
-    background: var(--text-primary);
-    color: #ffffff;
-    border-color: var(--text-primary);
-  }
+  .filter-chip.active { background: var(--text-primary); color: #ffffff; border-color: var(--text-primary); }
 
   .portfolio-grid {
     display: grid;
@@ -222,116 +192,65 @@ permalink: /
     gap: 32px;
   }
 
-  /* Visual-First Card Container */
   .project-card {
     background: var(--bg-card);
     border: 1px solid var(--border-subtle);
-    border-radius: 18px;
+    border-radius: 16px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     cursor: pointer;
-    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s ease;
   }
 
   .project-card:hover {
-    transform: translateY(-8px);
-    border-color: var(--border-focus);
-    box-shadow: 0 24px 48px rgba(15, 23, 42, 0.1);
+    transform: translateY(-6px);
+    border-color: var(--border-dark);
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
   }
 
-  /* Expanded Visual Media Canvas */
   .card-media-wrap {
     width: 100%;
-    height: 260px;
+    height: 240px;
     overflow: hidden;
     background-color: #f1f5f9;
     border-bottom: 1px solid var(--border-subtle);
     position: relative;
   }
 
-  .card-media-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  }
+  .card-media-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+  .project-card:hover .card-media-wrap img { transform: scale(1.05); }
 
-  .project-card:hover .card-media-wrap img {
-    transform: scale(1.06);
-  }
-
-  /* Overlay Metric Badge directly on image */
   .overlay-metric {
     position: absolute;
     top: 14px;
     right: 14px;
-    background: rgba(15, 23, 42, 0.82);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(8px);
     color: #ffffff;
     font-size: 0.75rem;
     font-weight: 700;
     padding: 6px 12px;
     border-radius: 20px;
-    letter-spacing: 0.02em;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   }
 
-  .card-body {
-    padding: 28px;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-  }
-
-  .tag-group {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin-bottom: 14px;
-  }
-
+  .card-body { padding: 28px; display: flex; flex-direction: column; flex-grow: 1; }
+  .tag-group { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
   .pill-tag {
     font-size: 0.72rem;
     font-weight: 700;
     padding: 4px 10px;
     border-radius: 6px;
-    background: #f1f5f9;
+    background: var(--bg-accent);
     color: var(--text-secondary);
     border: 1px solid var(--border-subtle);
   }
 
-  .card-title {
-    font-size: 1.35rem;
-    font-weight: 800;
-    margin: 0 0 10px 0;
-    color: var(--text-primary);
-    line-height: 1.3;
-  }
+  .card-title { font-size: 1.35rem; font-weight: 800; margin: 0 0 10px 0; line-height: 1.3; }
+  .card-summary { font-size: 0.92rem; color: var(--text-secondary); flex-grow: 1; line-height: 1.6; margin-bottom: 24px; }
+  .card-action { font-size: 0.88rem; font-weight: 700; color: var(--accent-blue); display: flex; align-items: center; gap: 6px; }
 
-  .card-summary {
-    font-size: 0.92rem;
-    color: var(--text-secondary);
-    flex-grow: 1;
-    line-height: 1.6;
-    margin-bottom: 24px;
-  }
-
-  .card-action {
-    font-size: 0.88rem;
-    font-weight: 700;
-    color: var(--accent-blue);
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    transition: gap 0.2s ease;
-  }
-
-  .project-card:hover .card-action { gap: 10px; }
-
-  /* --- Executive Side Drawers --- */
+  /* --- Executive Dynamic Modal Drawers (Matching FEUP Design Pattern) --- */
   .drawer-overlay {
     position: fixed;
     top: 0;
@@ -339,14 +258,12 @@ permalink: /
     width: 100vw;
     height: 100vh;
     background: rgba(15, 23, 42, 0.45);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(8px);
     z-index: 2000;
     display: none;
     opacity: 0;
     transition: opacity 0.3s ease;
   }
-
   .drawer-overlay.active { display: block; opacity: 1; }
 
   .drawer-panel {
@@ -354,22 +271,21 @@ permalink: /
     top: 0;
     right: -100%;
     width: 100%;
-    max-width: 760px;
+    max-width: 860px;
     height: 100vh;
     background: #ffffff;
     border-left: 1px solid var(--border-subtle);
     z-index: 2001;
-    padding: 48px 36px;
+    padding: 48px;
     box-sizing: border-box;
     overflow-y: auto;
     transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     box-shadow: -10px 0 40px rgba(0, 0, 0, 0.15);
   }
-
   .drawer-overlay.active .drawer-panel { right: 0; }
 
   .close-btn {
-    background: #f1f5f9;
+    background: var(--bg-accent);
     border: 1px solid var(--border-subtle);
     color: var(--text-secondary);
     padding: 8px 16px;
@@ -377,73 +293,72 @@ permalink: /
     cursor: pointer;
     float: right;
     font-weight: 700;
-    transition: all 0.2s ease;
   }
 
-  .close-btn:hover { color: var(--text-primary); border-color: var(--border-focus); }
-
-  .callout-box {
-    background: #f8fafc;
-    border-left: 4px solid var(--text-primary);
-    border-radius: 0 8px 8px 0;
-    padding: 18px 22px;
-    margin: 24px 0;
+  /* Structural Dynamic Blocks (Like Image 1) */
+  .modal-hero-split {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    margin: 28px 0;
   }
+  .modal-hero-text { flex: 1; }
+  .modal-hero-visual { flex: 1; max-height: 280px; overflow: hidden; border-radius: 12px; }
+  .modal-hero-visual img { width: 100%; height: 100%; object-fit: contain; }
 
-  .callout-box h4 { margin: 0 0 6px 0; font-size: 1rem; font-weight: 700; }
-  .callout-box p { margin: 0; font-size: 0.92rem; color: var(--text-secondary); }
+  .modal-stat-block {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    border-top: 1px solid var(--border-subtle);
+    border-bottom: 1px solid var(--border-subtle);
+    margin: 32px 0;
+  }
+  .stat-highlight {
+    background: var(--bg-accent);
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .stat-highlight .big-number { font-size: 3.2rem; font-weight: 800; line-height: 1; letter-spacing: -0.03em; }
+  .stat-highlight .big-caption { font-size: 0.88rem; color: var(--text-secondary); margin-top: 8px; font-weight: 500; }
+  
+  .stat-takeaways { padding: 24px 32px; background: #ffffff; }
+  .takeaway-item { margin-bottom: 20px; }
+  .takeaway-item:last-child { margin-bottom: 0; }
+  .takeaway-num { font-family: monospace; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 4px; }
+  .takeaway-title { font-weight: 700; font-size: 0.98rem; margin-bottom: 4px; }
+  .takeaway-desc { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin: 0; }
 
-  .drawer-hero-media {
+  .workflow-section { margin-top: 40px; }
+  .workflow-step { margin-bottom: 32px; }
+  .workflow-step-num { font-family: monospace; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 4px; }
+  .workflow-step-title { font-size: 1.2rem; font-weight: 800; margin-bottom: 8px; }
+  .workflow-step-desc { font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px; }
+  
+  .workflow-img-wrap {
     width: 100%;
-    margin: 24px 0;
     border-radius: 12px;
     overflow: hidden;
     border: 1px solid var(--border-subtle);
-    background-color: #f8fafc;
+    background: var(--bg-accent);
   }
+  .workflow-img-wrap img { width: 100%; max-height: 420px; object-fit: cover; display: block; }
+  .workflow-img-caption { font-size: 0.8rem; color: var(--text-muted); text-align: center; padding: 10px; background: #ffffff; border-top: 1px solid var(--border-subtle); }
 
-  .drawer-hero-media img {
-    width: 100%;
-    max-height: 400px;
-    object-fit: cover;
-    display: block;
-  }
-
-  .drawer-hero-media p.caption {
-    font-size: 0.82rem;
-    color: var(--text-muted);
-    margin: 0;
-    padding: 10px 16px;
-    text-align: center;
-    font-weight: 600;
-    background: #ffffff;
-    border-top: 1px solid var(--border-subtle);
-  }
-
-  .skills-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-subtle);
-    border-radius: 16px;
-    padding: 36px;
-  }
-
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 32px;
-  }
-
+  .skills-card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 16px; padding: 36px; }
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px; }
   .skill-group h4 { margin: 0 0 10px 0; font-size: 1rem; font-weight: 700; }
   .skill-group p { font-size: 0.9rem; color: var(--text-secondary); margin: 0; }
 
-  footer {
-    border-top: 1px solid var(--border-subtle);
-    padding: 60px 24px;
-    text-align: center;
-    color: var(--text-muted);
-    font-size: 0.9rem;
-    background: #ffffff;
+  @media (max-width: 820px) {
+    .hero-wrapper { flex-direction: column-reverse; text-align: center; }
+    .modal-hero-split { flex-direction: column; }
+    .modal-stat-block { grid-template-columns: 1fr; }
+    .drawer-panel { padding: 28px 20px; }
   }
+
+  footer { border-top: 1px solid var(--border-subtle); padding: 60px 24px; text-align: center; color: var(--text-muted); font-size: 0.9rem; background: #ffffff; }
 </style>
 
 <!-- Navigation -->
@@ -458,25 +373,34 @@ permalink: /
 
 <!-- Hero Section -->
 <div class="hero-wrapper">
-  <div class="status-badge">
-    <span class="dot"></span> Open to Mechanical &amp; Manufacturing Engineering Roles
-  </div>
-  
-  <h1 class="hero-title">Mechanical Engineering, Tooling Design &amp; Process Optimization.</h1>
-  
-  <p class="hero-subtitle">
-    Mechanical Engineer (M.Sc.) specializing in injection mold tool design (Siemens NX), industrial process quality &amp; SPC (Toyota Caetano), non-linear FEA simulation (Abaqus), and technical venture management.
-  </p>
+  <div class="hero-text-content">
+    <div class="status-badge">
+      <span class="dot"></span> Open to Mechanical Engineering Roles
+    </div>
+    
+    <div class="mono-label">M.Sc. Mechanical Engineer · Porto / Aveiro</div>
+    <h1 class="hero-title">Mechanical Design, Tooling &amp; Industrial Production.</h1>
+    
+    <p class="hero-subtitle">
+      Mechanical Engineer specializing in polymer injection mold design (Siemens NX), industrial process quality control &amp; SPC (Toyota Caetano), non-linear FEA simulation (Abaqus), and technical venture leadership.
+    </p>
 
-  <div class="cta-group">
-    <a href="#projects" class="btn-primary">View Case Studies</a>
-    <a href="assets/Luisa_Mendes_CV.pdf" download class="btn-secondary">Download Resume (PDF)</a>
+    <div class="cta-group">
+      <a href="#projects" class="btn-primary">Explore Work</a>
+      <a href="assets/Luisa_Mendes_CV.pdf" download class="btn-secondary">Download Resume (PDF)</a>
+    </div>
   </div>
 
-  <!-- Key Executive Metrics -->
+  <div class="hero-avatar-wrap">
+    <img src="/images/luisa-photo.jpg" alt="Luísa Mendes, M.Sc. Mechanical Engineer" onerror="this.src='/images/uniraid-car.png'" />
+  </div>
+</div>
+
+<!-- Key Executive Metrics -->
+<div class="metrics-ribbon-wrapper">
   <div class="metrics-ribbon">
     <div class="metric-card">
-      <div class="value">5.96 to 0</div>
+      <div class="value">5.96 → 0</div>
       <div class="label">Defects/Unit Target (Toyota)</div>
     </div>
     <div class="metric-card">
@@ -497,7 +421,7 @@ permalink: /
 <!-- Portfolio Showcase Section -->
 <div id="projects" class="section-wrapper">
   <div class="filter-bar">
-    <button class="filter-chip active" onclick="filterProjects('all', this)">All Projects</button>
+    <button class="filter-chip active" onclick="filterProjects('all', this)">All Experience</button>
     <button class="filter-chip" onclick="filterProjects('oem', this)">Toyota OEM &amp; Quality</button>
     <button class="filter-chip" onclick="filterProjects('tooling', this)">Mold &amp; Tooling CAD</button>
     <button class="filter-chip" onclick="filterProjects('fea', this)">FEA &amp; Simulation</button>
@@ -505,13 +429,14 @@ permalink: /
 
   <div class="portfolio-grid">
 
-    <!-- Card 1: Toyota -->
+    <!-- Experience 1: Toyota -->
     <div class="project-card" data-category="oem fea" onclick="openDrawer('drawer-toyota')">
       <div class="card-media-wrap">
         <span class="overlay-metric">&euro;2,726/yr Payback</span>
         <img src="/images/toyota-diagram.png" alt="Toyota environmental control system architecture" />
       </div>
       <div class="card-body">
+        <div class="mono-label" style="margin-bottom: 8px;">Master's Thesis · Toyota Caetano</div>
         <div class="tag-group">
           <span class="pill-tag">Toyota Caetano</span>
           <span class="pill-tag">Process Quality</span>
@@ -519,17 +444,18 @@ permalink: /
         </div>
         <h3 class="card-title">Automatic Climate Control For Painting Booth</h3>
         <p class="card-summary">Industry 4.0 climate retrofit for Land Cruiser 70 line (14 units/day). Analyzed baseline defects via Laney U-Charts, FMEA, and Simscape dynamics.</p>
-        <span class="card-action">Inspect Visual Case Study &rarr;</span>
+        <span class="card-action">Review Engineering Work &rarr;</span>
       </div>
     </div>
 
-    <!-- Card 2: Mold -->
+    <!-- Experience 2: Mold -->
     <div class="project-card" data-category="tooling" onclick="openDrawer('drawer-mold')">
       <div class="card-media-wrap">
         <span class="overlay-metric">5 Lifters (8&deg;)</span>
         <img src="/images/mold-drawing.png" alt="Siemens NX injection mold CAD design" />
       </div>
       <div class="card-body">
+        <div class="mono-label" style="margin-bottom: 8px;">Tooling Design · Simoldes Group</div>
         <div class="tag-group">
           <span class="pill-tag">Simoldes Plastics</span>
           <span class="pill-tag">DME 2A Standard</span>
@@ -537,17 +463,18 @@ permalink: /
         </div>
         <h3 class="card-title">Automotive Speaker Polypropylene Injection Mold</h3>
         <p class="card-summary">Complete polymer injection tool in Siemens NX. Features 5 angled lifters (8&deg;), single/dual cam-pin sliders, DME 2A base, and 8mm cooling circuits.</p>
-        <span class="card-action">Inspect Visual Case Study &rarr;</span>
+        <span class="card-action">Review Engineering Work &rarr;</span>
       </div>
     </div>
 
-    <!-- Card 3: Abaqus -->
+    <!-- Experience 3: Abaqus -->
     <div class="project-card" data-category="fea" onclick="openDrawer('drawer-abaqus')">
       <div class="card-media-wrap">
         <span class="overlay-metric">-18% Springback</span>
         <img src="/images/mold-drawing.png" alt="Abaqus FEA simulation results" />
       </div>
       <div class="card-body">
+        <div class="mono-label" style="margin-bottom: 8px;">CAE Simulation · FEA</div>
         <div class="tag-group">
           <span class="pill-tag">Abaqus/Explicit</span>
           <span class="pill-tag">FEA Analysis</span>
@@ -555,17 +482,18 @@ permalink: /
         </div>
         <h3 class="card-title">Brass Drawing Process FEA Optimisation</h3>
         <p class="card-summary">Nonlinear elastoplastic simulation modeling stress distribution, springback mitigation, and energy optimization in brass alloys.</p>
-        <span class="card-action">Inspect Visual Case Study &rarr;</span>
+        <span class="card-action">Review Engineering Work &rarr;</span>
       </div>
     </div>
 
-    <!-- Card 4: UniRaid -->
+    <!-- Experience 4: UniRaid -->
     <div class="project-card" data-category="oem tooling" onclick="openDrawer('drawer-uniraid')">
       <div class="card-media-wrap">
         <span class="overlay-metric">&euro;6,000+ Sponsorship</span>
         <img src="/images/uniraid-car.png" alt="VW Golf II GTD UniRaid vehicle" />
       </div>
       <div class="card-body">
+        <div class="mono-label" style="margin-bottom: 8px;">Venture Leadership · Morocco Rally</div>
         <div class="tag-group">
           <span class="pill-tag">&euro;6,000+ Budget</span>
           <span class="pill-tag">Venture Leadership</span>
@@ -573,7 +501,7 @@ permalink: /
         </div>
         <h3 class="card-title">UniRaid Rally Project Leadership &amp; Field Mechanics</h3>
         <p class="card-summary">Directed €6,000+ in corporate sponsorships, accounting, marketing, supply chain, and emergency on-road repairs to complete a 3,000 km Morocco rally.</p>
-        <span class="card-action">Inspect Visual Case Study &rarr;</span>
+        <span class="card-action">Review Engineering Work &rarr;</span>
       </div>
     </div>
 
@@ -604,112 +532,180 @@ permalink: /
   </div>
 </div>
 
-<!-- Modal Side Drawers -->
+<!-- Dynamic Modal Drawers (Structured Like Image 1) -->
 <div id="drawer-overlay" class="drawer-overlay" onclick="closeAllDrawers()">
 
   <!-- Toyota Drawer -->
   <div id="drawer-toyota" class="drawer-panel" onclick="event.stopPropagation()">
     <button class="close-btn" onclick="closeAllDrawers()">Close &times;</button>
-    <span class="pill-tag">Toyota Caetano Portugal, S.A. | TME Stakeholder Project</span>
-    <h2 style="margin-top: 16px; font-size: 1.6rem;">Automatic Climate Control For Painting Booth</h2>
-    <p style="color: var(--text-secondary); font-size: 0.95rem;">Land Cruiser 70 Line (14 units/day) | <strong>CAPEX/OPEX Net Savings: &euro;2,726/yr</strong></p>
-    <hr style="border: 0; border-top: 1px solid var(--border-subtle); margin: 24px 0;" />
+    <div class="mono-label">Master's Thesis · Toyota Caetano Portugal · 2026</div>
+    <h2 style="margin-top: 8px; font-size: 2.2rem; font-weight: 800; letter-spacing: -0.02em;">Automatic Climate Control For Painting Booth</h2>
+    <p style="color: var(--text-secondary); font-size: 1.05rem; margin-top: 8px;">
+      Development of an Industry 4.0 climate control retrofit for Land Cruiser 70 assembly line (14 units/day)—from root-cause defect diagnostics to physical Simscape model validation.
+    </p>
 
-    <div class="callout-box">
-      <h4>Root-Cause Diagnostics (Gemba &amp; Genchi Genbutsu)</h4>
-      <p>Evaluated a <strong>5.96 defects/unit baseline (100% repair rate)</strong> using Laney U-Charts and FMEA. Statistically proved correlation between temperature variation and paint sagging via Pearson analysis.</p>
+    <!-- Split Hero Section -->
+    <div class="modal-stat-block">
+      <div class="stat-highlight">
+        <div class="mono-label" style="margin-bottom: 8px; color: var(--text-secondary);">NET PAYBACK</div>
+        <div class="big-number">&euro;2,726/yr</div>
+        <div class="big-caption">Direct CAPEX/OPEX net savings presented to Toyota Motor Europe stakeholders.</div>
+      </div>
+      <div class="stat-takeaways">
+        <div class="takeaway-item">
+          <div class="takeaway-num">01</div>
+          <div class="takeaway-title">Statistical Defect Elimination</div>
+          <p class="takeaway-desc">Analyzed 5.96 defects/unit baseline (100% repair rate) via Laney U-Charts and FMEA, proving correlation between ambient variation and paint sagging.</p>
+        </div>
+        <div class="takeaway-item">
+          <div class="takeaway-num">02</div>
+          <div class="takeaway-title">Closed-Loop ATEX Control</div>
+          <p class="takeaway-desc">Designed automated PLC/HMI control strategy (Siemens ET200 + VFD Pump) integrating a 55% RH safety threshold for ATEX compliance.</p>
+        </div>
+      </div>
     </div>
 
-    <div class="drawer-hero-media">
-      <img src="/images/toyota-diagram.png" alt="Toyota Environmental Control System Architecture" />
-      <p class="caption">Toyota Paint Booth Automation System Architecture</p>
+    <!-- Workflow Section -->
+    <div class="workflow-section">
+      <div class="mono-label" style="margin-bottom: 16px;">PROJECT WORKFLOW</div>
+      <div class="workflow-step">
+        <div class="workflow-step-num">01</div>
+        <div class="workflow-step-title">System Architecture &amp; Physical Simulation</div>
+        <div class="workflow-step-desc">
+          Engineered multi-domain Simscape models in MATLAB to simulate thermodynamic behavior across dual Air Supply Units (ASU), delivering predictive maintenance roadmaps.
+        </div>
+        <div class="workflow-img-wrap">
+          <img src="/images/toyota-diagram.png" alt="Toyota Paint Booth Automation Architecture" />
+          <div class="workflow-img-caption">Toyota Paint Booth Automation System Architecture &amp; PLC Network</div>
+        </div>
+      </div>
     </div>
-
-    <h3 style="font-size: 1.1rem; margin-top: 28px;">Control Architecture &amp; ATEX Safety</h3>
-    <ul style="color: var(--text-secondary); line-height: 1.8; padding-left: 20px;">
-      <li><strong>Automated Hardware Control:</strong> Designed automated PLC/HMI control strategy using Siemens ET200 + VFD Pump integration.</li>
-      <li><strong>ATEX Safety Integration:</strong> Integrated a strict <strong>55% RH safety threshold</strong> for explosion-proof ATEX compliance within the spray booth.</li>
-      <li><strong>Simscape Physical Model:</strong> Developed multi-domain Simscape model in MATLAB to simulate thermal and humidity dynamics across dual Air Supply Units (ASU).</li>
-      <li><strong>Toyota Motor Europe (TME) Delivery:</strong> Delivered technical specifications, equipment selection, and predictive maintenance roadmap directly to TME executive stakeholders.</li>
-    </ul>
   </div>
 
   <!-- Mold Drawer (Simoldes) -->
   <div id="drawer-mold" class="drawer-panel" onclick="event.stopPropagation()">
     <button class="close-btn" onclick="closeAllDrawers()">Close &times;</button>
-    <span class="pill-tag">Simoldes Plastics Collaboration</span>
-    <h2 style="margin-top: 16px; font-size: 1.6rem;">Automotive Speaker Polypropylene Injection Mold</h2>
-    <hr style="border: 0; border-top: 1px solid var(--border-subtle); margin: 24px 0;" />
+    <div class="mono-label">Tooling Engineering · Simoldes Group</div>
+    <h2 style="margin-top: 8px; font-size: 2.2rem; font-weight: 800; letter-spacing: -0.02em;">Polypropylene Injection Mold Tool Design</h2>
+    <p style="color: var(--text-secondary); font-size: 1.05rem; margin-top: 8px;">
+      Complete polymer injection tool design in Siemens NX for an automotive speaker component, ensuring zero mechanical undercut interference during high-speed ejection.
+    </p>
 
-    <div class="callout-box">
-      <h4>Objective &amp; Collaboration Scope</h4>
-      <p>Designed a complete polymer injection mold in Siemens NX for an automotive Polypropylene (PP) speaker component, ensuring zero mechanical interference during ejection in collaboration with tier-1 supplier <strong>Simoldes Plastics</strong>.</p>
+    <!-- Split Hero Section -->
+    <div class="modal-stat-block">
+      <div class="stat-highlight">
+        <div class="mono-label" style="margin-bottom: 8px; color: var(--text-secondary);">TOOL MECHANICS</div>
+        <div class="big-number">5 Lifters</div>
+        <div class="big-caption">Integrated 5 angled lifters set at an 8&deg; inclination to release complex interior undercuts.</div>
+      </div>
+      <div class="stat-takeaways">
+        <div class="takeaway-item">
+          <div class="takeaway-num">01</div>
+          <div class="takeaway-title">Surface &amp; Region Surface Modeling</div>
+          <p class="takeaway-desc">Executed Patch Surfaces, Isocline checks, Check Regions, and Trim Region operations in Siemens NX to define parting lines.</p>
+        </div>
+        <div class="takeaway-item">
+          <div class="takeaway-num">02</div>
+          <div class="takeaway-title">Standardized Tooling Base</div>
+          <p class="takeaway-desc">Configured DME 2A tool base with straight ejector sleeves, single/dual cam-pin sliders, and normalized pipe/extension plugs.</p>
+        </div>
+      </div>
     </div>
 
-    <div class="drawer-hero-media">
-      <img src="/images/mold-drawing.png" alt="Siemens NX Mold Layout" />
-      <p class="caption">Siemens NX Mold Assembly (DME 2A Tooling Base)</p>
+    <!-- Workflow Section -->
+    <div class="workflow-section">
+      <div class="mono-label" style="margin-bottom: 16px;">PROJECT WORKFLOW</div>
+      <div class="workflow-step">
+        <div class="workflow-step-num">01</div>
+        <div class="workflow-step-title">3D CAD Kinematics &amp; Thermal Channel Design</div>
+        <div class="workflow-step-desc">
+          Configured 8 mm conformal cooling circuits with internal baffles in high-heat core zones to optimize cycle time and prevent Polypropylene shrinkage warpage.
+        </div>
+        <div class="workflow-img-wrap">
+          <img src="/images/mold-drawing.png" alt="Siemens NX Mold Layout" />
+          <div class="workflow-img-caption">Siemens NX Mold Assembly (DME 2A Base &amp; Subsystem Layout)</div>
+        </div>
+      </div>
     </div>
-
-    <h3 style="font-size: 1.1rem; margin-top: 28px;">Methodology &amp; CAD Subsystems</h3>
-    <ul style="color: var(--text-secondary); line-height: 1.8; padding-left: 20px;">
-      <li><strong>Surface &amp; Region Modeling:</strong> Executed Patch Surfaces, Isocline checks, Check Regions, and Trim Region operations in Siemens NX.</li>
-      <li><strong>Dynamic Mechanics:</strong> Integrated <strong>5 angled lifters set at an 8&deg; inclination</strong> to resolve deep interior undercuts.</li>
-      <li><strong>Side-Action Components:</strong> Configured single and dual cam-pin sliders with plungers for side geometries.</li>
-      <li><strong>Ejection &amp; Tooling Base:</strong> Standardized DME 2A tool base equipped with straight ejector sleeves.</li>
-      <li><strong>Thermal &amp; Flow Management:</strong> Designed 8 mm cooling circuits with internal baffles in high-heat core zones to reduce cycle times; standardized DME pipe/extension plugs for leak prevention.</li>
-      <li><strong>Software Workaround:</strong> Resolved Siemens NX memory violation crashes by prioritizing theoretical runner sizing (8 mm) and 2D tool detailing.</li>
-    </ul>
   </div>
 
   <!-- Abaqus Drawer -->
   <div id="drawer-abaqus" class="drawer-panel" onclick="event.stopPropagation()">
     <button class="close-btn" onclick="closeAllDrawers()">Close &times;</button>
-    <span class="pill-tag">Abaqus FEA &amp; Taguchi DOE</span>
-    <h2 style="margin-top: 16px; font-size: 1.6rem;">Brass Drawing Process FEA Optimisation</h2>
-    <hr style="border: 0; border-top: 1px solid var(--border-subtle); margin: 24px 0;" />
+    <div class="mono-label">CAE Simulation · Abaqus FEA</div>
+    <h2 style="margin-top: 8px; font-size: 2.2rem; font-weight: 800; letter-spacing: -0.02em;">Brass Drawing Process FEA Optimisation</h2>
+    <p style="color: var(--text-secondary); font-size: 1.05rem; margin-top: 8px;">
+      Nonlinear elastoplastic finite element simulation using Abaqus/Explicit combined with Taguchi orthogonal arrays to model multi-pass deep drawing of brass alloys.
+    </p>
 
-    <h3 style="font-size: 1.1rem; margin-top: 24px;">Numerical Analysis</h3>
-    <p style="color: var(--text-secondary);">Nonlinear finite element simulation using <strong>Abaqus/Explicit</strong> combined with Taguchi orthogonal arrays to model multi-pass deep drawing of brass alloys.</p>
-
-    <h3 style="font-size: 1.1rem; margin-top: 24px;">Results</h3>
-    <ul style="color: var(--text-secondary); line-height: 1.8; padding-left: 20px;">
-      <li>Post-forming elastic springback reduced by <strong>18%</strong>.</li>
-      <li>Peak punch draw force reduced by <strong>12%</strong>.</li>
-    </ul>
+    <!-- Split Hero Section -->
+    <div class="modal-stat-block">
+      <div class="stat-highlight">
+        <div class="mono-label" style="margin-bottom: 8px; color: var(--text-secondary);">SPRINGBACK REDUCTION</div>
+        <div class="big-number">18%</div>
+        <div class="big-caption">Post-forming elastic springback reduced while lowering peak punch force by 12%.</div>
+      </div>
+      <div class="stat-takeaways">
+        <div class="takeaway-item">
+          <div class="takeaway-num">01</div>
+          <div class="takeaway-title">Nonlinear Material Modeling</div>
+          <p class="takeaway-desc">Configured elastoplastic stress-strain curves to simulate true stress distribution and contact friction during deep drawing.</p>
+        </div>
+        <div class="takeaway-item">
+          <div class="takeaway-num">02</div>
+          <div class="takeaway-title">Taguchi Optimization DOE</div>
+          <p class="takeaway-desc">Optimized die radius, punch velocity, and blank holder force parameters to mitigate forming defects.</p>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- UniRaid Drawer -->
   <div id="drawer-uniraid" class="drawer-panel" onclick="event.stopPropagation()">
     <button class="close-btn" onclick="closeAllDrawers()">Close &times;</button>
-    <span class="pill-tag">Entrepreneurial Engineering &amp; Field Mechanics</span>
-    <h2 style="margin-top: 16px; font-size: 1.6rem;">UniRaid Project Leadership &amp; Field Engineering</h2>
-    <hr style="border: 0; border-top: 1px solid var(--border-subtle); margin: 24px 0;" />
+    <div class="mono-label">Venture Leadership · Morocco Desert Rally</div>
+    <h2 style="margin-top: 8px; font-size: 2.2rem; font-weight: 800; letter-spacing: -0.02em;">UniRaid Rally Leadership &amp; Field Mechanics</h2>
+    <p style="color: var(--text-secondary); font-size: 1.05rem; margin-top: 8px;">
+      Complete venture ownership of a 3,000 km desert rally team—managing financial budgeting, corporate sponsorship acquisition, spare parts logistics, and field mechanical repairs.
+    </p>
 
-    <div class="callout-box">
-      <h4>Full Venture Ownership (&euro;6,000+ Budget)</h4>
-      <p>Managed the entire lifecycle of a 3,000 km Morocco rally team—raising <strong>&euro;6,000+ in corporate sponsorships</strong>, directing financial accounting, managing supply chain logistics, executing vehicle prep, and serving as driver/co-driver.</p>
+    <!-- Split Hero Section -->
+    <div class="modal-stat-block">
+      <div class="stat-highlight">
+        <div class="mono-label" style="margin-bottom: 8px; color: var(--text-secondary);">VENTURE SPONSORSHIP</div>
+        <div class="big-number">&euro;6,000+</div>
+        <div class="big-caption">Secured in corporate monetary funding and technical material partnerships.</div>
+      </div>
+      <div class="stat-takeaways">
+        <div class="takeaway-item">
+          <div class="takeaway-num">01</div>
+          <div class="takeaway-title">Supply Chain &amp; Financial Control</div>
+          <p class="takeaway-desc">Controlled team budget, accounting, marketing pitches, and emergency spare parts procurement under strict time constraints.</p>
+        </div>
+        <div class="takeaway-item">
+          <div class="takeaway-num">02</div>
+          <div class="takeaway-title">On-Road Emergency Repairs</div>
+          <p class="takeaway-desc">Executed dynamic troubleshooting under desert conditions, fixing team fuel line leaks and mechanical component issues to complete the 3,000 km rally.</p>
+        </div>
+      </div>
     </div>
 
-    <div class="drawer-hero-media">
-      <img src="/images/uniraid-car.png" alt="VW Golf II GTD Finishers" />
-      <p class="caption">VW Golf II GTD - Morocco Desert Rally Operations</p>
+    <!-- Workflow Section -->
+    <div class="workflow-section">
+      <div class="workflow-step">
+        <div class="workflow-img-wrap">
+          <img src="/images/uniraid-car.png" alt="VW Golf II GTD Morocco Rally Operations" />
+          <div class="workflow-img-caption">VW Golf II GTD - Morocco Desert Rally Operations &amp; Finishers</div>
+        </div>
+      </div>
     </div>
-
-    <h3 style="font-size: 1.1rem; margin-top: 28px;">Core Responsibilities</h3>
-    <ul style="color: var(--text-secondary); line-height: 1.8; padding-left: 20px;">
-      <li><strong>Sponsorship Acquisition &amp; Marketing:</strong> Pitched directly to corporate partners, securing over &euro;6,000 in monetary funding and technical material sponsorships.</li>
-      <li><strong>Financial &amp; Supply Chain Operations:</strong> Controlled team budget, financial accounting, and emergency spare parts procurement under tight deadlines.</li>
-      <li><strong>On-Road Field Mechanics:</strong> Executed dynamic troubleshooting and emergency roadside repairs under desert conditions, including fixing fuel line leaks and mechanical component issues.</li>
-      <li><strong>In-Car Operations:</strong> Operated as driver and co-driver, navigating 3,000 km of desert terrain while delivering 100 kg of humanitarian supplies to rural communities.</li>
-    </ul>
   </div>
 
 </div>
 
 <!-- Contact Footer -->
 <footer id="contact">
-  <h2 style="margin-bottom: 8px; font-size: 1.6rem;">Contact Information</h2>
+  <h2 style="margin-bottom: 8px; font-size: 1.6rem; font-weight: 800;">Contact Information</h2>
   <p style="margin-bottom: 24px; color: var(--text-secondary);">Open to engineering opportunities in automotive manufacturing, tooling design, and product engineering.</p>
 
   <div style="display: flex; justify-content: center; gap: 28px; font-weight: 600; margin-bottom: 32px;">
