@@ -6,26 +6,26 @@ permalink: /
 ---
 
 <style>
-  /* --- Executive Editorial Palette & Design System --- */
+  /* --- Executive Light Editorial Palette --- */
   :root {
-    --bg-base: #0b0f17;
-    --bg-surface: #131924;
-    --bg-surface-hover: #1a2232;
-    --border-subtle: rgba(255, 255, 255, 0.08);
-    --border-focus: rgba(255, 255, 255, 0.22);
+    --bg-base: #fbfbfd;
+    --bg-surface: #ffffff;
+    --bg-surface-hover: #f5f5f7;
+    --border-subtle: #e5e5ea;
+    --border-focus: #d1d1d6;
     
-    --text-primary: #f8fafc;
-    --text-secondary: #94a3b8;
-    --text-muted: #64748b;
+    --text-primary: #1d1d1f;
+    --text-secondary: #515154;
+    --text-muted: #86868b;
     
-    --accent-silver: #e2e8f0;
-    --accent-status: #34d399;
+    --accent-status: #10b981;
+    --accent-blue: #0066cc;
   }
 
   body {
     background-color: var(--bg-base);
     color: var(--text-primary);
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
@@ -33,13 +33,13 @@ permalink: /
     scroll-behavior: smooth;
   }
 
-  /* --- Minimalist Header Navigation --- */
+  /* --- Minimalist Glass Header --- */
   nav.executive-nav {
     position: sticky;
     top: 0;
-    background: rgba(11, 15, 23, 0.9);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: rgba(251, 251, 253, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border-subtle);
     padding: 18px 40px;
     z-index: 1000;
@@ -78,7 +78,7 @@ permalink: /
     color: var(--text-primary);
   }
 
-  /* --- Executive Hero Section --- */
+  /* --- Executive Light Hero Section --- */
   .hero-container {
     max-width: 1040px;
     margin: 0 auto;
@@ -89,7 +89,7 @@ permalink: /
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: rgba(255, 255, 255, 0.03);
+    background: #ffffff;
     border: 1px solid var(--border-subtle);
     color: var(--text-secondary);
     padding: 6px 14px;
@@ -97,6 +97,7 @@ permalink: /
     font-size: 0.82rem;
     font-weight: 500;
     margin-bottom: 28px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
   }
 
   .status-pill .indicator {
@@ -107,13 +108,15 @@ permalink: /
   }
 
   .hero-title {
-    font-size: 3.6rem;
+    font-size: 3.8rem;
     font-weight: 700;
-    letter-spacing: -1.5px;
-    line-height: 1.12;
+    letter-spacing: -1.8px;
+    line-height: 1.08;
     margin: 0 0 24px 0;
-    color: var(--text-primary);
-    max-width: 900px;
+    background: linear-gradient(180deg, #1d1d1f 0%, #424245 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    max-width: 920px;
   }
 
   .hero-subtitle {
@@ -133,34 +136,36 @@ permalink: /
 
   .btn-primary {
     background: var(--text-primary);
-    color: var(--bg-base);
+    color: #ffffff;
     padding: 12px 24px;
-    border-radius: 6px;
+    border-radius: 8px;
     font-weight: 600;
     font-size: 0.92rem;
     text-decoration: none;
-    transition: transform 0.2s ease, opacity 0.2s ease;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   }
 
   .btn-primary:hover {
-    opacity: 0.9;
+    background: #333336;
     transform: translateY(-1px);
   }
 
   .btn-secondary {
-    background: transparent;
+    background: #ffffff;
     border: 1px solid var(--border-subtle);
     color: var(--text-primary);
     padding: 12px 24px;
-    border-radius: 6px;
+    border-radius: 8px;
     font-weight: 500;
     font-size: 0.92rem;
     text-decoration: none;
-    transition: background 0.2s ease, border-color 0.2s ease;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
   }
 
   .btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.04);
+    background: var(--bg-surface-hover);
     border-color: var(--border-focus);
   }
 
@@ -175,10 +180,10 @@ permalink: /
   }
 
   .metric-box .metric-value {
-    font-size: 2.1rem;
+    font-size: 2.2rem;
     font-weight: 700;
     color: var(--text-primary);
-    letter-spacing: -0.5px;
+    letter-spacing: -0.8px;
   }
 
   .metric-box .metric-label {
@@ -199,7 +204,7 @@ permalink: /
   }
 
   .section-title {
-    font-size: 2rem;
+    font-size: 2.1rem;
     font-weight: 700;
     letter-spacing: -0.8px;
     margin: 0 0 8px 0;
@@ -221,24 +226,26 @@ permalink: /
   .project-card {
     background: var(--bg-surface);
     border: 1px solid var(--border-subtle);
-    border-radius: 10px;
+    border-radius: 12px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     cursor: pointer;
-    transition: transform 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
   }
 
   .project-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-5px);
     border-color: var(--border-focus);
-    background-color: var(--bg-surface-hover);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
   }
 
   .card-image-wrap {
     width: 100%;
     height: 220px;
     overflow: hidden;
+    background: #f0f0f2;
     border-bottom: 1px solid var(--border-subtle);
   }
 
@@ -271,8 +278,8 @@ permalink: /
     font-size: 0.72rem;
     font-weight: 600;
     padding: 4px 10px;
-    border-radius: 4px;
-    background: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    background: #f2f2f7;
     color: var(--text-secondary);
     border: 1px solid var(--border-subtle);
     letter-spacing: 0.2px;
@@ -297,7 +304,7 @@ permalink: /
   .card-action {
     font-size: 0.88rem;
     font-weight: 600;
-    color: var(--text-primary);
+    color: var(--accent-blue);
     display: flex;
     align-items: center;
     gap: 6px;
@@ -307,8 +314,9 @@ permalink: /
   .skills-card {
     background: var(--bg-surface);
     border: 1px solid var(--border-subtle);
-    border-radius: 10px;
+    border-radius: 12px;
     padding: 36px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
   }
 
   .skills-grid {
@@ -331,15 +339,15 @@ permalink: /
     line-height: 1.6;
   }
 
-  /* --- Side Drawer (Technical Case Study Panels) --- */
+  /* --- Side Drawer Case Study Panels --- */
   .drawer-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.75);
-    backdrop-filter: blur(4px);
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(6px);
     z-index: 2000;
     display: none;
     opacity: 0;
@@ -358,13 +366,14 @@ permalink: /
     width: 100%;
     max-width: 640px;
     height: 100vh;
-    background: var(--bg-base);
+    background: #ffffff;
     border-left: 1px solid var(--border-subtle);
     z-index: 2001;
     padding: 48px;
     box-sizing: border-box;
     overflow-y: auto;
     transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.1);
   }
 
   .drawer-overlay.active .drawer-panel {
@@ -372,7 +381,7 @@ permalink: /
   }
 
   .close-btn {
-    background: transparent;
+    background: #f2f2f7;
     border: 1px solid var(--border-subtle);
     color: var(--text-secondary);
     padding: 8px 16px;
@@ -386,6 +395,7 @@ permalink: /
   .close-btn:hover {
     color: var(--text-primary);
     border-color: var(--border-focus);
+    background: #e5e5ea;
   }
 
   /* --- Clean Footer --- */
@@ -395,6 +405,7 @@ permalink: /
     text-align: center;
     color: var(--text-muted);
     font-size: 0.9rem;
+    background: #ffffff;
   }
 </style>
 
@@ -641,9 +652,9 @@ permalink: /
   <p style="margin-bottom: 24px; color: var(--text-secondary);">Open to engineering opportunities in automotive manufacturing, simulation, and automation.</p>
 
   <div style="display: flex; justify-content: center; gap: 28px; font-weight: 500; margin-bottom: 32px;">
-    <a href="mailto:mendesluisa1202@gmail.com" style="color: var(--text-primary); text-decoration: none;">mendesluisa1202@gmail.com</a>
-    <a href="https://linkedin.com/in/luisa_mendes" target="_blank" style="color: var(--text-primary); text-decoration: none;">LinkedIn</a>
-    <a href="https://engluisamendes.github.io" target="_blank" style="color: var(--text-primary); text-decoration: none;">GitHub</a>
+    <a href="mailto:mendesluisa1202@gmail.com" style="color: var(--accent-blue); text-decoration: none;">mendesluisa1202@gmail.com</a>
+    <a href="https://linkedin.com/in/luisa_mendes" target="_blank" style="color: var(--accent-blue); text-decoration: none;">LinkedIn</a>
+    <a href="https://engluisamendes.github.io" target="_blank" style="color: var(--accent-blue); text-decoration: none;">GitHub</a>
   </div>
 
   <p>&copy; 2026 Luísa Mendes, M.Sc. All rights reserved.</p>
