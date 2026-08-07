@@ -1,12 +1,12 @@
 ---
 layout: default
 title: Luísa Mendes, M.Sc. | Mechanical & Systems Engineering
-description: Interactive executive engineering portfolio of Luísa Mendes, M.Sc. Automotive OEM Manufacturing, Multi-Domain System Simulation, Tooling Design, and Industrial Automation.
+description: Professional engineering portfolio of Luísa Mendes, M.Sc. Automotive OEM Manufacturing, Multi-Domain System Simulation, Tooling Design, and Industrial Automation.
 permalink: /
 ---
 
 <style>
-  /* --- Executive Light Editorial Palette --- */
+  /* --- Executive Light Design Architecture --- */
   :root {
     --bg-base: #fbfbfd;
     --bg-surface: #ffffff;
@@ -20,7 +20,6 @@ permalink: /
     
     --accent-status: #10b981;
     --accent-blue: #0066cc;
-    --accent-blue-hover: #004499;
   }
 
   body {
@@ -171,7 +170,7 @@ permalink: /
     border-color: var(--border-focus);
   }
 
-  /* --- Interactive Metric Cards --- */
+  /* --- Metrics Ribbon --- */
   .metrics-ribbon {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
@@ -233,7 +232,7 @@ permalink: /
     margin: 0;
   }
 
-  /* --- Interactive Project Filter Tabs --- */
+  /* --- Filter Tabs --- */
   .filter-tabs {
     display: flex;
     gap: 10px;
@@ -259,7 +258,7 @@ permalink: /
     border-color: var(--text-primary);
   }
 
-  /* --- Dynamic Project Cards --- */
+  /* --- Project Cards --- */
   .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -359,7 +358,7 @@ permalink: /
     gap: 10px;
   }
 
-  /* --- Technical Callout Boxes Inside Drawers --- */
+  /* --- Technical Callouts & Galleries --- */
   .callout-box {
     background: #f5f5f7;
     border-left: 4px solid var(--text-primary);
@@ -410,7 +409,7 @@ permalink: /
     font-weight: 500;
   }
 
-  /* --- Technical Skills Grid --- */
+  /* --- Skills Matrix --- */
   .skills-card {
     background: var(--bg-surface);
     border: 1px solid var(--border-subtle);
@@ -439,7 +438,7 @@ permalink: /
     line-height: 1.6;
   }
 
-  /* --- Modal Side Panels & PDF Viewers --- */
+  /* --- Side Drawers & PDF Viewers --- */
   .drawer-overlay {
     position: fixed;
     top: 0;
@@ -548,20 +547,20 @@ permalink: /
   <!-- Key Executive Metrics -->
   <div class="metrics-ribbon">
     <div class="metric-card">
-      <div class="metric-value">19/20</div>
-      <div class="metric-label">Master's Thesis Grade (Toyota)</div>
+      <div class="metric-value">5.96 to 0</div>
+      <div class="metric-label">Defects/Unit Target (Toyota)</div>
     </div>
     <div class="metric-card">
-      <div class="metric-value">r &gt; 0.96</div>
-      <div class="metric-label">Digital Twin Correlation</div>
+      <div class="metric-value">&euro;2,726/yr</div>
+      <div class="metric-label">Net Payback Savings (TME)</div>
     </div>
     <div class="metric-card">
-      <div class="metric-value">-18%</div>
-      <div class="metric-label">FEA Springback Reduction</div>
+      <div class="metric-value">5 Lifters ($8^\circ$)</div>
+      <div class="metric-label">Simoldes PP Mold Mechanisms</div>
     </div>
     <div class="metric-card">
-      <div class="metric-value">3,000 km</div>
-      <div class="metric-label">Desert Field Operations (UniRaid)</div>
+      <div class="metric-value">&euro;6,000+</div>
+      <div class="metric-label">UniRaid Project Budget</div>
     </div>
   </div>
 </div>
@@ -577,7 +576,7 @@ permalink: /
   <div class="filter-tabs">
     <button class="filter-btn active" onclick="filterProjects('all', this)">All Projects</button>
     <button class="filter-btn" onclick="filterProjects('oem', this)">Toyota OEM &amp; SPC</button>
-    <button class="filter-btn" onclick="filterProjects('tooling', this)">CAD &amp; Tooling (Simoldes)</button>
+    <button class="filter-btn" onclick="filterProjects('tooling', this)">Simoldes Polypropylene Tooling</button>
     <button class="filter-btn" onclick="filterProjects('fea', this)">CAE &amp; Simulation</button>
   </div>
 
@@ -591,28 +590,28 @@ permalink: /
       <div class="card-content">
         <div class="tag-group">
           <span class="tag">Toyota Caetano</span>
-          <span class="tag">Simscape / SPC</span>
-          <span class="tag">Ryohin Joken</span>
+          <span class="tag">Siemens ET200 + VFD</span>
+          <span class="tag">Laney U-Charts</span>
         </div>
-        <h3 class="card-title">Automotive Paint Booth Environmental Control</h3>
-        <p class="card-summary">Hardware-in-the-loop Quasi-Digital Twin linking Siemens S7-1200 PLCs with MATLAB Simscape to eliminate paint booth process drift.</p>
+        <h3 class="card-title">Automatic Climate Control For Paint Booth</h3>
+        <p class="card-summary">Industry 4.0 climate retrofit for Land Cruiser 70 line (14 units/day). Analyzed 5.96 defects/unit baseline via Laney U-Charts, FMEA, and Simscape dynamics.</p>
         <span class="card-action">Review Case Study &rarr;</span>
       </div>
     </div>
 
-    <!-- Project 2: Mold -->
+    <!-- Project 2: Mold (Simoldes) -->
     <div class="project-card" data-category="tooling" onclick="openDrawer('drawer-mold')">
       <div class="card-image-wrap">
         <img src="/images/molde.jpg" alt="Siemens NX injection mold CAD design" />
       </div>
       <div class="card-content">
         <div class="tag-group">
-          <span class="tag">Siemens NX</span>
-          <span class="tag">Simoldes Context</span>
-          <span class="tag">Injection Molding</span>
+          <span class="tag">Simoldes Plastics</span>
+          <span class="tag">DME 2A Standard</span>
+          <span class="tag">5 Angled Lifters</span>
         </div>
-        <h3 class="card-title">Injection Mold Design &amp; Kinematic Validation</h3>
-        <p class="card-summary">Complete Siemens NX tooling design for an automotive ABS housing, featuring custom side sliders, lifters, and conformal cooling circuits.</p>
+        <h3 class="card-title">Automotive Speaker Polypropylene Injection Mold</h3>
+        <p class="card-summary">Complete polymer injection tool in Siemens NX. Features 5 angled lifters ($8^\circ$), single/dual cam-pin sliders, DME 2A base, and 8mm cooling circuits.</p>
         <span class="card-action">Review Case Study &rarr;</span>
       </div>
     </div>
@@ -641,12 +640,12 @@ permalink: /
       </div>
       <div class="card-content">
         <div class="tag-group">
+          <span class="tag">&euro;6,000+ Budget</span>
+          <span class="tag">360&deg; Leadership</span>
           <span class="tag">Field Engineering</span>
-          <span class="tag">Thermal Mgmt</span>
-          <span class="tag">Finishers Trophy</span>
         </div>
-        <h3 class="card-title">UniRaid Rally Vehicle Reliability &amp; Preparation</h3>
-        <p class="card-summary">Preparation and field mechanics for a VW Golf II GTD in a 3,000 km desert endurance rally under extreme thermal loading.</p>
+        <h3 class="card-title">UniRaid Rally Project Leadership &amp; Field Mechanics</h3>
+        <p class="card-summary">Directed €6,000+ in corporate sponsorships, accounting, marketing, supply chain, and field engineering to successfully complete a 3,000 km Morocco rally.</p>
         <span class="card-action">Review Case Study &rarr;</span>
       </div>
     </div>
@@ -658,26 +657,26 @@ permalink: /
 <div id="skills" class="section-wrapper">
   <div class="section-header">
     <h2 class="section-title">Technical Competencies</h2>
-    <p class="section-desc">Structured toolset across design, multi-domain simulation, industrial controls, and quality engineering.</p>
+    <p class="section-desc">Structured toolset derived directly from industrial projects and OEM manufacturing validation.</p>
   </div>
 
   <div class="skills-card">
     <div class="skills-grid">
       <div class="skill-group">
-        <h4>CAD &amp; Tooling</h4>
-        <p>Siemens NX, SolidWorks, Fusion 360, AutoCAD, Mold Tooling Design, GD&amp;T (ISO/ASME)</p>
+        <h4>CAD &amp; Tooling Design</h4>
+        <p>Siemens NX (Patch Surfaces, Isocline, Check/Trim Regions), DME 2A Mold Bases, Angled Lifters ($8^\circ$), Cam-Pin Sliders, Ejector Sleeves, Conformal Cooling Baffles, Polypropylene (PP) Rheology</p>
       </div>
       <div class="skill-group">
         <h4>Simulation &amp; CAE</h4>
-        <p>MATLAB, Simulink, Simscape, Abaqus/Explicit, Moldflow, Non-Linear FEA</p>
+        <p>MATLAB Simscape (Thermal/Humidity Dynamics), Abaqus/Explicit, Polymer Filling &amp; Gate Analysis, Runner Sizing (8mm), Multi-Pass Deep Drawing FEA</p>
       </div>
       <div class="skill-group">
         <h4>Automation &amp; Control</h4>
-        <p>Siemens TIA Portal (S7-1200), Sinamics VFD, OPC UA, Closed-Loop PID, HIL Simulation</p>
+        <p>Siemens ET200, VFD Pump Speed Control, ATEX Safety Thresholds (55% RH), OPC UA, Siemens S7-1200 PLC, HMI Control Strategy, Air Supply Units (ASU)</p>
       </div>
       <div class="skill-group">
         <h4>Quality &amp; Analytics</h4>
-        <p>Ryohin Joken, FMEA, SPC, Minitab, Taguchi DOE, Pearson Correlation, Python (SciPy)</p>
+        <p>Gemba &amp; Genchi Genbutsu, Laney U-Charts, FMEA, 5 Whys, Pearson Correlation Analysis, Minitab SPC, CAPEX/OPEX Payback Analysis, TME Stakeholder Delivery</p>
       </div>
     </div>
   </div>
@@ -689,14 +688,14 @@ permalink: /
   <!-- Toyota Drawer -->
   <div id="drawer-toyota" class="drawer-panel" onclick="event.stopPropagation()">
     <button class="close-btn" onclick="closeAllDrawers()">Close &times;</button>
-    <span class="tag">Toyota Caetano Portugal | MSc Thesis</span>
-    <h2 style="margin-top: 16px; color: var(--text-primary); font-size: 1.6rem;">Automotive Paint Booth Environmental Control</h2>
-    <p style="color: var(--text-secondary); font-size: 0.95rem;">MSc Thesis Evaluation: <strong>19/20</strong></p>
+    <span class="tag">Toyota Caetano Portugal, S.A. | TME Stakeholder Project</span>
+    <h2 style="margin-top: 16px; color: var(--text-primary); font-size: 1.6rem;">Automatic Climate Control For Painting Booth</h2>
+    <p style="color: var(--text-secondary); font-size: 0.95rem;">Land Cruiser 70 Line (14 units/day) | <strong>CAPEX/OPEX Net Savings: &euro;2,726/yr</strong></p>
     <hr style="border: 0; border-top: 1px solid var(--border-subtle); margin: 24px 0;" />
 
     <div class="callout-box">
-      <h4>Industrial Partner &amp; Statistical Quality Focus</h4>
-      <p>Developed directly within <strong>Toyota Caetano Portugal's OEM manufacturing plant</strong>. Integrated Statistical Process Control (SPC) in <strong>Minitab</strong> with real-time Simscape physical modeling to uphold <strong>Ryohin Joken</strong> ("100% Good Product Conditions").</p>
+      <h4>Root-Cause Diagnostics (Gemba &amp; Genchi Genbutsu)</h4>
+      <p>Evaluated a <strong>5.96 defects/unit baseline (100% repair rate)</strong> using Laney U-Charts and FMEA. Statistically proved correlation between temperature variation and paint sagging via Pearson analysis.</p>
     </div>
 
     <h3 style="color: var(--text-primary); font-size: 1.1rem; margin-top: 24px;">Automation Schematic Viewer</h3>
@@ -705,44 +704,42 @@ permalink: /
       <a href="/images/Sch_Automation.drawio.pdf" target="_blank" style="color: var(--accent-blue); text-decoration: none; font-weight: 600; font-size: 0.88rem;">Open Vector PDF Schematic in Full Window &rarr;</a>
     </p>
 
-    <h3 style="color: var(--text-primary); font-size: 1.1rem; margin-top: 24px;">Technical Highlights</h3>
+    <h3 style="color: var(--text-primary); font-size: 1.1rem; margin-top: 24px;">Control Architecture &amp; ATEX Safety</h3>
     <ul style="color: var(--text-secondary); line-height: 1.8; padding-left: 20px;">
-      <li><strong>Simscape Multi-Domain Modeling:</strong> Modeled thermodynamic heat exchange, moisture distribution, and fan torque profiles.</li>
-      <li><strong>Hardware-in-the-Loop (HIL):</strong> Linked physical Siemens S7-1200 PLCs and Sinamics VFDs to Simscape via OPC UA.</li>
-      <li><strong>Minitab SPC Validation:</strong> Analyzed process capability ($C_p, C_{pk}$) and performed Anderson-Darling tests on continuous telemetry data.</li>
-    </ul>
-
-    <h3 style="color: var(--text-primary); font-size: 1.1rem; margin-top: 24px;">Quantified Outcomes</h3>
-    <ul style="color: var(--text-secondary); line-height: 1.8; padding-left: 20px;">
-      <li>Chamber temperature stabilized to within <strong>&plusmn;0.5&deg;C</strong> and relative humidity to <strong>&plusmn;2%</strong>.</li>
-      <li>Pearson correlation between hardware current draw and simulation model reached <strong>r &gt; 0.96</strong>.</li>
+      <li><strong>Automated Hardware Control:</strong> Designed automated PLC/HMI control strategy using Siemens ET200 + VFD Pump integration.</li>
+      <li><strong>ATEX Safety Integration:</strong> Integrated a strict <strong>55% RH safety threshold</strong> for explosion-proof ATEX compliance within the spray booth.</li>
+      <li><strong>Simscape Physical Model:</strong> Developed multi-domain Simscape model in MATLAB to simulate thermal and humidity dynamics across dual Air Supply Units (ASU).</li>
+      <li><strong>Toyota Motor Europe (TME) Delivery:</strong> Delivered technical specifications, equipment selection, and predictive maintenance roadmap directly to TME executive stakeholders.</li>
     </ul>
   </div>
 
-  <!-- Mold Drawer (Simoldes Context) -->
+  <!-- Mold Drawer (Simoldes) -->
   <div id="drawer-mold" class="drawer-panel" onclick="event.stopPropagation()">
     <button class="close-btn" onclick="closeAllDrawers()">Close &times;</button>
-    <span class="tag">Simoldes Precision Context</span>
-    <h2 style="margin-top: 16px; color: var(--text-primary); font-size: 1.6rem;">Injection Mold Design &amp; Kinematic Validation</h2>
+    <span class="tag">Simoldes Plastics Collaboration</span>
+    <h2 style="margin-top: 16px; color: var(--text-primary); font-size: 1.6rem;">Automotive Speaker Polypropylene Injection Mold</h2>
     <hr style="border: 0; border-top: 1px solid var(--border-subtle); margin: 24px 0;" />
 
     <div class="callout-box">
-      <h4>Tooling Mechanics &amp; Kinematics</h4>
-      <p>High-precision 3D mold tool design in <strong>Siemens NX</strong> incorporating advanced slider mechanisms and custom cooling layout architectures.</p>
+      <h4>Objective &amp; Collaboration Scope</h4>
+      <p>Designed a complete polymer injection mold in Siemens NX for an automotive Polypropylene (PP) speaker component, ensuring zero mechanical interference during ejection in collaboration with tier-1 supplier **Simoldes Plastics**.</p>
     </div>
 
     <div class="visual-gallery-grid">
       <div class="gallery-item">
         <img src="/images/molde.jpg" alt="Siemens NX Mold Layout" />
-        <p class="caption">Siemens NX Mold Tooling Assembly</p>
+        <p class="caption">Siemens NX Mold Assembly (DME 2A Base)</p>
       </div>
     </div>
 
-    <h3 style="color: var(--text-primary); font-size: 1.1rem; margin-top: 24px;">Subsystems Integrated</h3>
+    <h3 style="color: var(--text-primary); font-size: 1.1rem; margin-top: 24px;">Methodology &amp; CAD Subsystems</h3>
     <ul style="color: var(--text-secondary); line-height: 1.8; padding-left: 20px;">
-      <li><strong>Side-Action Slider Mechanisms:</strong> Engineered mechanical sliders and angle lifters for complex internal clip undercuts.</li>
-      <li><strong>Cooling Circuit Layout:</strong> Designed optimized cooling lines to maintain even mold temperatures and reduce cycle times.</li>
-      <li><strong>Ejection Force Calculations:</strong> Calculated core/cavity stress and ejector layout based on polymer thermal contraction coefficients.</li>
+      <li><strong>Surface &amp; Region Modeling:</strong> Executed Patch Surfaces, Isocline checks, Check Regions, and Trim Region operations in Siemens NX.</li>
+      <li><strong>Dynamic Mechanics:</strong> Integrated <strong>5 angled lifters set at an 8&deg; inclination</strong> to resolve deep interior undercuts.</li>
+      <li><strong>Side-Action Components:</strong> Configured single and dual cam-pin sliders with plungers for side geometries.</li>
+      <li><strong>Ejection &amp; Tooling Base:</strong> Standardized DME 2A tool base equipped with straight ejector sleeves.</li>
+      <li><strong>Thermal &amp; Flow Management:</strong> Designed 8 mm cooling circuits with internal baffles in high-heat core zones to reduce cycle times; standardized DME pipe/extension plugs for leak prevention.</li>
+      <li><strong>Software Workaround:</strong> Resolved Siemens NX memory violation crashes by prioritizing theoretical runner sizing (8 mm) and 2D tool detailing.</li>
     </ul>
   </div>
 
@@ -773,24 +770,28 @@ permalink: /
   <!-- UniRaid Drawer -->
   <div id="drawer-uniraid" class="drawer-panel" onclick="event.stopPropagation()">
     <button class="close-btn" onclick="closeAllDrawers()">Close &times;</button>
-    <span class="tag">Field Engineering &amp; Finishers Trophy</span>
-    <h2 style="margin-top: 16px; color: var(--text-primary); font-size: 1.6rem;">UniRaid Rally Vehicle Reliability</h2>
+    <span class="tag">Entrepreneurial Engineering &amp; Field Mechanics</span>
+    <h2 style="margin-top: 16px; color: var(--text-primary); font-size: 1.6rem;">UniRaid Project Leadership &amp; Field Engineering</h2>
     <hr style="border: 0; border-top: 1px solid var(--border-subtle); margin: 24px 0;" />
+
+    <div class="callout-box">
+      <h4>Full Venture Ownership (€6,000+ Budget)</h4>
+      <p>Managed the entire lifecycle of a 3,000 km Morocco rally team—raising **€6,000+ in corporate sponsorships**, directing financial accounting, managing supply chain logistics, executing mechanical vehicle prep, and serving as driver/co-driver.</p>
+    </div>
 
     <div class="visual-gallery-grid">
       <div class="gallery-item">
         <img src="/images/uniraid.jpg" alt="VW Golf II GTD Finishers" onerror="this.src='/images/molde.jpg'" />
-        <p class="caption">VW Golf II GTD - Finishers in Morocco</p>
+        <p class="caption">VW Golf II GTD - Morocco Rally Finishers</p>
       </div>
     </div>
 
-    <h3 style="color: var(--text-primary); font-size: 1.1rem; margin-top: 24px;">Field Operations</h3>
-    <p style="color: var(--text-secondary);">Preparation and emergency field mechanics for a 1987 VW Golf II GTD during a 3,000 km desert endurance rally across Morocco.</p>
-
-    <h3 style="color: var(--text-primary); font-size: 1.1rem; margin-top: 24px;">Key Upgrades</h3>
+    <h3 style="color: var(--text-primary); font-size: 1.1rem; margin-top: 24px;">Responsibilities</h3>
     <ul style="color: var(--text-secondary); line-height: 1.8; padding-left: 20px;">
-      <li>Configured auxiliary high-flow cooling circuits for 40&deg;C+ desert ambient temperatures.</li>
-      <li>Reinforced subframe and underbody skid protection against dynamic impact loads.</li>
+      <li><strong>Sponsorship Acquisition &amp; Marketing:</strong> Pitched to corporate partners, raising over €6,000 in funding and material sponsorship.</li>
+      <li><strong>Financial &amp; Supply Chain Operations:</strong> Controlled team budget, financial accounting, and parts procurement under tight deadlines.</li>
+      <li><strong>Field Mechanical Engineering:</strong> Redesigned cooling circuits for 40&deg;C+ desert environments, fabricated underbody skid protection, and executed real-time emergency repairs.</li>
+      <li><strong>In-Car Operations:</strong> Operated as driver and co-driver, navigating complex desert terrain while delivering 100 kg of humanitarian supplies.</li>
     </ul>
   </div>
 
