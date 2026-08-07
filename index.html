@@ -6,7 +6,7 @@ permalink: /
 ---
 
 <style>
-  /* --- Executive Light Design Architecture --- */
+  /* --- Executive Light Editorial Palette --- */
   :root {
     --bg-base: #fbfbfd;
     --bg-surface: #ffffff;
@@ -359,6 +359,57 @@ permalink: /
     gap: 10px;
   }
 
+  /* --- Technical Callout Boxes Inside Drawers --- */
+  .callout-box {
+    background: #f5f5f7;
+    border-left: 4px solid var(--text-primary);
+    border-radius: 0 8px 8px 0;
+    padding: 16px 20px;
+    margin: 20px 0;
+  }
+
+  .callout-box h4 {
+    margin: 0 0 6px 0;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+  }
+
+  .callout-box p {
+    margin: 0;
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+  }
+
+  .visual-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin: 20px 0;
+  }
+
+  .gallery-item {
+    background: #ffffff;
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 8px;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+
+  .gallery-item p.caption {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin: 8px 0 0 0;
+    text-align: center;
+    font-weight: 500;
+  }
+
   /* --- Technical Skills Grid --- */
   .skills-card {
     background: var(--bg-surface);
@@ -414,7 +465,7 @@ permalink: /
     top: 0;
     right: -100%;
     width: 100%;
-    max-width: 680px;
+    max-width: 720px;
     height: 100vh;
     background: #ffffff;
     border-left: 1px solid var(--border-subtle);
@@ -525,8 +576,8 @@ permalink: /
   <!-- Interactive Filter Tabs -->
   <div class="filter-tabs">
     <button class="filter-btn active" onclick="filterProjects('all', this)">All Projects</button>
-    <button class="filter-btn" onclick="filterProjects('oem', this)">Automotive OEM</button>
-    <button class="filter-btn" onclick="filterProjects('tooling', this)">CAD &amp; Tooling</button>
+    <button class="filter-btn" onclick="filterProjects('oem', this)">Toyota OEM &amp; SPC</button>
+    <button class="filter-btn" onclick="filterProjects('tooling', this)">CAD &amp; Tooling (Simoldes)</button>
     <button class="filter-btn" onclick="filterProjects('fea', this)">CAE &amp; Simulation</button>
   </div>
 
@@ -535,12 +586,12 @@ permalink: /
     <!-- Project 1: Toyota -->
     <div class="project-card" data-category="oem fea" onclick="openDrawer('drawer-toyota')">
       <div class="card-image-wrap">
-        <img src="/images/toyota.jpg" alt="Toyota environmental control system architecture" onerror="this.src='/images/placeholder.txt'" />
+        <img src="/images/toyota.jpg" alt="Toyota environmental control system architecture" onerror="this.src='/images/molde.jpg'" />
       </div>
       <div class="card-content">
         <div class="tag-group">
           <span class="tag">Toyota Caetano</span>
-          <span class="tag">Simscape / PLC</span>
+          <span class="tag">Simscape / SPC</span>
           <span class="tag">Ryohin Joken</span>
         </div>
         <h3 class="card-title">Automotive Paint Booth Environmental Control</h3>
@@ -557,7 +608,7 @@ permalink: /
       <div class="card-content">
         <div class="tag-group">
           <span class="tag">Siemens NX</span>
-          <span class="tag">Tooling Design</span>
+          <span class="tag">Simoldes Context</span>
           <span class="tag">Injection Molding</span>
         </div>
         <h3 class="card-title">Injection Mold Design &amp; Kinematic Validation</h3>
@@ -592,7 +643,7 @@ permalink: /
         <div class="tag-group">
           <span class="tag">Field Engineering</span>
           <span class="tag">Thermal Mgmt</span>
-          <span class="tag">Vehicle Mechanics</span>
+          <span class="tag">Finishers Trophy</span>
         </div>
         <h3 class="card-title">UniRaid Rally Vehicle Reliability &amp; Preparation</h3>
         <p class="card-summary">Preparation and field mechanics for a VW Golf II GTD in a 3,000 km desert endurance rally under extreme thermal loading.</p>
@@ -626,7 +677,7 @@ permalink: /
       </div>
       <div class="skill-group">
         <h4>Quality &amp; Analytics</h4>
-        <p>Ryohin Joken, FMEA, SPC, Taguchi DOE, Pearson Correlation, Python (SciPy)</p>
+        <p>Ryohin Joken, FMEA, SPC, Minitab, Taguchi DOE, Pearson Correlation, Python (SciPy)</p>
       </div>
     </div>
   </div>
@@ -638,62 +689,79 @@ permalink: /
   <!-- Toyota Drawer -->
   <div id="drawer-toyota" class="drawer-panel" onclick="event.stopPropagation()">
     <button class="close-btn" onclick="closeAllDrawers()">Close &times;</button>
-    <span class="tag">Toyota Thesis Project</span>
+    <span class="tag">Toyota Caetano Portugal | MSc Thesis</span>
     <h2 style="margin-top: 16px; color: var(--text-primary); font-size: 1.6rem;">Automotive Paint Booth Environmental Control</h2>
     <p style="color: var(--text-secondary); font-size: 0.95rem;">MSc Thesis Evaluation: <strong>19/20</strong></p>
     <hr style="border: 0; border-top: 1px solid var(--border-subtle); margin: 24px 0;" />
 
-    <h3 style="color: var(--text-primary); font-size: 1.1rem;">Problem Statement</h3>
-    <p style="color: var(--text-secondary);">Uncontrolled ambient temperature and humidity shifts in paint spray booths cause subtle finish defects, violating Toyota's <strong>Ryohin Joken</strong> ("100% Good Product Conditions") standards.</p>
+    <div class="callout-box">
+      <h4>Industrial Partner &amp; Statistical Quality Focus</h4>
+      <p>Developed directly within <strong>Toyota Caetano Portugal's OEM manufacturing plant</strong>. Integrated Statistical Process Control (SPC) in <strong>Minitab</strong> with real-time Simscape physical modeling to uphold <strong>Ryohin Joken</strong> ("100% Good Product Conditions").</p>
+    </div>
 
-    <h3 style="color: var(--text-primary); font-size: 1.1rem; margin-top: 24px;">Interactive Schematic Viewer</h3>
-    <p style="color: var(--text-secondary); font-size: 0.9rem;">Embedded PDF automation drawing (Draw.io vector):</p>
-    
-    <!-- Embedded Interactive PDF Schematic -->
+    <h3 style="color: var(--text-primary); font-size: 1.1rem; margin-top: 24px;">Automation Schematic Viewer</h3>
     <iframe class="pdf-preview-box" src="/images/Sch_Automation.drawio.pdf"></iframe>
     <p style="margin-top: 8px;">
-      <a href="/images/Sch_Automation.drawio.pdf" target="_blank" style="color: var(--accent-blue); text-decoration: none; font-weight: 600; font-size: 0.88rem;">Open PDF Schematic in Full Window &rarr;</a>
+      <a href="/images/Sch_Automation.drawio.pdf" target="_blank" style="color: var(--accent-blue); text-decoration: none; font-weight: 600; font-size: 0.88rem;">Open Vector PDF Schematic in Full Window &rarr;</a>
     </p>
 
-    <h3 style="color: var(--text-primary); font-size: 1.1rem; margin-top: 24px;">Technical Methodology</h3>
+    <h3 style="color: var(--text-primary); font-size: 1.1rem; margin-top: 24px;">Technical Highlights</h3>
     <ul style="color: var(--text-secondary); line-height: 1.8; padding-left: 20px;">
-      <li>Engineered a Hardware-in-the-Loop (HIL) Quasi-Digital Twin linking physical Siemens S7-1200 PLCs with MATLAB Simscape thermal-fluid plant models via OPC UA protocol.</li>
-      <li>Executed sensor placement optimization and FMEA protocols to minimize signal reading latency.</li>
+      <li><strong>Simscape Multi-Domain Modeling:</strong> Modeled thermodynamic heat exchange, moisture distribution, and fan torque profiles.</li>
+      <li><strong>Hardware-in-the-Loop (HIL):</strong> Linked physical Siemens S7-1200 PLCs and Sinamics VFDs to Simscape via OPC UA.</li>
+      <li><strong>Minitab SPC Validation:</strong> Analyzed process capability ($C_p, C_{pk}$) and performed Anderson-Darling tests on continuous telemetry data.</li>
     </ul>
 
     <h3 style="color: var(--text-primary); font-size: 1.1rem; margin-top: 24px;">Quantified Outcomes</h3>
     <ul style="color: var(--text-secondary); line-height: 1.8; padding-left: 20px;">
       <li>Chamber temperature stabilized to within <strong>&plusmn;0.5&deg;C</strong> and relative humidity to <strong>&plusmn;2%</strong>.</li>
-      <li>Model current draw correlated with physical hardware telemetry at <strong>r &gt; 0.96</strong>.</li>
+      <li>Pearson correlation between hardware current draw and simulation model reached <strong>r &gt; 0.96</strong>.</li>
     </ul>
   </div>
 
-  <!-- Mold Drawer -->
+  <!-- Mold Drawer (Simoldes Context) -->
   <div id="drawer-mold" class="drawer-panel" onclick="event.stopPropagation()">
     <button class="close-btn" onclick="closeAllDrawers()">Close &times;</button>
-    <span class="tag">Tooling Engineering</span>
+    <span class="tag">Simoldes Precision Context</span>
     <h2 style="margin-top: 16px; color: var(--text-primary); font-size: 1.6rem;">Injection Mold Design &amp; Kinematic Validation</h2>
     <hr style="border: 0; border-top: 1px solid var(--border-subtle); margin: 24px 0;" />
 
-    <h3 style="color: var(--text-primary); font-size: 1.1rem;">Engineering Scope</h3>
-    <p style="color: var(--text-secondary);">Industrial injection mold developed in <strong>Siemens NX</strong> for an automotive ABS speaker housing with complex undercut geometries.</p>
+    <div class="callout-box">
+      <h4>Tooling Mechanics &amp; Kinematics</h4>
+      <p>High-precision 3D mold tool design in <strong>Siemens NX</strong> incorporating advanced slider mechanisms and custom cooling layout architectures.</p>
+    </div>
+
+    <div class="visual-gallery-grid">
+      <div class="gallery-item">
+        <img src="/images/molde.jpg" alt="Siemens NX Mold Layout" />
+        <p class="caption">Siemens NX Mold Tooling Assembly</p>
+      </div>
+    </div>
 
     <h3 style="color: var(--text-primary); font-size: 1.1rem; margin-top: 24px;">Subsystems Integrated</h3>
     <ul style="color: var(--text-secondary); line-height: 1.8; padding-left: 20px;">
-      <li><strong>Kinematics:</strong> Designed side-action sliders and mechanical angle lifters for collision-free undercut ejection.</li>
-      <li><strong>Thermal Control:</strong> Configured conformal cooling loops to eliminate part warpage and optimize cycle time.</li>
+      <li><strong>Side-Action Slider Mechanisms:</strong> Engineered mechanical sliders and angle lifters for complex internal clip undercuts.</li>
+      <li><strong>Cooling Circuit Layout:</strong> Designed optimized cooling lines to maintain even mold temperatures and reduce cycle times.</li>
+      <li><strong>Ejection Force Calculations:</strong> Calculated core/cavity stress and ejector layout based on polymer thermal contraction coefficients.</li>
     </ul>
   </div>
 
   <!-- Abaqus Drawer -->
   <div id="drawer-abaqus" class="drawer-panel" onclick="event.stopPropagation()">
     <button class="close-btn" onclick="closeAllDrawers()">Close &times;</button>
-    <span class="tag">FEA Simulation</span>
+    <span class="tag">Abaqus FEA &amp; Taguchi DOE</span>
     <h2 style="margin-top: 16px; color: var(--text-primary); font-size: 1.6rem;">Brass Drawing Process FEA Optimisation</h2>
     <hr style="border: 0; border-top: 1px solid var(--border-subtle); margin: 24px 0;" />
 
-    <h3 style="color: var(--text-primary); font-size: 1.1rem;">Numerical Analysis</h3>
-    <p style="color: var(--text-secondary);">Nonlinear finite element analysis using <strong>Abaqus/Explicit</strong> combined with Taguchi DOE to model multi-pass deep drawing of brass alloys.</p>
+    <div class="visual-gallery-grid">
+      <div class="gallery-item">
+        <img src="/images/abaqus.png" alt="Abaqus FEA Stress Plot" onerror="this.src='/images/molde.jpg'" />
+        <p class="caption">Von Mises Stress Contour Plot</p>
+      </div>
+    </div>
+
+    <h3 style="color: var(--text-primary); font-size: 1.1rem; margin-top: 24px;">Numerical Analysis</h3>
+    <p style="color: var(--text-secondary);">Nonlinear finite element simulation using <strong>Abaqus/Explicit</strong> combined with Taguchi orthogonal arrays to model multi-pass deep drawing of brass alloys.</p>
 
     <h3 style="color: var(--text-primary); font-size: 1.1rem; margin-top: 24px;">Results</h3>
     <ul style="color: var(--text-secondary); line-height: 1.8; padding-left: 20px;">
@@ -705,12 +773,19 @@ permalink: /
   <!-- UniRaid Drawer -->
   <div id="drawer-uniraid" class="drawer-panel" onclick="event.stopPropagation()">
     <button class="close-btn" onclick="closeAllDrawers()">Close &times;</button>
-    <span class="tag">Field Engineering</span>
+    <span class="tag">Field Engineering &amp; Finishers Trophy</span>
     <h2 style="margin-top: 16px; color: var(--text-primary); font-size: 1.6rem;">UniRaid Rally Vehicle Reliability</h2>
     <hr style="border: 0; border-top: 1px solid var(--border-subtle); margin: 24px 0;" />
 
-    <h3 style="color: var(--text-primary); font-size: 1.1rem;">Field Operations</h3>
-    <p style="color: var(--text-secondary);">Preparation and field servicing for a 1987 VW Golf II GTD during a 3,000 km desert endurance rally across Morocco.</p>
+    <div class="visual-gallery-grid">
+      <div class="gallery-item">
+        <img src="/images/uniraid.jpg" alt="VW Golf II GTD Finishers" onerror="this.src='/images/molde.jpg'" />
+        <p class="caption">VW Golf II GTD - Finishers in Morocco</p>
+      </div>
+    </div>
+
+    <h3 style="color: var(--text-primary); font-size: 1.1rem; margin-top: 24px;">Field Operations</h3>
+    <p style="color: var(--text-secondary);">Preparation and emergency field mechanics for a 1987 VW Golf II GTD during a 3,000 km desert endurance rally across Morocco.</p>
 
     <h3 style="color: var(--text-primary); font-size: 1.1rem; margin-top: 24px;">Key Upgrades</h3>
     <ul style="color: var(--text-secondary); line-height: 1.8; padding-left: 20px;">
