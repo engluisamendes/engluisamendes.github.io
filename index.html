@@ -1,18 +1,18 @@
 ---
 layout: default
 title: Luísa Mendes, M.Sc. | Mechanical & Systems Engineering
-description: Professional engineering portfolio of Luísa Mendes, M.Sc. Automotive OEM Manufacturing, Multi-Domain System Simulation, Tooling Design, and Industrial Automation.
+description: Interactive executive engineering portfolio of Luísa Mendes, M.Sc. Automotive OEM Manufacturing, Multi-Domain System Simulation, Tooling Design, and Industrial Automation.
 permalink: /
 ---
 
 <style>
-  /* --- Executive Light Editorial Palette --- */
+  /* --- Executive Light Design Architecture --- */
   :root {
     --bg-base: #fbfbfd;
     --bg-surface: #ffffff;
     --bg-surface-hover: #f5f5f7;
     --border-subtle: #e5e5ea;
-    --border-focus: #d1d1d6;
+    --border-focus: #1d1d1f;
     
     --text-primary: #1d1d1f;
     --text-secondary: #515154;
@@ -20,6 +20,7 @@ permalink: /
     
     --accent-status: #10b981;
     --accent-blue: #0066cc;
+    --accent-blue-hover: #004499;
   }
 
   body {
@@ -78,11 +79,11 @@ permalink: /
     color: var(--text-primary);
   }
 
-  /* --- Executive Light Hero Section --- */
+  /* --- Hero Section --- */
   .hero-container {
     max-width: 1040px;
     margin: 0 auto;
-    padding: 100px 24px 60px 24px;
+    padding: 90px 24px 50px 24px;
   }
 
   .status-pill {
@@ -132,6 +133,7 @@ permalink: /
     display: flex;
     gap: 16px;
     align-items: center;
+    flex-wrap: wrap;
   }
 
   .btn-primary {
@@ -143,7 +145,7 @@ permalink: /
     font-size: 0.92rem;
     text-decoration: none;
     transition: transform 0.2s ease, background-color 0.2s ease;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
   }
 
   .btn-primary:hover {
@@ -169,24 +171,39 @@ permalink: /
     border-color: var(--border-focus);
   }
 
-  /* --- Executive Metrics Ribbon --- */
+  /* --- Interactive Metric Cards --- */
   .metrics-ribbon {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
     gap: 16px;
-    margin-top: 60px;
+    margin-top: 50px;
     padding-top: 40px;
     border-top: 1px solid var(--border-subtle);
   }
 
-  .metric-box .metric-value {
-    font-size: 2.2rem;
+  .metric-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    padding: 20px;
+    transition: all 0.25s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+  }
+
+  .metric-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--border-focus);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  }
+
+  .metric-card .metric-value {
+    font-size: 2.1rem;
     font-weight: 700;
     color: var(--text-primary);
     letter-spacing: -0.8px;
   }
 
-  .metric-box .metric-label {
+  .metric-card .metric-label {
     font-size: 0.85rem;
     color: var(--text-muted);
     margin-top: 2px;
@@ -200,7 +217,7 @@ permalink: /
   }
 
   .section-header {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
   }
 
   .section-title {
@@ -216,7 +233,33 @@ permalink: /
     margin: 0;
   }
 
-  /* --- Editorial Project Cards --- */
+  /* --- Interactive Project Filter Tabs --- */
+  .filter-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    background: #ffffff;
+    border: 1px solid var(--border-subtle);
+    color: var(--text-secondary);
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .filter-btn:hover, .filter-btn.active {
+    background: var(--text-primary);
+    color: #ffffff;
+    border-color: var(--text-primary);
+  }
+
+  /* --- Dynamic Project Cards --- */
   .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -226,19 +269,19 @@ permalink: /
   .project-card {
     background: var(--bg-surface);
     border: 1px solid var(--border-subtle);
-    border-radius: 12px;
+    border-radius: 14px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     cursor: pointer;
-    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
   }
 
   .project-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
     border-color: var(--border-focus);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
   }
 
   .card-image-wrap {
@@ -247,17 +290,18 @@ permalink: /
     overflow: hidden;
     background: #f0f0f2;
     border-bottom: 1px solid var(--border-subtle);
+    position: relative;
   }
 
   .card-image-wrap img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.4s ease;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .project-card:hover .card-image-wrap img {
-    transform: scale(1.03);
+    transform: scale(1.05);
   }
 
   .card-content {
@@ -308,13 +352,18 @@ permalink: /
     display: flex;
     align-items: center;
     gap: 6px;
+    transition: gap 0.2s ease;
+  }
+
+  .project-card:hover .card-action {
+    gap: 10px;
   }
 
   /* --- Technical Skills Grid --- */
   .skills-card {
     background: var(--bg-surface);
     border: 1px solid var(--border-subtle);
-    border-radius: 12px;
+    border-radius: 14px;
     padding: 36px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
   }
@@ -339,15 +388,16 @@ permalink: /
     line-height: 1.6;
   }
 
-  /* --- Side Drawer Case Study Panels --- */
+  /* --- Modal Side Panels & PDF Viewers --- */
   .drawer-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.35);
-    backdrop-filter: blur(6px);
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     z-index: 2000;
     display: none;
     opacity: 0;
@@ -364,7 +414,7 @@ permalink: /
     top: 0;
     right: -100%;
     width: 100%;
-    max-width: 640px;
+    max-width: 680px;
     height: 100vh;
     background: #ffffff;
     border-left: 1px solid var(--border-subtle);
@@ -373,7 +423,7 @@ permalink: /
     box-sizing: border-box;
     overflow-y: auto;
     transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.1);
+    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.12);
   }
 
   .drawer-overlay.active .drawer-panel {
@@ -398,7 +448,15 @@ permalink: /
     background: #e5e5ea;
   }
 
-  /* --- Clean Footer --- */
+  .pdf-preview-box {
+    width: 100%;
+    height: 380px;
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    margin-top: 16px;
+  }
+
+  /* --- Footer --- */
   footer {
     border-top: 1px solid var(--border-subtle);
     padding: 60px 24px;
@@ -438,38 +496,46 @@ permalink: /
 
   <!-- Key Executive Metrics -->
   <div class="metrics-ribbon">
-    <div class="metric-box">
+    <div class="metric-card">
       <div class="metric-value">19/20</div>
       <div class="metric-label">Master's Thesis Grade (Toyota)</div>
     </div>
-    <div class="metric-box">
+    <div class="metric-card">
       <div class="metric-value">r &gt; 0.96</div>
-      <div class="metric-label">Digital Twin Model Correlation</div>
+      <div class="metric-label">Digital Twin Correlation</div>
     </div>
-    <div class="metric-box">
+    <div class="metric-card">
       <div class="metric-value">-18%</div>
       <div class="metric-label">FEA Springback Reduction</div>
     </div>
-    <div class="metric-box">
+    <div class="metric-card">
       <div class="metric-value">3,000 km</div>
       <div class="metric-label">Desert Field Operations (UniRaid)</div>
     </div>
   </div>
 </div>
 
-<!-- Case Studies Grid -->
+<!-- Case Studies Section -->
 <div id="projects" class="section-wrapper">
   <div class="section-header">
     <h2 class="section-title">Selected Engineering Work</h2>
-    <p class="section-desc">Click any case study to review the technical methodology, system architecture, and quantified results.</p>
+    <p class="section-desc">Interactive showcase of multi-domain physical simulation, tooling design, and OEM automation.</p>
+  </div>
+
+  <!-- Interactive Filter Tabs -->
+  <div class="filter-tabs">
+    <button class="filter-btn active" onclick="filterProjects('all', this)">All Projects</button>
+    <button class="filter-btn" onclick="filterProjects('oem', this)">Automotive OEM</button>
+    <button class="filter-btn" onclick="filterProjects('tooling', this)">CAD &amp; Tooling</button>
+    <button class="filter-btn" onclick="filterProjects('fea', this)">CAE &amp; Simulation</button>
   </div>
 
   <div class="portfolio-grid">
 
     <!-- Project 1: Toyota -->
-    <div class="project-card" onclick="openDrawer('drawer-toyota')">
+    <div class="project-card" data-category="oem fea" onclick="openDrawer('drawer-toyota')">
       <div class="card-image-wrap">
-        <img src="images/toyota-diagram.png" alt="Toyota environmental control system architecture" />
+        <img src="/images/toyota.jpg" alt="Toyota environmental control system architecture" onerror="this.src='/images/placeholder.txt'" />
       </div>
       <div class="card-content">
         <div class="tag-group">
@@ -484,9 +550,9 @@ permalink: /
     </div>
 
     <!-- Project 2: Mold -->
-    <div class="project-card" onclick="openDrawer('drawer-mold')">
+    <div class="project-card" data-category="tooling" onclick="openDrawer('drawer-mold')">
       <div class="card-image-wrap">
-        <img src="images/mold-drawing.png" alt="Siemens NX injection mold CAD design" />
+        <img src="/images/molde.jpg" alt="Siemens NX injection mold CAD design" />
       </div>
       <div class="card-content">
         <div class="tag-group">
@@ -501,9 +567,9 @@ permalink: /
     </div>
 
     <!-- Project 3: Abaqus -->
-    <div class="project-card" onclick="openDrawer('drawer-abaqus')">
+    <div class="project-card" data-category="fea" onclick="openDrawer('drawer-abaqus')">
       <div class="card-image-wrap">
-        <img src="images/abaqus-result.png" alt="Abaqus FEA simulation results" />
+        <img src="/images/abaqus.png" alt="Abaqus FEA simulation results" onerror="this.src='/images/molde.jpg'" />
       </div>
       <div class="card-content">
         <div class="tag-group">
@@ -518,14 +584,14 @@ permalink: /
     </div>
 
     <!-- Project 4: UniRaid -->
-    <div class="project-card" onclick="openDrawer('drawer-uniraid')">
+    <div class="project-card" data-category="oem tooling" onclick="openDrawer('drawer-uniraid')">
       <div class="card-image-wrap">
-        <img src="images/uniraid-car.png" alt="VW Golf II GTD UniRaid vehicle" />
+        <img src="/images/uniraid.jpg" alt="VW Golf II GTD UniRaid vehicle" onerror="this.src='/images/molde.jpg'" />
       </div>
       <div class="card-content">
         <div class="tag-group">
           <span class="tag">Field Engineering</span>
-          <span class="tag">Thermal Management</span>
+          <span class="tag">Thermal Mgmt</span>
           <span class="tag">Vehicle Mechanics</span>
         </div>
         <h3 class="card-title">UniRaid Rally Vehicle Reliability &amp; Preparation</h3>
@@ -579,6 +645,15 @@ permalink: /
 
     <h3 style="color: var(--text-primary); font-size: 1.1rem;">Problem Statement</h3>
     <p style="color: var(--text-secondary);">Uncontrolled ambient temperature and humidity shifts in paint spray booths cause subtle finish defects, violating Toyota's <strong>Ryohin Joken</strong> ("100% Good Product Conditions") standards.</p>
+
+    <h3 style="color: var(--text-primary); font-size: 1.1rem; margin-top: 24px;">Interactive Schematic Viewer</h3>
+    <p style="color: var(--text-secondary); font-size: 0.9rem;">Embedded PDF automation drawing (Draw.io vector):</p>
+    
+    <!-- Embedded Interactive PDF Schematic -->
+    <iframe class="pdf-preview-box" src="/images/Sch_Automation.drawio.pdf"></iframe>
+    <p style="margin-top: 8px;">
+      <a href="/images/Sch_Automation.drawio.pdf" target="_blank" style="color: var(--accent-blue); text-decoration: none; font-weight: 600; font-size: 0.88rem;">Open PDF Schematic in Full Window &rarr;</a>
+    </p>
 
     <h3 style="color: var(--text-primary); font-size: 1.1rem; margin-top: 24px;">Technical Methodology</h3>
     <ul style="color: var(--text-secondary); line-height: 1.8; padding-left: 20px;">
@@ -662,6 +737,23 @@ permalink: /
 
 <!-- Interactive Scripts -->
 <script>
+  // Filter Tabs Logic
+  function filterProjects(category, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    const cards = document.querySelectorAll('.project-card');
+    cards.forEach(card => {
+      const cats = card.getAttribute('data-category');
+      if (category === 'all' || cats.includes(category)) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+
+  // Modal Side Drawer Controls
   function openDrawer(id) {
     document.getElementById('drawer-overlay').classList.add('active');
     document.querySelectorAll('.drawer-panel').forEach(p => p.style.display = 'none');
