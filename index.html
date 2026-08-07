@@ -1,461 +1,612 @@
 ---
 layout: default
-title: Luísa Mendes | Mechanical Engineering Portfolio
-description: Interactive engineering portfolio of Luísa Mendes, M.Sc. Specializing in automotive manufacturing, multi-domain system simulation, mold design, and field engineering.
+title: Luísa Mendes, M.Sc. | Mechanical Engineering Portfolio
+description: Interactive visual portfolio of Luísa Mendes, M.Sc. Mechanical Systems, Automotive OEM Manufacturing, Simulation, Tooling, and Automation.
 permalink: /
 ---
 
-<!-- CSS Styling for Dynamic Layout & Flow -->
 <style>
-  /* Base Reset & Typography */
+  /* --- High-End CSS Architecture --- */
   :root {
-    --bg-dark: #0d1117;
-    --card-bg: #161b22;
-    --border-color: #30363d;
-    --accent-blue: #58a6ff;
-    --accent-green: #238636;
-    --text-primary: #c9d1d9;
-    --text-secondary: #8b949e;
+    --bg-main: #090d12;
+    --bg-card: #111827;
+    --bg-card-hover: #1f2937;
+    --border-color: rgba(255, 255, 255, 0.08);
+    --border-hover: rgba(56, 189, 248, 0.4);
+    --accent-blue: #38bdf8;
+    --accent-emerald: #34d399;
+    --text-primary: #f3f4f6;
+    --text-muted: #9ca3af;
   }
 
   body {
-    background-color: var(--bg-dark);
+    background-color: var(--bg-main);
     color: var(--text-primary);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
   }
 
-  /* Sticky Navigation */
-  nav.sticky-nav {
+  /* Frosted Glass Sticky Nav */
+  nav.glass-nav {
     position: sticky;
     top: 0;
-    background-color: rgba(13, 17, 23, 0.95);
-    backdrop-filter: blur(8px);
-    padding: 14px 24px;
-    z-index: 1000;
+    background: rgba(9, 13, 18, 0.8);
+    backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border-color);
+    padding: 16px 32px;
+    z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
-  nav.sticky-nav a {
-    color: var(--text-primary);
+  nav.glass-nav .brand {
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: -0.5px;
+    color: #ffffff;
+  }
+
+  nav.glass-nav .nav-links {
+    display: flex;
+    gap: 24px;
+  }
+
+  nav.glass-nav a {
+    color: var(--text-muted);
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 500;
     transition: color 0.2s ease;
   }
 
-  nav.sticky-nav a:hover {
+  nav.glass-nav a:hover {
     color: var(--accent-blue);
   }
 
   /* Hero Section */
-  header.hero {
-    padding: 60px 0 30px 0;
+  .hero-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 24px 40px 24px;
   }
 
-  .eyebrow {
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: var(--accent-blue);
-    font-size: 0.85rem;
-    font-weight: 700;
-    margin-bottom: 8px;
-  }
-
-  .hero h1 {
-    font-size: 2.8rem;
-    font-weight: 800;
-    margin: 0 0 12px 0;
-    letter-spacing: -0.5px;
-  }
-
-  .hero p.subtitle {
-    font-size: 1.25rem;
-    color: var(--text-secondary);
-    max-width: 800px;
-    line-height: 1.5;
-    margin-bottom: 24px;
-  }
-
-  /* Buttons & CTAs */
-  .button-group {
-    display: flex;
-    gap: 14px;
+  .badge-status {
+    display: inline-flex;
     align-items: center;
-    flex-wrap: wrap;
-  }
-
-  .btn {
-    display: inline-block;
-    padding: 10px 20px;
-    border-radius: 6px;
+    gap: 8px;
+    background: rgba(52, 211, 153, 0.1);
+    border: 1px solid rgba(52, 211, 153, 0.25);
+    color: var(--accent-emerald);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.82rem;
     font-weight: 600;
-    font-size: 0.95rem;
-    text-decoration: none;
-    transition: transform 0.15s ease, background-color 0.2s ease;
-  }
-
-  .btn:hover {
-    transform: translateY(-2px);
-  }
-
-  .btn-primary {
-    background-color: var(--accent-green);
-    color: #ffffff;
-  }
-
-  .btn-secondary {
-    background-color: #21262d;
-    color: var(--text-primary);
-    border: 1px solid var(--border-color);
-  }
-
-  .btn-link {
-    color: var(--accent-blue);
-    padding: 10px 8px;
-  }
-
-  /* Tag Pills */
-  .tag-pill {
-    display: inline-block;
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--accent-blue);
-    background-color: rgba(88, 166, 255, 0.1);
-    padding: 4px 10px;
-    border-radius: 12px;
-    border: 1px solid rgba(88, 166, 255, 0.2);
-    margin-bottom: 10px;
-  }
-
-  /* Grid Layouts */
-  .grid-2 {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 24px;
-    margin-top: 24px;
-  }
-
-  /* Project Cards with Hover Effects */
-  .card {
-    background-color: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: border-color 0.2s ease, transform 0.2s ease;
-  }
-
-  .card:hover {
-    border-color: var(--accent-blue);
-    transform: translateY(-4px);
-  }
-
-  .card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 6px;
-    border: 1px solid var(--border-color);
-    margin-bottom: 14px;
-  }
-
-  .card h3 {
-    margin: 8px 0;
-    font-size: 1.25rem;
-  }
-
-  .card p {
-    font-size: 0.92rem;
-    color: var(--text-secondary);
-    flex-grow: 1;
-    margin-bottom: 16px;
-  }
-
-  /* Technical Breakdown Block inside Expandable Cards */
-  .tech-details {
-    background-color: #0d1117;
-    border-left: 3px solid var(--accent-blue);
-    padding: 12px 16px;
-    margin: 12px 0;
-    font-size: 0.88rem;
-    border-radius: 0 4px 4px 0;
-  }
-
-  .tech-details ul {
-    margin: 6px 0 0 0;
-    padding-left: 18px;
-  }
-
-  /* Section Styling */
-  section {
-    padding-top: 40px;
-  }
-
-  h2 {
-    font-size: 1.8rem;
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 8px;
     margin-bottom: 20px;
   }
 
-  hr.divider {
-    border: 0;
-    border-top: 1px solid var(--border-color);
-    margin: 50px 0;
+  .badge-status .dot {
+    width: 6px;
+    height: 6px;
+    background-color: var(--accent-emerald);
+    border-radius: 50%;
   }
 
-  /* Table Customization */
-  table.matrix-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 16px;
-    background-color: var(--card-bg);
+  .hero-title {
+    font-size: 3.2rem;
+    font-weight: 800;
+    letter-spacing: -1.2px;
+    line-height: 1.1;
+    margin: 0 0 16px 0;
+    background: linear-gradient(180deg, #ffffff 0%, #9ca3af 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    max-width: 780px;
+    font-weight: 400;
+    margin-bottom: 32px;
+  }
+
+  .cta-group {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .btn-primary {
+    background: var(--accent-blue);
+    color: #000000;
+    padding: 12px 24px;
     border-radius: 8px;
-    overflow: hidden;
-    border: 1px solid var(--border-color);
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
   }
 
-  table.matrix-table th, table.matrix-table td {
-    padding: 12px 16px;
-    text-align: left;
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 28px rgba(56, 189, 248, 0.4);
+  }
+
+  .btn-outline {
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .btn-outline:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--text-muted);
+  }
+
+  /* Metric Highlights Ribbon */
+  .metrics-ribbon {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin: 40px 0;
+    padding: 24px;
+    background: rgba(17, 24, 39, 0.5);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+  }
+
+  .metric-item .value {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--accent-blue);
+  }
+
+  .metric-item .label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  /* Project Grid Section */
+  .section-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 24px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+  }
+
+  .section-desc {
+    color: var(--text-muted);
+    margin-bottom: 32px;
+  }
+
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 28px;
+  }
+
+  .project-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    cursor: pointer;
+  }
+
+  .project-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--border-hover);
+    box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.5);
+  }
+
+  .card-media {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
     border-bottom: 1px solid var(--border-color);
   }
 
-  table.matrix-table th {
-    background-color: #21262d;
+  .card-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .pill-group {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+  }
+
+  .pill {
+    font-size: 0.72rem;
     font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 12px;
+    background: rgba(56, 189, 248, 0.08);
+    color: var(--accent-blue);
+    border: 1px solid rgba(56, 189, 248, 0.15);
+  }
+
+  .card-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    color: #ffffff;
+  }
+
+  .card-desc {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    flex-grow: 1;
+    margin-bottom: 20px;
+  }
+
+  .card-action {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--accent-blue);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  /* Skills Matrix Box */
+  .skills-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 32px;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+  }
+
+  .skill-cat h4 {
+    color: var(--accent-blue);
+    margin: 0 0 12px 0;
+    font-size: 1rem;
+  }
+
+  .skill-cat p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin: 0;
+  }
+
+  /* Technical Side Drawer (Modal Details) */
+  .drawer-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(4px);
+    z-index: 2000;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .drawer-overlay.active {
+    display: block;
+    opacity: 1;
+  }
+
+  .drawer-content {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    max-width: 650px;
+    height: 100%;
+    background: #0d131d;
+    border-left: 1px solid var(--border-color);
+    z-index: 2001;
+    padding: 40px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .drawer-overlay.active .drawer-content {
+    right: 0;
+  }
+
+  .close-drawer {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    float: right;
+    font-weight: 600;
+  }
+
+  /* Footer */
+  footer {
+    border-top: 1px solid var(--border-color);
+    padding: 60px 24px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
   }
 </style>
 
-<!-- Sticky Navigation Bar -->
-<nav class="sticky-nav">
-  <span style="font-weight: 700; color: var(--accent-blue); font-size: 1.05rem;">Luísa Mendes, M.Sc.</span>
-  <div style="display: flex; gap: 18px;">
-    <a href="#projects">Featured Projects</a>
-    <a href="#deep-dive">Case Studies</a>
+<!-- Glass Sticky Navigation -->
+<nav class="glass-nav">
+  <div class="brand">Luísa Mendes, M.Sc.</div>
+  <div class="nav-links">
+    <a href="#projects">Work</a>
     <a href="#skills">Skills</a>
-    <a href="#contact" style="color: var(--accent-blue); font-weight: 600;">Contact</a>
+    <a href="#contact">Contact</a>
   </div>
 </nav>
 
-<!-- Hero / Intro Section -->
-<header class="hero">
-  <div class="eyebrow">Mechanical Engineering Portfolio</div>
-  <h1>Luísa Mendes</h1>
-  <p class="subtitle">
-    Mechanical Engineer specializing in automotive manufacturing, multi-domain system simulation (Simscape/Simulink/Abaqus), tooling design (Siemens NX), and industrial automation (Siemens PLC/VFD).
-  </p>
-
-  <div class="button-group">
-    <a href="#projects" class="btn btn-primary">View Featured Projects</a>
-    <a href="assets/Luisa_Mendes_CV.pdf" download class="btn btn-secondary">Download Resume (PDF)</a>
-    <a href="#contact" class="btn btn-link">Contact Me →</a>
+<!-- Hero Section -->
+<div class="hero-container">
+  <div class="badge-status">
+    <span class="dot"></span> Open to Advanced Engineering Roles
   </div>
-</header>
-
-<hr class="divider" />
-
-<!-- Project Overview Cards Grid (The Cool Flow) -->
-<section id="projects">
-  <h2>Featured Engineering Projects</h2>
-  <p style="color: var(--text-secondary); max-width: 800px;">
-    High-impact projects across automotive OEM production, injection molding, FEA process simulation, and field mechanics.
+  <h1 class="hero-title">Engineering Systems, Simulation &amp; Manufacturing Precision.</h1>
+  <p class="hero-subtitle">
+    Mechanical Engineer specializing in automotive OEM processes, multi-domain system modeling (Simscape/Abaqus), Siemens NX tooling design, and industrial automation.
   </p>
+  
+  <div class="cta-group">
+    <a href="#projects" class="btn-primary">Explore Engineering Work</a>
+    <a href="assets/Luisa_Mendes_CV.pdf" download class="btn-outline">Download Resume (PDF)</a>
+  </div>
 
-  <div class="grid-2">
+  <!-- Metric Highlights Ribbon -->
+  <div class="metrics-ribbon">
+    <div class="metric-item">
+      <div class="value">19/20</div>
+      <div class="label">MSc Thesis Grade (Toyota)</div>
+    </div>
+    <div class="metric-item">
+      <div class="value">r &gt; 0.96</div>
+      <div class="label">Physical-to-Digital Twin Model Fidelity</div>
+    </div>
+    <div class="metric-item">
+      <div class="value">-18%</div>
+      <div class="label">Springback Reduction (FEA Taguchi)</div>
+    </div>
+    <div class="metric-item">
+      <div class="value">3,000 km</div>
+      <div class="label">Desert Rally Mechanics (UniRaid)</div>
+    </div>
+  </div>
+</div>
+
+<!-- Portfolio Visual Grid -->
+<div id="projects" class="section-container">
+  <h2 class="section-title">Selected Engineering Projects</h2>
+  <p class="section-desc">Click any project to inspect the full technical methodology, system architecture, and quantitative outcomes.</p>
+
+  <div class="portfolio-grid">
 
     <!-- Card 1: Toyota -->
-    <article class="card">
-      <div>
-        <img src="images/toyota-diagram.png" alt="Toyota environmental control system architecture" />
-        <span class="tag-pill">Controls · Manufacturing · Simulation</span>
-        <h3>Automotive Paint Booth Environmental Control</h3>
-        <p>
-          MSc thesis at Toyota Caetano Portugal (Grade: 19/20). Built a hardware-in-the-loop Quasi-Digital Twin linking Siemens S7-1200 PLCs with MATLAB Simscape to eliminate thermal/humidity process drift.
-        </p>
+    <div class="project-card" onclick="openDrawer('drawer-toyota')">
+      <img src="images/toyota-diagram.png" alt="Toyota environmental control system architecture" class="card-media" />
+      <div class="card-body">
+        <div class="pill-group">
+          <span class="pill">Toyota Caetano</span>
+          <span class="pill">Simscape/PLC</span>
+          <span class="pill">Ryohin Joken</span>
+        </div>
+        <h3 class="card-title">Automotive Paint Booth Environmental Control</h3>
+        <p class="card-desc">Hardware-in-the-loop Quasi-Digital Twin linking Siemens S7-1200 PLCs with MATLAB Simscape to eliminate atmospheric process drift.</p>
+        <div class="card-action">Inspect Case Study &rarr;</div>
       </div>
-      <a href="#case-toyota" class="btn btn-secondary" style="text-align: center; margin-top: 10px;">Read Full Case Study ↓</a>
-    </article>
+    </div>
 
-    <!-- Card 2: Injection Mold -->
-    <article class="card">
-      <div>
-        <img src="images/mold-drawing.png" alt="Siemens NX injection mold CAD design" />
-        <span class="tag-pill">Tooling · CAD · Industrialisation</span>
-        <h3>Injection Mold Design &amp; Validation</h3>
-        <p>
-          Complete Siemens NX injection mold design for an automotive ABS speaker housing. Features custom sliders, angle lifters, conformal cooling, and kinematic undercut ejection systems.
-        </p>
+    <!-- Card 2: Mold -->
+    <div class="project-card" onclick="openDrawer('drawer-mold')">
+      <img src="images/mold-drawing.png" alt="Siemens NX injection mold design" class="card-media" />
+      <div class="card-body">
+        <div class="pill-group">
+          <span class="pill">Siemens NX</span>
+          <span class="pill">Tooling</span>
+          <span class="pill">Injection Molding</span>
+        </div>
+        <h3 class="card-title">Injection Mold Design &amp; Kinematic Validation</h3>
+        <p class="card-desc">Complete Siemens NX tooling design for an automotive ABS housing, featuring custom side sliders, lifters, and conformal cooling.</p>
+        <div class="card-action">Inspect Case Study &rarr;</div>
       </div>
-      <a href="#case-mold" class="btn btn-secondary" style="text-align: center; margin-top: 10px;">Read Full Case Study ↓</a>
-    </article>
+    </div>
 
-    <!-- Card 3: Abaqus FEA -->
-    <article class="card">
-      <div>
-        <img src="images/abaqus-result.png" alt="Abaqus FEA simulation results" />
-        <span class="tag-pill">CAE · Materials · Taguchi DOE</span>
-        <h3>Brass Drawing Process FEA Optimisation</h3>
-        <p>
-          Nonlinear Abaqus/Explicit finite element analysis coupled with Taguchi DOE to reduce material springback by 18% and optimize punch draw force parameters in brass alloys.
-        </p>
+    <!-- Card 3: Abaqus -->
+    <div class="project-card" onclick="openDrawer('drawer-abaqus')">
+      <img src="images/abaqus-result.png" alt="Abaqus FEA drawing simulation result" class="card-media" />
+      <div class="card-body">
+        <div class="pill-group">
+          <span class="pill">Abaqus/Explicit</span>
+          <span class="pill">FEA</span>
+          <span class="pill">Taguchi DOE</span>
+        </div>
+        <h3 class="card-title">Brass Drawing Process FEA Optimisation</h3>
+        <p class="card-desc">Nonlinear elastoplastic simulation modeling stress concentrations, springback mitigation, and energy optimization in brass drawing.</p>
+        <div class="card-action">Inspect Case Study &rarr;</div>
       </div>
-      <a href="#case-abaqus" class="btn btn-secondary" style="text-align: center; margin-top: 10px;">Read Full Case Study ↓</a>
-    </article>
+    </div>
 
     <!-- Card 4: UniRaid -->
-    <article class="card">
-      <div>
-        <img src="images/uniraid-car.png" alt="VW Golf II GTD UniRaid vehicle" />
-        <span class="tag-pill">Vehicle Reliability · Field Engineering</span>
-        <h3>UniRaid Rally Vehicle Reliability &amp; Mechanics</h3>
-        <p>
-          Preparation and field mechanics for a VW Golf II GTD in a 3,000 km desert rally. Executed chassis reinforcement, high-ambient thermal management, and emergency diagnostics.
-        </p>
+    <div class="project-card" onclick="openDrawer('drawer-uniraid')">
+      <img src="images/uniraid-car.png" alt="VW Golf II GTD UniRaid rally vehicle" class="card-media" />
+      <div class="card-body">
+        <div class="pill-group">
+          <span class="pill">Field Engineering</span>
+          <span class="pill">Thermal Mgmt</span>
+          <span class="pill">Vehicle Mechanics</span>
+        </div>
+        <h3 class="card-title">UniRaid Rally Vehicle Reliability &amp; Preparation</h3>
+        <p class="card-desc">Preparation and field mechanics for a VW Golf II GTD in a 3,000 km desert endurance rally under extreme thermal loading.</p>
+        <div class="card-action">Inspect Case Study &rarr;</div>
       </div>
-      <a href="#case-uniraid" class="btn btn-secondary" style="text-align: center; margin-top: 10px;">Read Full Case Study ↓</a>
-    </article>
+    </div>
 
   </div>
-</section>
+</div>
 
-<hr class="divider" />
+<!-- Skills Matrix -->
+<div id="skills" class="section-container">
+  <h2 class="section-title">Technical Competencies</h2>
+  <p class="section-desc">Comprehensive matrix across CAD, CAE physical modeling, industrial controls, and statistical quality engineering.</p>
+  
+  <div class="skills-box">
+    <div class="skills-grid">
+      <div class="skill-cat">
+        <h4>CAD &amp; Tooling</h4>
+        <p>Siemens NX, SolidWorks, Fusion 360, AutoCAD, Mold Tooling, GD&amp;T (ISO/ASME)</p>
+      </div>
+      <div class="skill-cat">
+        <h4>Simulation &amp; CAE</h4>
+        <p>MATLAB, Simulink, Simscape, Abaqus/Explicit, Moldflow, Non-Linear Plasticity FEA</p>
+      </div>
+      <div class="skill-cat">
+        <h4>Automation &amp; Controls</h4>
+        <p>Siemens TIA Portal (S7-1200), Sinamics VFD, OPC UA, Closed-Loop PID, HIL Simulation</p>
+      </div>
+      <div class="skill-cat">
+        <h4>Quality &amp; Analytics</h4>
+        <p>Ryohin Joken, FMEA, SPC, Taguchi DOE, Pearson Correlation, Python (SciPy/Pandas)</p>
+      </div>
+    </div>
+  </div>
+</div>
 
-<!-- In-Depth Technical Case Studies Section -->
-<section id="deep-dive">
-  <h2>In-Depth Case Studies &amp; Technical Breakthroughs</h2>
-
-  <!-- Deep Dive 1: Toyota -->
-  <div id="case-toyota" style="margin-bottom: 50px;">
-    <span class="tag-pill">Toyota Caetano Portugal | Master's Thesis</span>
-    <h3 style="font-size: 1.5rem; margin-top: 4px;">Automotive Paint Booth Environmental Control &amp; Quasi-Digital Twin</h3>
-    <p>
-      During high-throughput vehicle production, ambient temperature and humidity shifts inside paint spray booths cause subtle paint cure defects. To align with <strong>Ryohin Joken</strong> ("100% Good Product Conditions") standards, I architected a Quasi-Digital Twin.
-    </p>
+<!-- Technical Side Drawers (Modal Case Studies) -->
+<div id="drawer-overlay" class="drawer-overlay" onclick="closeAllDrawers()">
+  
+  <!-- Toyota Drawer -->
+  <div id="drawer-toyota" class="drawer-content" onclick="event.stopPropagation()">
+    <button class="close-drawer" onclick="closeAllDrawers()">Close &times;</button>
+    <span class="pill">Toyota Thesis Case Study</span>
+    <h2 style="margin-top: 12px;">Automotive Paint Booth Environmental Control</h2>
+    <p><strong>MSc Thesis Grade: 19/20</strong></p>
+    <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 20px 0;" />
     
-    <div class="tech-details">
-      <strong>Key Accomplishments &amp; Methodology:</strong>
-      <ul>
-        <li><strong>Hardware-in-the-Loop Integration:</strong> Linked physical Siemens S7-1200 PLCs and Sinamics VFDs to a dynamic MATLAB Simscape model via OPC UA protocol.</li>
-        <li><strong>FMEA &amp; Quality Control:</strong> Performed Failure Mode and Effects Analysis on sensor response latency, stabilizing booth temperature to within <strong>&plusmn;0.5&deg;C</strong> and relative humidity to <strong>&plusmn;2%</strong>.</li>
-        <li><strong>Academic Outcome:</strong> Defended before the examination board and awarded a grade of <strong>19/20</strong>.</li>
-      </ul>
-    </div>
+    <h3>Problem Statement</h3>
+    <p>Atmospheric temperature and moisture fluctuations in automotive spray booths induce paint cure defects and process drift, violating Toyota's <strong>Ryohin Joken</strong> standards.</p>
+
+    <h3>Architectural Solution</h3>
+    <ul>
+      <li>Built a Hardware-in-the-Loop (HIL) Quasi-Digital Twin linking physical Siemens S7-1200 PLCs with MATLAB Simscape thermal-fluid plant models via OPC UA.</li>
+      <li>Executed sensor placement optimization and FMEA protocols to minimize reading latency.</li>
+    </ul>
+
+    <h3>Quantified Results</h3>
+    <ul>
+      <li>Booth temperature stabilized to <strong>&plusmn;0.5&deg;C</strong> and relative humidity to <strong>&plusmn;2%</strong>.</li>
+      <li>Pearson correlation coefficient between digital twin current draw and physical hardware exceeded <strong>r = 0.96</strong>.</li>
+    </ul>
   </div>
 
-  <!-- Deep Dive 2: Mold Design -->
-  <div id="case-mold" style="margin-bottom: 50px;">
-    <span class="tag-pill">CAD &amp; Tooling Engineering</span>
-    <h3 style="font-size: 1.5rem; margin-top: 4px;">Siemens NX Injection Mold Design for ABS Component</h3>
-    <p>
-      Engineered an industrial injection mold for a complex automotive ABS speaker grille featuring intricate interior locking clips and tight aesthetic tolerances.
-    </p>
+  <!-- Mold Drawer -->
+  <div id="drawer-mold" class="drawer-content" onclick="event.stopPropagation()">
+    <button class="close-drawer" onclick="closeAllDrawers()">Close &times;</button>
+    <span class="pill">Tooling Engineering</span>
+    <h2 style="margin-top: 12px;">Injection Mold Design &amp; Validation</h2>
+    <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 20px 0;" />
+    
+    <h3>Design Execution</h3>
+    <p>Complete mold design developed in <strong>Siemens NX</strong> for an automotive ABS speaker housing featuring deep aesthetic undercuts.</p>
 
-    <div class="tech-details">
-      <strong>Key Accomplishments &amp; Methodology:</strong>
-      <ul>
-        <li><strong>Kinematic Subsystems:</strong> Designed side-action mechanical sliders and angle lifters to resolve deep internal undercuts without mechanical collision.</li>
-        <li><strong>Thermal &amp; Ejection Analysis:</strong> Configured balanced hot-runner feed gates, cooling lines, and ejection pin layouts calculated against material shrinkage rates to eliminate warpage.</li>
-      </ul>
-    </div>
+    <h3>Subsystems Built</h3>
+    <ul>
+      <li><strong>Kinematics:</strong> Mechanical side-action sliders and angle lifters configured for collision-free ejection.</li>
+      <li><strong>Thermal Control:</strong> Conformal cooling lines engineered to balance temperature distribution and prevent warpage.</li>
+      <li><strong>Calculations:</strong> Core/cavity stress analysis and ejector pin force calculations based on ABS shrinkage profiles.</li>
+    </ul>
   </div>
 
-  <!-- Deep Dive 3: Abaqus FEA -->
-  <div id="case-abaqus" style="margin-bottom: 50px;">
-    <span class="tag-pill">FEA &amp; Materials Optimization</span>
-    <h3 style="font-size: 1.5rem; margin-top: 4px;">Nonlinear FEA Deep Drawing Simulation (Abaqus/Explicit)</h3>
-    <p>
-      Analyzed elastoplastic behavior during multi-pass deep drawing of brass alloys using non-linear finite element modeling and statistical DOE techniques.
-    </p>
+  <!-- Abaqus Drawer -->
+  <div id="drawer-abaqus" class="drawer-content" onclick="event.stopPropagation()">
+    <button class="close-drawer" onclick="closeAllDrawers()">Close &times;</button>
+    <span class="pill">CAE Simulation</span>
+    <h2 style="margin-top: 12px;">Brass Drawing Process FEA Optimisation</h2>
+    <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 20px 0;" />
+    
+    <h3>Numerical Scope</h3>
+    <p>Nonlinear finite element analysis utilizing <strong>Abaqus/Explicit</strong> coupled with Taguchi orthogonal arrays to optimize multi-pass deep drawing of brass alloys.</p>
 
-    <div class="tech-details">
-      <strong>Key Accomplishments &amp; Methodology:</strong>
-      <ul>
-        <li><strong>Stress Analysis:</strong> Mapped Von Mises stress concentrations, blank-holder contact pressure, and die radius shear behavior under high deformation rates.</li>
-        <li><strong>Taguchi Optimization:</strong> Reduced elastic springback by <strong>18%</strong> and peak draw force by <strong>12%</strong> by optimizing friction parameters and blank holder force.</li>
-      </ul>
-    </div>
+    <h3>Technical Results</h3>
+    <ul>
+      <li>Mapped Von Mises stress profiles and die corner radius contact stresses.</li>
+      <li>Reduced post-forming material elastic springback by <strong>18%</strong>.</li>
+      <li>Reduced peak punch draw force requirement by <strong>12%</strong>.</li>
+    </ul>
   </div>
 
-  <!-- Deep Dive 4: UniRaid -->
-  <div id="case-uniraid" style="margin-bottom: 20px;">
-    <span class="tag-pill">Field Engineering &amp; Automotive Mechanics</span>
-    <h3 style="font-size: 1.5rem; margin-top: 4px;">UniRaid Desert Rally Vehicle Preparation &amp; Reliability</h3>
-    <p>
-      Prepared and field-serviced a 1987 Volkswagen Golf II GTD for a 3,000 km desert endurance rally carrying 100 kg of humanitarian aid across harsh terrain.
-    </p>
+  <!-- UniRaid Drawer -->
+  <div id="drawer-uniraid" class="drawer-content" onclick="event.stopPropagation()">
+    <button class="close-drawer" onclick="closeAllDrawers()">Close &times;</button>
+    <span class="pill">Field Engineering</span>
+    <h2 style="margin-top: 12px;">UniRaid Rally Vehicle Reliability</h2>
+    <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 20px 0;" />
+    
+    <h3>Operations &amp; Mechanics</h3>
+    <p>Preparation and continuous field mechanics for a 1987 VW Golf II GTD during a 3,000 km desert rally carrying 100 kg of humanitarian supplies across Morocco.</p>
 
-    <div class="tech-details">
-      <strong>Key Accomplishments &amp; Methodology:</strong>
-      <ul>
-        <li><strong>Thermal Management:</strong> Designed auxiliary high-flow cooling circuits and fan overrides to prevent engine thermal runaway in 40&deg;C+ desert temperatures.</li>
-        <li><strong>Field Diagnostics:</strong> Executed emergency structural chassis welding, suspension tuning, and mechanical root-cause analysis under extreme resource constraints.</li>
-      </ul>
-    </div>
+    <h3>Technical Solutions</h3>
+    <ul>
+      <li>Configured high-flow auxiliary heat exchangers to handle high engine loads in 40&deg;C+ ambient desert temperatures.</li>
+      <li>Engineered custom steel underbody skid plates and reinforced lower suspension mounting points against impact fatigue.</li>
+    </ul>
   </div>
-</section>
 
-<hr class="divider" />
+</div>
 
-<!-- Technical Skills Matrix -->
-<section id="skills">
-  <h2>Technical Skills Matrix</h2>
+<!-- Contact & Footer -->
+<footer id="contact">
+  <h2 style="color: #ffffff; margin-bottom: 8px;">Let's Connect</h2>
+  <p style="margin-bottom: 24px;">Available for technical mechanical engineering and systems architecture roles.</p>
+  
+  <div style="display: flex; justify-content: center; gap: 24px; font-weight: 600; margin-bottom: 32px;">
+    <a href="mailto:mendesluisa1202@gmail.com" style="color: var(--accent-blue); text-decoration: none;">mendesluisa1202@gmail.com</a>
+    <a href="https://linkedin.com/in/luisa_mendes" target="_blank" style="color: var(--accent-blue); text-decoration: none;">LinkedIn</a>
+    <a href="https://engluisamendes.github.io" target="_blank" style="color: var(--accent-blue); text-decoration: none;">GitHub</a>
+  </div>
 
-  <table class="matrix-table">
-    <thead>
-      <tr>
-        <th style="width: 25%;">Domain</th>
-        <th style="width: 45%;">Software &amp; Tools</th>
-        <th style="width: 30%;">Methodologies</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><strong>CAD &amp; Tooling</strong></td>
-        <td>Siemens NX, SolidWorks, Fusion 360, AutoCAD</td>
-        <td>Injection Mold Design, GD&amp;T, Assembly Kinematics</td>
-      </tr>
-      <tr>
-        <td><strong>Simulation &amp; CAE</strong></td>
-        <td>MATLAB, Simulink, Simscape, Abaqus/Explicit, Moldflow</td>
-        <td>Multi-Domain Physical Modeling, Non-Linear FEA, Taguchi DOE</td>
-      </tr>
-      <tr>
-        <td><strong>Automation &amp; Control</strong></td>
-        <td>Siemens TIA Portal (S7-1200), Sinamics VFD, OPC UA</td>
-        <td>Closed-Loop Control, HIL Simulation, Sensor Integration</td>
-      </tr>
-      <tr>
-        <td><strong>Quality &amp; Analysis</strong></td>
-        <td>Minitab, Python (SciPy/Pandas)</td>
-        <td>Ryohin Joken, FMEA, SPC, 8D Root-Cause Analysis</td>
-      </tr>
-    </tbody>
-  </table>
-</section>
-
-<hr class="divider" />
-
-<!-- Contact Section -->
-<footer id="contact" style="padding-bottom: 60px;">
-  <h2>Get In Touch</h2>
-  <p style="color: var(--text-secondary);">
-    I am open to discussions regarding mechanical engineering roles, OEM manufacturing projects, and automation design.
-  </p>
-  <ul style="list-style: none; padding: 0; line-height: 2;">
-    <li><strong>Email:</strong> <a href="mailto:mendesluisa1202@gmail.com" style="color: var(--accent-blue);">mendesluisa1202@gmail.com</a></li>
-    <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/luisa_mendes" target="_blank" rel="noopener noreferrer" style="color: var(--accent-blue);">linkedin.com/in/luisa_mendes</a></li>
-    <li><strong>GitHub Portfolio:</strong> <a href="https://engluisamendes.github.io" target="_blank" rel="noopener noreferrer" style="color: var(--accent-blue);">engluisamendes.github.io</a></li>
-  </ul>
-  <p style="margin-top: 40px; font-size: 0.85rem; color: var(--text-secondary);">
-    &copy; 2026 Luísa Mendes — Built with GitHub Pages &amp; Jekyll.
-  </p>
+  <p>&copy; 2026 Luísa Mendes, M.Sc. Designed with class and technical precision.</p>
 </footer>
+
+<!-- JavaScript for Interactive Drawers -->
+<script>
+  function openDrawer(drawerId) {
+    document.getElementById('drawer-overlay').classList.add('active');
+    document.querySelectorAll('.drawer-content').forEach(d => d.style.display = 'none');
+    document.getElementById(drawerId).style.display = 'block';
+  }
+
+  function closeAllDrawers() {
+    document.getElementById('drawer-overlay').classList.remove('active');
+  }
+</script>
