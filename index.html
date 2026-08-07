@@ -498,14 +498,6 @@ permalink: /
     border-color: var(--border-hover);
   }
 
-  .pdf-viewer-box {
-    width: 100%;
-    height: 420px;
-    border: 1px solid var(--border-subtle);
-    border-radius: 10px;
-    margin-top: 16px;
-  }
-
   /* Responsive Fixes */
   @media (max-width: 768px) {
     nav.navbar { padding: 16px 20px; }
@@ -555,17 +547,18 @@ permalink: /
   <div class="metrics-ribbon">
     <div class="metric-card">
       <div class="value">5.96 to 0</div>
-      <div class="label">Defects/Unit Target (Toyota)</div>
+      <div class="label">Defects/Unit Target (Toyota)[cite: 1]</div>
     </div>
     <div class="metric-card">
       <div class="value">&euro;2,726/yr</div>
-      <div class="label">Net Payback Savings (TME)</div>
+      <div class="label">Net Payback Savings (TME)[cite: 1]</div>
     </div>
     <div class="metric-card">
       <div class="value">5 Lifters (8&deg;)</div>
-      <div class="label">Simoldes PP Mold Tooling</div>
+      <div class="label">Simoldes PP Mold Tooling[cite: 1]</div>
     </div>
     <div class="metric-card">
+      <div class="metric-card">
       <div class="value">&euro;6,000+</div>
       <div class="label">UniRaid Project Budget</div>
     </div>
@@ -592,7 +585,7 @@ permalink: /
     <!-- Card 1: Toyota -->
     <div class="project-card" data-category="oem fea" onclick="openDrawer('drawer-toyota')">
       <div class="card-media-wrap">
-        <img src="/images/toyota.jpg" alt="Toyota environmental control system architecture" />
+        <img src="/images/toyota-diagram.png" alt="Toyota environmental control system architecture" />
       </div>
       <div class="card-body">
         <div class="tag-group">
@@ -601,7 +594,7 @@ permalink: /
           <span class="pill-tag">Laney U-Charts</span>
         </div>
         <h3 class="card-title">Automatic Climate Control For Painting Booth</h3>
-        <p class="card-summary">Industry 4.0 climate retrofit for Land Cruiser 70 line (14 units/day). Analyzed baseline defects via Laney U-Charts, FMEA, and Simscape dynamics.</p>
+        <p class="card-summary">Industry 4.0 climate retrofit for Land Cruiser 70 line (14 units/day)[cite: 1]. Analyzed baseline defects via Laney U-Charts, FMEA, and Simscape dynamics[cite: 1].</p>
         <span class="card-action">Inspect Case Study &rarr;</span>
       </div>
     </div>
@@ -609,7 +602,7 @@ permalink: /
     <!-- Card 2: Mold -->
     <div class="project-card" data-category="tooling" onclick="openDrawer('drawer-mold')">
       <div class="card-media-wrap">
-        <img src="/images/molde.jpg" alt="Siemens NX injection mold CAD design" />
+        <img src="/images/mold-drawing.png" alt="Siemens NX injection mold CAD design" />
       </div>
       <div class="card-body">
         <div class="tag-group">
@@ -618,7 +611,7 @@ permalink: /
           <span class="pill-tag">5 Angled Lifters</span>
         </div>
         <h3 class="card-title">Automotive Speaker Polypropylene Injection Mold</h3>
-        <p class="card-summary">Complete polymer injection tool in Siemens NX. Features 5 angled lifters (8&deg;), single/dual cam-pin sliders, DME 2A base, and 8mm cooling circuits.</p>
+        <p class="card-summary">Complete polymer injection tool in Siemens NX[cite: 1]. Features 5 angled lifters (8&deg;), single/dual cam-pin sliders, DME 2A base, and 8mm cooling circuits[cite: 1].</p>
         <span class="card-action">Inspect Case Study &rarr;</span>
       </div>
     </div>
@@ -626,7 +619,7 @@ permalink: /
     <!-- Card 3: Abaqus -->
     <div class="project-card" data-category="fea" onclick="openDrawer('drawer-abaqus')">
       <div class="card-media-wrap">
-        <img src="/images/abaqus.png" alt="Abaqus FEA simulation results" />
+        <img src="/images/mold-drawing.png" alt="Abaqus FEA simulation results" />
       </div>
       <div class="card-body">
         <div class="tag-group">
@@ -643,7 +636,7 @@ permalink: /
     <!-- Card 4: UniRaid -->
     <div class="project-card" data-category="oem tooling" onclick="openDrawer('drawer-uniraid')">
       <div class="card-media-wrap">
-        <img src="/images/uniraid.jpg" alt="VW Golf II GTD UniRaid vehicle" />
+        <img src="/images/uniraid-car.png" alt="VW Golf II GTD UniRaid vehicle" />
       </div>
       <div class="card-body">
         <div class="tag-group">
@@ -664,26 +657,26 @@ permalink: /
 <div id="skills" class="section-wrapper">
   <div class="section-header">
     <h2 class="section-title">Technical Competencies</h2>
-    <p class="section-desc">Structured toolset derived directly from industrial projects and OEM manufacturing validation.</p>
+    <p class="section-desc">Structured toolset derived directly from industrial projects and OEM manufacturing validation[cite: 1].</p>
   </div>
 
   <div class="skills-card">
     <div class="skills-grid">
       <div class="skill-group">
         <h4>CAD &amp; Tooling Design</h4>
-        <p>Siemens NX (Patch Surfaces, Isocline, Check/Trim Regions), DME 2A Mold Bases, Angled Lifters (8&deg;), Cam-Pin Sliders, Ejector Sleeves, Conformal Cooling Baffles, Polypropylene (PP) Rheology</p>
+        <p>Siemens NX (Patch Surfaces, Isocline, Check/Trim Regions)[cite: 1], DME 2A Mold Bases[cite: 1], Angled Lifters (8&deg;)[cite: 1], Cam-Pin Sliders[cite: 1], Ejector Sleeves[cite: 1], Conformal Cooling Baffles[cite: 1], Polypropylene (PP) Rheology[cite: 1]</p>
       </div>
       <div class="skill-group">
         <h4>Simulation &amp; CAE</h4>
-        <p>MATLAB Simscape (Thermal/Humidity Dynamics), Abaqus/Explicit, Polymer Filling &amp; Gate Analysis, Runner Sizing (8mm), Multi-Pass Deep Drawing FEA</p>
+        <p>MATLAB Simscape (Thermal/Humidity Dynamics)[cite: 1], Abaqus/Explicit, Polymer Filling &amp; Gate Analysis[cite: 1], Runner Sizing (8mm)[cite: 1], Multi-Pass Deep Drawing FEA</p>
       </div>
       <div class="skill-group">
         <h4>Automation &amp; Control</h4>
-        <p>Siemens ET200, VFD Pump Speed Control, ATEX Safety Thresholds (55% RH), OPC UA, Siemens S7-1200 PLC, HMI Control Strategy, Air Supply Units (ASU)</p>
+        <p>Siemens ET200[cite: 1], VFD Pump Speed Control[cite: 1], ATEX Safety Thresholds (55% RH)[cite: 1], OPC UA, Siemens S7-1200 PLC, HMI Control Strategy[cite: 1], Air Supply Units (ASU)[cite: 1]</p>
       </div>
       <div class="skill-group">
         <h4>Quality &amp; Leadership</h4>
-        <p>Gemba &amp; Genchi Genbutsu, Laney U-Charts, FMEA, 5 Whys, Pearson Correlation Analysis, Minitab SPC, CAPEX/OPEX Payback Analysis, TME Stakeholder Delivery</p>
+        <p>Gemba &amp; Genchi Genbutsu[cite: 1], Laney U-Charts[cite: 1], FMEA[cite: 1], 5 Whys[cite: 1], Pearson Correlation Analysis[cite: 1], Minitab SPC[cite: 1], CAPEX/OPEX Payback Analysis[cite: 1], TME Stakeholder Delivery[cite: 1]</p>
       </div>
     </div>
   </div>
@@ -697,26 +690,20 @@ permalink: /
     <button class="close-btn" onclick="closeAllDrawers()">Close &times;</button>
     <span class="pill-tag">Toyota Caetano Portugal, S.A. | TME Stakeholder Project</span>
     <h2 style="margin-top: 16px; color: var(--text-primary); font-size: 1.6rem;">Automatic Climate Control For Painting Booth</h2>
-    <p style="color: var(--text-secondary); font-size: 0.95rem;">Land Cruiser 70 Line (14 units/day) | <strong>CAPEX/OPEX Net Savings: &euro;2,726/yr</strong></p>
+    <p style="color: var(--text-secondary); font-size: 0.95rem;">Land Cruiser 70 Line (14 units/day) | <strong>CAPEX/OPEX Net Savings: &euro;2,726/yr</strong>[cite: 1]</p>
     <hr style="border: 0; border-top: 1px solid var(--border-subtle); margin: 24px 0;" />
 
     <div class="callout-box">
-      <h4>Root-Cause Diagnostics (Gemba &amp; Genchi Genbutsu)</h4>
-      <p>Evaluated a <strong>5.96 defects/unit baseline (100% repair rate)</strong> using Laney U-Charts and FMEA. Statistically proved correlation between temperature variation and paint sagging via Pearson analysis.</p>
+      <h4>Root-Cause Diagnostics (Gemba &amp; Genchi Genbutsu)[cite: 1]</h4>
+      <p>Evaluated a <strong>5.96 defects/unit baseline (100% repair rate)</strong> using Laney U-Charts and FMEA[cite: 1]. Statistically proved correlation between temperature variation and paint sagging via Pearson analysis[cite: 1].</p>
     </div>
 
-    <h3 style="color: var(--text-primary); font-size: 1.1rem; margin-top: 24px;">Automation Schematic Viewer</h3>
-    <iframe class="pdf-viewer-box" src="/images/Sch_Automation.drawio.pdf"></iframe>
-    <p style="margin-top: 8px;">
-      <a href="/images/Sch_Automation.drawio.pdf" target="_blank" style="color: var(--accent-blue); text-decoration: none; font-weight: 700; font-size: 0.88rem;">Open Vector PDF Schematic in Full Window &rarr;</a>
-    </p>
-
-    <h3 style="color: var(--text-primary); font-size: 1.1rem; margin-top: 24px;">Control Architecture &amp; ATEX Safety</h3>
+    <h3 style="color: var(--text-primary); font-size: 1.1rem; margin-top: 24px;">Control Architecture &amp; ATEX Safety[cite: 1]</h3>
     <ul style="color: var(--text-secondary); line-height: 1.8; padding-left: 20px;">
-      <li><strong>Automated Hardware Control:</strong> Designed automated PLC/HMI control strategy using Siemens ET200 + VFD Pump integration.</li>
-      <li><strong>ATEX Safety Integration:</strong> Integrated a strict <strong>55% RH safety threshold</strong> for explosion-proof ATEX compliance within the spray booth.</li>
-      <li><strong>Simscape Physical Model:</strong> Developed multi-domain Simscape model in MATLAB to simulate thermal and humidity dynamics across dual Air Supply Units (ASU).</li>
-      <li><strong>Toyota Motor Europe (TME) Delivery:</strong> Delivered technical specifications, equipment selection, and predictive maintenance roadmap directly to TME executive stakeholders.</li>
+      <li><strong>Automated Hardware Control:</strong> Designed automated PLC/HMI control strategy using Siemens ET200 + VFD Pump integration[cite: 1].</li>
+      <li><strong>ATEX Safety Integration:</strong> Integrated a strict <strong>55% RH safety threshold</strong> for explosion-proof ATEX compliance within the spray booth[cite: 1].</li>
+      <li><strong>Simscape Physical Model:</strong> Developed multi-domain Simscape model in MATLAB to simulate thermal and humidity dynamics across dual Air Supply Units (ASU)[cite: 1].</li>
+      <li><strong>Toyota Motor Europe (TME) Delivery:</strong> Delivered technical specifications, equipment selection, and predictive maintenance roadmap directly to TME executive stakeholders[cite: 1].</li>
     </ul>
   </div>
 
@@ -728,25 +715,25 @@ permalink: /
     <hr style="border: 0; border-top: 1px solid var(--border-subtle); margin: 24px 0;" />
 
     <div class="callout-box">
-      <h4>Objective &amp; Collaboration Scope</h4>
-      <p>Designed a complete polymer injection mold in Siemens NX for an automotive Polypropylene (PP) speaker component, ensuring zero mechanical interference during ejection in collaboration with tier-1 supplier <strong>Simoldes Plastics</strong>.</p>
+      <h4>Objective &amp; Collaboration Scope[cite: 1]</h4>
+      <p>Designed a complete polymer injection mold in Siemens NX for an automotive Polypropylene (PP) speaker component, ensuring zero mechanical interference during ejection in collaboration with tier-1 supplier <strong>Simoldes Plastics</strong>[cite: 1].</p>
     </div>
 
     <div class="gallery-grid">
       <div class="gallery-card">
-        <img src="/images/molde.jpg" alt="Siemens NX Mold Layout" />
-        <p class="caption">Siemens NX Mold Assembly (DME 2A Base)</p>
+        <img src="/images/mold-drawing.png" alt="Siemens NX Mold Layout" />
+        <p class="caption">Siemens NX Mold Assembly (DME 2A Base)[cite: 1]</p>
       </div>
     </div>
 
-    <h3 style="color: var(--text-primary); font-size: 1.1rem; margin-top: 24px;">Methodology &amp; CAD Subsystems</h3>
+    <h3 style="color: var(--text-primary); font-size: 1.1rem; margin-top: 24px;">Methodology &amp; CAD Subsystems[cite: 1]</h3>
     <ul style="color: var(--text-secondary); line-height: 1.8; padding-left: 20px;">
-      <li><strong>Surface &amp; Region Modeling:</strong> Executed Patch Surfaces, Isocline checks, Check Regions, and Trim Region operations in Siemens NX.</li>
-      <li><strong>Dynamic Mechanics:</strong> Integrated <strong>5 angled lifters set at an 8&deg; inclination</strong> to resolve deep interior undercuts.</li>
-      <li><strong>Side-Action Components:</strong> Configured single and dual cam-pin sliders with plungers for side geometries.</li>
-      <li><strong>Ejection &amp; Tooling Base:</strong> Standardized DME 2A tool base equipped with straight ejector sleeves.</li>
-      <li><strong>Thermal &amp; Flow Management:</strong> Designed 8 mm cooling circuits with internal baffles in high-heat core zones to reduce cycle times; standardized DME pipe/extension plugs for leak prevention.</li>
-      <li><strong>Software Workaround:</strong> Resolved Siemens NX memory violation crashes by prioritizing theoretical runner sizing (8 mm) and 2D tool detailing.</li>
+      <li><strong>Surface &amp; Region Modeling:</strong> Executed Patch Surfaces, Isocline checks, Check Regions, and Trim Region operations in Siemens NX[cite: 1].</li>
+      <li><strong>Dynamic Mechanics:</strong> Integrated <strong>5 angled lifters set at an 8&deg; inclination</strong> to resolve deep interior undercuts[cite: 1].</li>
+      <li><strong>Side-Action Components:</strong> Configured single and dual cam-pin sliders with plungers for side geometries[cite: 1].</li>
+      <li><strong>Ejection &amp; Tooling Base:</strong> Standardized DME 2A tool base equipped with straight ejector sleeves[cite: 1].</li>
+      <li><strong>Thermal &amp; Flow Management:</strong> Designed 8 mm cooling circuits with internal baffles in high-heat core zones to reduce cycle times; standardized DME pipe/extension plugs for leak prevention[cite: 1].</li>
+      <li><strong>Software Workaround:</strong> Resolved Siemens NX memory violation crashes by prioritizing theoretical runner sizing (8 mm) and 2D tool detailing[cite: 1].</li>
     </ul>
   </div>
 
@@ -756,13 +743,6 @@ permalink: /
     <span class="pill-tag">Abaqus FEA &amp; Taguchi DOE</span>
     <h2 style="margin-top: 16px; color: var(--text-primary); font-size: 1.6rem;">Brass Drawing Process FEA Optimisation</h2>
     <hr style="border: 0; border-top: 1px solid var(--border-subtle); margin: 24px 0;" />
-
-    <div class="gallery-grid">
-      <div class="gallery-card">
-        <img src="/images/abaqus.png" alt="Abaqus FEA Stress Plot" />
-        <p class="caption">Von Mises Stress Contour Plot</p>
-      </div>
-    </div>
 
     <h3 style="color: var(--text-primary); font-size: 1.1rem; margin-top: 24px;">Numerical Analysis</h3>
     <p style="color: var(--text-secondary);">Nonlinear finite element simulation using <strong>Abaqus/Explicit</strong> combined with Taguchi orthogonal arrays to model multi-pass deep drawing of brass alloys.</p>
@@ -788,7 +768,7 @@ permalink: /
 
     <div class="gallery-grid">
       <div class="gallery-card">
-        <img src="/images/uniraid.jpg" alt="VW Golf II GTD Finishers" />
+        <img src="/images/uniraid-car.png" alt="VW Golf II GTD Finishers" />
         <p class="caption">VW Golf II GTD - Morocco Rally Finishers</p>
       </div>
     </div>
