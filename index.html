@@ -196,7 +196,7 @@ permalink: /
   }
 
   .metric-card .value {
-    font-size: 2rem;
+    font-size: 1.85rem;
     font-weight: 800;
     letter-spacing: -0.03em;
     color: var(--text-primary);
@@ -284,14 +284,11 @@ permalink: /
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
   }
 
-  /* Glitch-Proof Image Canvas Container */
   .card-media-wrap {
     width: 100%;
     height: 220px;
     overflow: hidden;
-    background-color: #e2e8f0;
-    background-size: cover;
-    background-position: center;
+    background-color: #f1f5f9;
     border-bottom: 1px solid var(--border-subtle);
     position: relative;
   }
@@ -473,7 +470,7 @@ permalink: /
     background: #ffffff;
     border-left: 1px solid var(--border-subtle);
     z-index: 2001;
-    padding: 48px;
+    padding: 48px 32px;
     box-sizing: border-box;
     overflow-y: auto;
     transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
@@ -507,6 +504,13 @@ permalink: /
     border: 1px solid var(--border-subtle);
     border-radius: 10px;
     margin-top: 16px;
+  }
+
+  /* Responsive Fixes */
+  @media (max-width: 768px) {
+    nav.navbar { padding: 16px 20px; }
+    .hero-title { font-size: 2.5rem; }
+    .drawer-panel { max-width: 100vw; padding: 32px 20px; }
   }
 
   /* --- Footer --- */
@@ -558,7 +562,7 @@ permalink: /
       <div class="label">Net Payback Savings (TME)[cite: 1]</div>
     </div>
     <div class="metric-card">
-      <div class="value">5 Lifters ($8^\circ$)</div>
+      <div class="value">5 Lifters (8&deg;)</div>
       <div class="label">Simoldes PP Mold Tooling[cite: 1]</div>
     </div>
     <div class="metric-card">
@@ -588,7 +592,7 @@ permalink: /
     <!-- Card 1: Toyota -->
     <div class="project-card" data-category="oem fea" onclick="openDrawer('drawer-toyota')">
       <div class="card-media-wrap">
-        <img src="images/toyota.jpg" alt="Toyota environmental control system architecture" onerror="this.style.display='none'" />
+        <img src="/images/toyota.jpg" alt="Toyota environmental control system architecture" />
       </div>
       <div class="card-body">
         <div class="tag-group">
@@ -605,7 +609,7 @@ permalink: /
     <!-- Card 2: Mold -->
     <div class="project-card" data-category="tooling" onclick="openDrawer('drawer-mold')">
       <div class="card-media-wrap">
-        <img src="images/molde.jpg" alt="Siemens NX injection mold CAD design" onerror="this.style.display='none'" />
+        <img src="/images/molde.jpg" alt="Siemens NX injection mold CAD design" />
       </div>
       <div class="card-body">
         <div class="tag-group">
@@ -614,7 +618,7 @@ permalink: /
           <span class="pill-tag">5 Angled Lifters</span>
         </div>
         <h3 class="card-title">Automotive Speaker Polypropylene Injection Mold</h3>
-        <p class="card-summary">Complete polymer injection tool in Siemens NX[cite: 1]. Features 5 angled lifters ($8^\circ$), single/dual cam-pin sliders, DME 2A base, and 8mm cooling circuits[cite: 1].</p>
+        <p class="card-summary">Complete polymer injection tool in Siemens NX[cite: 1]. Features 5 angled lifters (8&deg;), single/dual cam-pin sliders, DME 2A base, and 8mm cooling circuits[cite: 1].</p>
         <span class="card-action">Inspect Case Study &rarr;</span>
       </div>
     </div>
@@ -622,7 +626,7 @@ permalink: /
     <!-- Card 3: Abaqus -->
     <div class="project-card" data-category="fea" onclick="openDrawer('drawer-abaqus')">
       <div class="card-media-wrap">
-        <img src="images/abaqus.png" alt="Abaqus FEA simulation results" onerror="this.style.display='none'" />
+        <img src="/images/abaqus.png" alt="Abaqus FEA simulation results" />
       </div>
       <div class="card-body">
         <div class="tag-group">
@@ -639,7 +643,7 @@ permalink: /
     <!-- Card 4: UniRaid -->
     <div class="project-card" data-category="oem tooling" onclick="openDrawer('drawer-uniraid')">
       <div class="card-media-wrap">
-        <img src="images/uniraid.jpg" alt="VW Golf II GTD UniRaid vehicle" onerror="this.style.display='none'" />
+        <img src="/images/uniraid.jpg" alt="VW Golf II GTD UniRaid vehicle" />
       </div>
       <div class="card-body">
         <div class="tag-group">
@@ -667,7 +671,7 @@ permalink: /
     <div class="skills-grid">
       <div class="skill-group">
         <h4>CAD &amp; Tooling Design</h4>
-        <p>Siemens NX (Patch Surfaces, Isocline, Check/Trim Regions)[cite: 1], DME 2A Mold Bases[cite: 1], Angled Lifters ($8^\circ$)[cite: 1], Cam-Pin Sliders[cite: 1], Ejector Sleeves[cite: 1], Conformal Cooling Baffles[cite: 1], Polypropylene (PP) Rheology[cite: 1]</p>
+        <p>Siemens NX (Patch Surfaces, Isocline, Check/Trim Regions)[cite: 1], DME 2A Mold Bases[cite: 1], Angled Lifters (8&deg;)[cite: 1], Cam-Pin Sliders[cite: 1], Ejector Sleeves[cite: 1], Conformal Cooling Baffles[cite: 1], Polypropylene (PP) Rheology[cite: 1]</p>
       </div>
       <div class="skill-group">
         <h4>Simulation &amp; CAE</h4>
@@ -702,9 +706,9 @@ permalink: /
     </div>
 
     <h3 style="color: var(--text-primary); font-size: 1.1rem; margin-top: 24px;">Automation Schematic Viewer</h3>
-    <iframe class="pdf-viewer-box" src="images/Sch_Automation.drawio.pdf"></iframe>
+    <iframe class="pdf-viewer-box" src="/images/Sch_Automation.drawio.pdf"></iframe>
     <p style="margin-top: 8px;">
-      <a href="images/Sch_Automation.drawio.pdf" target="_blank" style="color: var(--accent-blue); text-decoration: none; font-weight: 700; font-size: 0.88rem;">Open Vector PDF Schematic in Full Window &rarr;</a>
+      <a href="/images/Sch_Automation.drawio.pdf" target="_blank" style="color: var(--accent-blue); text-decoration: none; font-weight: 700; font-size: 0.88rem;">Open Vector PDF Schematic in Full Window &rarr;</a>
     </p>
 
     <h3 style="color: var(--text-primary); font-size: 1.1rem; margin-top: 24px;">Control Architecture &amp; ATEX Safety[cite: 1]</h3>
@@ -730,7 +734,7 @@ permalink: /
 
     <div class="gallery-grid">
       <div class="gallery-card">
-        <img src="images/molde.jpg" alt="Siemens NX Mold Layout" onerror="this.style.display='none'" />
+        <img src="/images/molde.jpg" alt="Siemens NX Mold Layout" />
         <p class="caption">Siemens NX Mold Assembly (DME 2A Base)[cite: 1]</p>
       </div>
     </div>
@@ -755,7 +759,7 @@ permalink: /
 
     <div class="gallery-grid">
       <div class="gallery-card">
-        <img src="images/abaqus.png" alt="Abaqus FEA Stress Plot" onerror="this.style.display='none'" />
+        <img src="/images/abaqus.png" alt="Abaqus FEA Stress Plot" />
         <p class="caption">Von Mises Stress Contour Plot</p>
       </div>
     </div>
@@ -778,13 +782,13 @@ permalink: /
     <hr style="border: 0; border-top: 1px solid var(--border-subtle); margin: 24px 0;" />
 
     <div class="callout-box">
-      <h4>Full Venture Ownership (€6,000+ Budget)</h4>
-      <p>Managed the entire lifecycle of a 3,000 km Morocco rally team—raising **€6,000+ in corporate sponsorships**, directing financial accounting, managing supply chain logistics, executing mechanical vehicle prep, and serving as driver/co-driver.</p>
+      <h4>Full Venture Ownership (&euro;6,000+ Budget)</h4>
+      <p>Managed the entire lifecycle of a 3,000 km Morocco rally team—raising **&euro;6,000+ in corporate sponsorships**, directing financial accounting, managing supply chain logistics, executing mechanical vehicle prep, and serving as driver/co-driver.</p>
     </div>
 
     <div class="gallery-grid">
       <div class="gallery-card">
-        <img src="images/uniraid.jpg" alt="VW Golf II GTD Finishers" onerror="this.style.display='none'" />
+        <img src="/images/uniraid.jpg" alt="VW Golf II GTD Finishers" />
         <p class="caption">VW Golf II GTD - Morocco Rally Finishers</p>
       </div>
     </div>
@@ -837,9 +841,11 @@ permalink: /
     document.getElementById('drawer-overlay').classList.add('active');
     document.querySelectorAll('.drawer-panel').forEach(p => p.style.display = 'none');
     document.getElementById(id).style.display = 'block';
+    document.body.style.overflow = 'hidden'; // Locks body scroll when modal is open
   }
 
   function closeAllDrawers() {
     document.getElementById('drawer-overlay').classList.remove('active');
+    document.body.style.overflow = 'auto'; // Restores body scroll
   }
 </script>
