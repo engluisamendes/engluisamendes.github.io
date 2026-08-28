@@ -6,6 +6,19 @@ permalink: /
 ---
 
 <style>
+  /* --- Hide Jekyll / Theme Default Header Injectors --- */
+  header.site-header,
+  .site-header,
+  .site-title,
+  .wrapper > header,
+  body > header:first-child {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
   /* --- Editorial Engineering Design System --- */
   :root {
     --bg-main: #fafafa;
@@ -27,7 +40,7 @@ permalink: /
   body {
     background-color: var(--bg-main);
     color: var(--text-primary);
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", -apple-system, sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
@@ -43,11 +56,11 @@ permalink: /
     color: var(--text-muted);
   }
 
-  /* --- Symmetric Glass Navbar --- */
-  nav.navbar {
+  /* --- Top Sticky Glass Navbar --- */
+  nav.custom-navbar {
     position: sticky;
     top: 0;
-    background: rgba(250, 250, 250, 0.9);
+    background: rgba(250, 250, 250, 0.92);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--border-subtle);
@@ -56,43 +69,45 @@ permalink: /
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 100%;
+    width: 100%;
   }
 
-  nav.navbar .brand { font-weight: 800; font-size: 1.05rem; }
-  nav.navbar .brand span { color: var(--text-muted); font-weight: 400; }
-  nav.navbar .nav-links { display: flex; gap: 32px; }
-  nav.navbar .nav-links a {
+  nav.custom-navbar .brand { font-weight: 800; font-size: 1.05rem; letter-spacing: -0.02em; }
+  nav.custom-navbar .brand span { color: var(--text-muted); font-weight: 400; }
+  nav.custom-navbar .nav-links { display: flex; gap: 32px; }
+  nav.custom-navbar .nav-links a {
     color: var(--text-secondary);
     text-decoration: none;
     font-size: 0.88rem;
     font-weight: 600;
-    transition: color 0.2s;
+    transition: color 0.2s ease;
   }
-  nav.navbar a:hover { color: var(--text-primary); }
+  nav.custom-navbar a:hover { color: var(--text-primary); }
 
-  /* --- Symmetric Hero Layout --- */
+  /* --- Symmetric Hero Section --- */
   .hero-container {
     max-width: 1080px;
     margin: 0 auto;
-    padding: 80px 24px 50px 24px;
+    padding: 70px 24px 40px 24px;
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
+    grid-template-columns: 1.25fr 0.75fr;
     gap: 48px;
     align-items: center;
   }
 
   .hero-avatar-wrap {
     width: 100%;
+    max-width: 260px;
     aspect-ratio: 1 / 1;
     border-radius: 20px;
     overflow: hidden;
     border: 1px solid var(--border-subtle);
     background-color: var(--bg-accent);
     box-shadow: 0 12px 32px rgba(15, 23, 42, 0.06);
+    justify-self: end;
   }
 
-  .hero-avatar-wrap img { width: 100%; height: 100%; object-fit: cover; }
+  .hero-avatar-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
   .status-badge {
     display: inline-flex;
@@ -135,7 +150,7 @@ permalink: /
     font-weight: 600;
     font-size: 0.9rem;
     text-decoration: none;
-    transition: transform 0.2s;
+    transition: transform 0.2s ease;
   }
   .btn-primary:hover { transform: translateY(-2px); }
 
@@ -148,7 +163,9 @@ permalink: /
     font-weight: 600;
     font-size: 0.9rem;
     text-decoration: none;
+    transition: border-color 0.2s ease;
   }
+  .btn-secondary:hover { border-color: var(--border-dark); }
 
   /* --- Symmetric Metrics Ribbon --- */
   .metrics-ribbon-wrapper { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
@@ -165,13 +182,13 @@ permalink: /
     border: 1px solid var(--border-subtle);
     border-radius: 12px;
     padding: 22px;
-    transition: border-color 0.2s;
+    transition: border-color 0.2s ease;
   }
   .metric-card:hover { border-color: var(--border-dark); }
   .metric-card .value { font-size: 1.8rem; font-weight: 800; letter-spacing: -0.03em; }
   .metric-card .label { font-size: 0.82rem; color: var(--text-muted); font-weight: 500; margin-top: 4px; }
 
-  /* --- Section Header & Symmetric Grid --- */
+  /* --- Section Wrapper & Cards --- */
   .section-wrapper { max-width: 1080px; margin: 0 auto; padding: 70px 24px 80px 24px; }
   
   .section-header-clean {
@@ -192,11 +209,11 @@ permalink: /
     font-size: 0.85rem;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.2s;
+    transition: all 0.2s ease;
   }
   .filter-chip.active { background: var(--text-primary); color: #ffffff; border-color: var(--text-primary); }
 
-  /* Perfect 3-Column Symmetric Grid */
+  /* 3-Column Symmetric Grid */
   .portfolio-grid-symmetric {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -400,7 +417,7 @@ permalink: /
     .skills-grid-visual { grid-template-columns: repeat(2, 1fr); }
     .metrics-ribbon { grid-template-columns: repeat(2, 1fr); }
     .hero-container { grid-template-columns: 1fr; text-align: center; }
-    .hero-avatar-wrap { width: 180px; margin: 0 auto; }
+    .hero-avatar-wrap { width: 180px; margin: 0 auto; justify-self: center; }
     .cta-group { justify-content: center; }
     .section-header-clean { flex-direction: column; align-items: flex-start; gap: 16px; }
   }
@@ -409,14 +426,14 @@ permalink: /
     .portfolio-grid-symmetric { grid-template-columns: 1fr; }
     .skills-grid-visual { grid-template-columns: 1fr; }
     .metrics-ribbon { grid-template-columns: 1fr; }
-    nav.navbar { padding: 16px 20px; }
+    nav.custom-navbar { padding: 16px 20px; }
   }
 
   footer { border-top: 1px solid var(--border-subtle); padding: 60px 24px; text-align: center; color: var(--text-muted); font-size: 0.9rem; background: #ffffff; }
 </style>
 
 <!-- Clean Navigation -->
-<nav class="navbar">
+<nav class="custom-navbar">
   <div class="brand">Luísa Mendes <span>| Portfolio</span></div>
   <div class="nav-links">
     <a href="#experience">Engineering Work</a>
@@ -455,15 +472,15 @@ permalink: /
   <div class="metrics-ribbon">
     <div class="metric-card">
       <div class="value">5.96 → 0</div>
-      <div class="label">Defects/Unit Target (Toyota)</div>
+      <div class="label">Defects/Unit Target (Toyota)[cite: 1]</div>
     </div>
     <div class="metric-card">
       <div class="value">&euro;2,726/yr</div>
-      <div class="label">Net Payback Savings (TME)</div>
+      <div class="label">Net Payback Savings (TME)[cite: 1]</div>
     </div>
     <div class="metric-card">
       <div class="value">5 Lifters (8&deg;)</div>
-      <div class="label">Simoldes PP Mold Tooling</div>
+      <div class="label">Simoldes PP Mold Tooling[cite: 1]</div>
     </div>
     <div class="metric-card">
       <div class="value">&euro;6,000+</div>
@@ -505,7 +522,7 @@ permalink: /
           <span class="pill-tag">Laney U-Charts</span>
         </div>
         <h3 class="card-title">Automatic Climate Control For Painting Booth</h3>
-        <p class="card-summary">Industry 4.0 climate retrofit for Land Cruiser 70 line (14 units/day). Analyzed baseline defects via Laney U-Charts, FMEA, and Simscape dynamics.</p>
+        <p class="card-summary">Industry 4.0 climate retrofit for Land Cruiser 70 line (14 units/day)[cite: 1]. Analyzed baseline defects via Laney U-Charts, FMEA, and Simscape dynamics[cite: 1].</p>
         <span class="card-action">Review Technical Details &rarr;</span>
       </div>
     </div>
@@ -524,7 +541,7 @@ permalink: /
           <span class="pill-tag">Polypropylene</span>
         </div>
         <h3 class="card-title">Automotive Speaker Polypropylene Mold</h3>
-        <p class="card-summary">Complete polymer injection tool in Siemens NX. Features 5 angled lifters (8&deg;), single/dual cam-pin sliders, DME 2A base, and 8mm cooling circuits.</p>
+        <p class="card-summary">Complete polymer injection tool in Siemens NX[cite: 1]. Features 5 angled lifters (8&deg;), single/dual cam-pin sliders, DME 2A base, and 8mm cooling circuits[cite: 1].</p>
         <span class="card-action">Review Technical Details &rarr;</span>
       </div>
     </div>
@@ -634,7 +651,7 @@ permalink: /
     <div class="mono-label">Master's Thesis · Toyota Caetano Portugal · 2026</div>
     <h2 style="margin-top: 8px; font-size: 2.2rem; font-weight: 800; letter-spacing: -0.02em;">Automatic Climate Control For Painting Booth</h2>
     <p style="color: var(--text-secondary); font-size: 1.05rem; margin-top: 8px;">
-      Development of an Industry 4.0 climate control retrofit for Land Cruiser 70 assembly line (14 units/day)—from root-cause defect diagnostics to physical Simscape model validation.
+      Development of an Industry 4.0 climate control retrofit for Land Cruiser 70 assembly line (14 units/day)[cite: 1]—from root-cause defect diagnostics to physical Simscape model validation.
     </p>
 
     <!-- Split Hero Section -->
@@ -642,18 +659,18 @@ permalink: /
       <div class="stat-highlight">
         <div class="mono-label" style="margin-bottom: 8px; color: var(--text-secondary);">NET PAYBACK</div>
         <div class="big-number">&euro;2,726/yr</div>
-        <div class="big-caption">Direct CAPEX/OPEX net savings presented directly to Toyota Motor Europe (TME) stakeholders.</div>
+        <div class="big-caption">Direct CAPEX/OPEX net savings presented directly to Toyota Motor Europe (TME) stakeholders[cite: 1].</div>
       </div>
       <div class="stat-takeaways">
         <div class="takeaway-item">
           <div class="takeaway-num">01</div>
           <div class="takeaway-title">Statistical Defect Diagnostics &amp; SPC</div>
-          <p class="takeaway-desc">Evaluated a baseline defect rate of 5.96 defects/unit (100% repair rate) using Laney U-Charts, FMEA, Gemba, Genchi Genbutsu, and 5 Whys. Proved statistical correlation between paint sagging and temperature fluctuation via Pearson analysis.</p>
+          <p class="takeaway-desc">Evaluated a baseline defect rate of 5.96 defects/unit (100% repair rate) using Laney U-Charts, FMEA, Gemba, Genchi Genbutsu, and 5 Whys[cite: 1]. Proved statistical correlation between paint sagging and temperature fluctuation via Pearson analysis[cite: 1].</p>
         </div>
         <div class="takeaway-item">
           <div class="takeaway-num">02</div>
           <div class="takeaway-title">Automation &amp; Explosion-Proof ATEX Safety</div>
-          <p class="takeaway-desc">Architected an automated PLC/HMI control strategy (Siemens ET200 + VFD Pump) integrating a strict 55% RH safety threshold to ensure ATEX safety compliance inside spray booth environments.</p>
+          <p class="takeaway-desc">Architected an automated PLC/HMI control strategy (Siemens ET200 + VFD Pump) integrating a strict 55% RH safety threshold to ensure ATEX safety compliance inside spray booth environments[cite: 1].</p>
         </div>
       </div>
     </div>
@@ -665,7 +682,7 @@ permalink: /
         <div class="workflow-step-num">01</div>
         <div class="workflow-step-title">Physical Dynamic Modeling (Simscape)</div>
         <div class="workflow-step-desc">
-          Constructed a physical dynamic simulation model in MATLAB Simscape to predict thermal and humidity transients across dual Air Supply Units (ASU), delivering actionable technical specifications and predictive maintenance roadmaps.
+          Constructed a physical dynamic simulation model in MATLAB Simscape to predict thermal and humidity transients across dual Air Supply Units (ASU)[cite: 1], delivering actionable technical specifications and predictive maintenance roadmaps[cite: 1].
         </div>
         <div class="workflow-img-wrap">
           <img src="/images/toyota-diagram.png" alt="Toyota Paint Booth Automation Architecture" />
@@ -681,7 +698,7 @@ permalink: /
     <div class="mono-label">Tooling Engineering · Simoldes Group Collaboration</div>
     <h2 style="margin-top: 8px; font-size: 2.2rem; font-weight: 800; letter-spacing: -0.02em;">Polypropylene Injection Mold Tool Design</h2>
     <p style="color: var(--text-secondary); font-size: 1.05rem; margin-top: 8px;">
-      Engineering design of a complete polymer injection mold in Siemens NX for an automotive Polypropylene (PP) speaker component, ensuring zero mechanical interference during dynamic ejection.
+      Engineering design of a complete polymer injection mold in Siemens NX for an automotive Polypropylene (PP) speaker component, ensuring zero mechanical interference during dynamic ejection[cite: 1].
     </p>
 
     <!-- Split Hero Section -->
@@ -689,18 +706,18 @@ permalink: /
       <div class="stat-highlight">
         <div class="mono-label" style="margin-bottom: 8px; color: var(--text-secondary);">TOOL MECHANICS</div>
         <div class="big-number">5 Lifters</div>
-        <div class="big-caption">Configured 5 angled lifters set at an 8&deg; inclination to successfully release interior undercut features.</div>
+        <div class="big-caption">Configured 5 angled lifters set at an 8&deg; inclination to successfully release interior undercut features[cite: 1].</div>
       </div>
       <div class="stat-takeaways">
         <div class="takeaway-item">
           <div class="takeaway-num">01</div>
           <div class="takeaway-title">Surface &amp; Subsystem Modeling</div>
-          <p class="takeaway-desc">Executed Patch Surfaces, Isocline checks, Check Regions, and Trim Region modeling in Siemens NX. Integrated single and dual cam-pin sliders with plungers for side-action geometries.</p>
+          <p class="takeaway-desc">Executed Patch Surfaces, Isocline checks, Check Regions, and Trim Region modeling in Siemens NX[cite: 1]. Integrated single and dual cam-pin sliders with plungers for side-action geometries[cite: 1].</p>
         </div>
         <div class="takeaway-item">
           <div class="takeaway-num">02</div>
           <div class="takeaway-title">Standardized Tool Base &amp; Thermal Control</div>
-          <p class="takeaway-desc">Standardized a DME 2A tool base with straight ejector sleeves. Designed 8 mm cooling channels with internal baffles in high-heat core zones to optimize cycle time and manage Polypropylene rheology/shrinkage.</p>
+          <p class="takeaway-desc">Standardized a DME 2A tool base with straight ejector sleeves[cite: 1]. Designed 8 mm cooling channels with internal baffles in high-heat core zones to optimize cycle time and manage Polypropylene rheology/shrinkage[cite: 1].</p>
         </div>
       </div>
     </div>
@@ -712,11 +729,11 @@ permalink: /
         <div class="workflow-step-num">01</div>
         <div class="workflow-step-title">Rheology Analysis &amp; Solver Optimization</div>
         <div class="workflow-step-desc">
-          Evaluated polymer filling behavior and gate locations to eliminate short shots and weld lines. Overcame Siemens NX memory violation solver crashes by prioritizing theoretical 8 mm runner sizing and 2D tool detailing.
+          Evaluated polymer filling behavior and gate locations to eliminate short shots and weld lines[cite: 1]. Overcame Siemens NX memory violation solver crashes by prioritizing theoretical 8 mm runner sizing and 2D tool detailing[cite: 1].
         </div>
         <div class="workflow-img-wrap">
           <img src="/images/mold-drawing.png" alt="Siemens NX Mold Layout" />
-          <div class="workflow-img-caption">Siemens NX Mold Assembly (DME 2A Base &amp; Internal Kinematic Subsystems)</div>
+          <div class="workflow-img-caption">Siemens NX Mold Assembly (DME 2A Base &amp; Internal Kinematic Subsystems)[cite: 1]</div>
         </div>
       </div>
     </div>
