@@ -6,7 +6,7 @@ permalink: /
 ---
 
 <style>
-  /* --- Hide Jekyll / Theme Default Header Injectors --- */
+  /* --- Global Reset & Hide Theme Header Overrides --- */
   header.site-header,
   .site-header,
   .site-title,
@@ -19,7 +19,7 @@ permalink: /
     margin: 0 !important;
   }
 
-  /* --- Editorial Engineering Design System --- */
+  /* --- Design Tokens --- */
   :root {
     --bg-main: #fafafa;
     --bg-card: #ffffff;
@@ -56,7 +56,7 @@ permalink: /
     color: var(--text-muted);
   }
 
-  /* --- Top Sticky Glass Navbar --- */
+  /* --- Navigation Bar --- */
   nav.custom-navbar {
     position: sticky;
     top: 0;
@@ -72,9 +72,22 @@ permalink: /
     width: 100%;
   }
 
-  nav.custom-navbar .brand { font-weight: 800; font-size: 1.05rem; letter-spacing: -0.02em; }
-  nav.custom-navbar .brand span { color: var(--text-muted); font-weight: 400; }
-  nav.custom-navbar .nav-links { display: flex; gap: 32px; }
+  nav.custom-navbar .brand { 
+    font-weight: 800; 
+    font-size: 1.05rem; 
+    letter-spacing: -0.02em; 
+  }
+  
+  nav.custom-navbar .brand span { 
+    color: var(--text-muted); 
+    font-weight: 400; 
+  }
+
+  nav.custom-navbar .nav-links { 
+    display: flex; 
+    gap: 32px; 
+  }
+
   nav.custom-navbar .nav-links a {
     color: var(--text-secondary);
     text-decoration: none;
@@ -82,9 +95,12 @@ permalink: /
     font-weight: 600;
     transition: color 0.2s ease;
   }
-  nav.custom-navbar a:hover { color: var(--text-primary); }
 
-  /* --- Symmetric Hero Section --- */
+  nav.custom-navbar a:hover { 
+    color: var(--text-primary); 
+  }
+
+  /* --- Hero Layout --- */
   .hero-container {
     max-width: 1080px;
     margin: 0 auto;
@@ -107,7 +123,12 @@ permalink: /
     justify-self: end;
   }
 
-  .hero-avatar-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .hero-avatar-wrap img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    display: block; 
+  }
 
   .status-badge {
     display: inline-flex;
@@ -123,7 +144,12 @@ permalink: /
     margin-bottom: 20px;
   }
 
-  .status-badge .dot { width: 7px; height: 7px; background-color: var(--accent-emerald); border-radius: 50%; }
+  .status-badge .dot { 
+    width: 7px; 
+    height: 7px; 
+    background-color: var(--accent-emerald); 
+    border-radius: 50%; 
+  }
 
   .hero-title {
     font-size: 3rem;
@@ -140,7 +166,11 @@ permalink: /
     margin-bottom: 30px;
   }
 
-  .cta-group { display: flex; gap: 16px; flex-wrap: wrap; }
+  .cta-group { 
+    display: flex; 
+    gap: 16px; 
+    flex-wrap: wrap; 
+  }
 
   .btn-primary {
     background: var(--text-primary);
@@ -152,7 +182,10 @@ permalink: /
     text-decoration: none;
     transition: transform 0.2s ease;
   }
-  .btn-primary:hover { transform: translateY(-2px); }
+
+  .btn-primary:hover { 
+    transform: translateY(-2px); 
+  }
 
   .btn-secondary {
     background: #ffffff;
@@ -165,10 +198,18 @@ permalink: /
     text-decoration: none;
     transition: border-color 0.2s ease;
   }
-  .btn-secondary:hover { border-color: var(--border-dark); }
 
-  /* --- Symmetric Metrics Ribbon --- */
-  .metrics-ribbon-wrapper { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+  .btn-secondary:hover { 
+    border-color: var(--border-dark); 
+  }
+
+  /* --- Metrics Ribbon --- */
+  .metrics-ribbon-wrapper { 
+    max-width: 1080px; 
+    margin: 0 auto; 
+    padding: 0 24px; 
+  }
+
   .metrics-ribbon {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -184,12 +225,30 @@ permalink: /
     padding: 22px;
     transition: border-color 0.2s ease;
   }
-  .metric-card:hover { border-color: var(--border-dark); }
-  .metric-card .value { font-size: 1.8rem; font-weight: 800; letter-spacing: -0.03em; }
-  .metric-card .label { font-size: 0.82rem; color: var(--text-muted); font-weight: 500; margin-top: 4px; }
 
-  /* --- Section Wrapper & Cards --- */
-  .section-wrapper { max-width: 1080px; margin: 0 auto; padding: 70px 24px 80px 24px; }
+  .metric-card:hover { 
+    border-color: var(--border-dark); 
+  }
+
+  .metric-card .value { 
+    font-size: 1.8rem; 
+    font-weight: 800; 
+    letter-spacing: -0.03em; 
+  }
+
+  .metric-card .label { 
+    font-size: 0.82rem; 
+    color: var(--text-muted); 
+    font-weight: 500; 
+    margin-top: 4px; 
+  }
+
+  /* --- Portfolio Showcase Section --- */
+  .section-wrapper { 
+    max-width: 1080px; 
+    margin: 0 auto; 
+    padding: 70px 24px 80px 24px; 
+  }
   
   .section-header-clean {
     display: flex;
@@ -198,7 +257,11 @@ permalink: /
     margin-bottom: 36px;
   }
 
-  .filter-bar { display: flex; gap: 10px; flex-wrap: wrap; }
+  .filter-bar { 
+    display: flex; 
+    gap: 10px; 
+    flex-wrap: wrap; 
+  }
 
   .filter-chip {
     background: #ffffff;
@@ -211,9 +274,13 @@ permalink: /
     cursor: pointer;
     transition: all 0.2s ease;
   }
-  .filter-chip.active { background: var(--text-primary); color: #ffffff; border-color: var(--text-primary); }
 
-  /* 3-Column Symmetric Grid */
+  .filter-chip.active { 
+    background: var(--text-primary); 
+    color: #ffffff; 
+    border-color: var(--text-primary); 
+  }
+
   .portfolio-grid-symmetric {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -246,8 +313,16 @@ permalink: /
     position: relative;
   }
 
-  .card-media-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
-  .project-card:hover .card-media-wrap img { transform: scale(1.05); }
+  .card-media-wrap img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    transition: transform 0.5s ease; 
+  }
+
+  .project-card:hover .card-media-wrap img { 
+    transform: scale(1.05); 
+  }
 
   .overlay-metric {
     position: absolute;
@@ -262,8 +337,20 @@ permalink: /
     border-radius: 20px;
   }
 
-  .card-body { padding: 24px; display: flex; flex-direction: column; flex-grow: 1; }
-  .tag-group { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
+  .card-body { 
+    padding: 24px; 
+    display: flex; 
+    flex-direction: column; 
+    flex-grow: 1; 
+  }
+
+  .tag-group { 
+    display: flex; 
+    gap: 6px; 
+    flex-wrap: wrap; 
+    margin-bottom: 12px; 
+  }
+
   .pill-tag {
     font-size: 0.7rem;
     font-weight: 700;
@@ -274,9 +361,29 @@ permalink: /
     border: 1px solid var(--border-subtle);
   }
 
-  .card-title { font-size: 1.25rem; font-weight: 800; margin: 0 0 10px 0; line-height: 1.3; }
-  .card-summary { font-size: 0.9rem; color: var(--text-secondary); flex-grow: 1; line-height: 1.5; margin-bottom: 20px; }
-  .card-action { font-size: 0.85rem; font-weight: 700; color: var(--accent-blue); display: flex; align-items: center; gap: 6px; }
+  .card-title { 
+    font-size: 1.25rem; 
+    font-weight: 800; 
+    margin: 0 0 10px 0; 
+    line-height: 1.3; 
+  }
+
+  .card-summary { 
+    font-size: 0.9rem; 
+    color: var(--text-secondary); 
+    flex-grow: 1; 
+    line-height: 1.5; 
+    margin-bottom: 20px; 
+  }
+
+  .card-action { 
+    font-size: 0.85rem; 
+    font-weight: 700; 
+    color: var(--accent-blue); 
+    display: flex; 
+    align-items: center; 
+    gap: 6px; 
+  }
 
   /* --- Technical Competencies Section --- */
   .skills-grid-visual {
@@ -309,15 +416,26 @@ permalink: /
     margin: 8px 0 16px 0;
   }
 
-  .skill-badge-cloud { display: flex; flex-wrap: wrap; gap: 6px; }
+  .skill-badge-cloud { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 8px; 
+    align-items: center;
+  }
+
   .skill-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.2;
     font-size: 0.75rem;
     font-weight: 600;
-    padding: 5px 10px;
-    border-radius: 6px;
+    padding: 6px 12px;
+    border-radius: 20px;
     background: var(--bg-accent);
     color: var(--text-primary);
     border: 1px solid var(--border-subtle);
+    white-space: nowrap;
   }
 
   .skill-badge.highlight {
@@ -341,7 +459,11 @@ permalink: /
     opacity: 0;
     transition: opacity 0.3s ease;
   }
-  .drawer-overlay.active { display: block; opacity: 1; }
+
+  .drawer-overlay.active { 
+    display: block; 
+    opacity: 1; 
+  }
 
   .drawer-panel {
     position: fixed;
@@ -359,7 +481,10 @@ permalink: /
     transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     box-shadow: -10px 0 40px rgba(0, 0, 0, 0.15);
   }
-  .drawer-panel.active { right: 0; }
+
+  .drawer-panel.active { 
+    right: 0; 
+  }
 
   .close-btn {
     background: var(--bg-accent);
@@ -379,6 +504,7 @@ permalink: /
     border-bottom: 1px solid var(--border-subtle);
     margin: 32px 0;
   }
+
   .stat-highlight {
     background: var(--bg-accent);
     padding: 32px 24px;
@@ -386,21 +512,83 @@ permalink: /
     flex-direction: column;
     justify-content: center;
   }
-  .stat-highlight .big-number { font-size: 2.5rem; font-weight: 800; line-height: 1.1; letter-spacing: -0.03em; }
-  .stat-highlight .big-caption { font-size: 0.88rem; color: var(--text-secondary); margin-top: 8px; font-weight: 500; }
-  
-  .stat-takeaways { padding: 24px 32px; background: #ffffff; }
-  .takeaway-item { margin-bottom: 20px; }
-  .takeaway-item:last-child { margin-bottom: 0; }
-  .takeaway-num { font-family: monospace; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 4px; font-weight: 700; }
-  .takeaway-title { font-weight: 700; font-size: 0.98rem; margin-bottom: 4px; }
-  .takeaway-desc { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin: 0; }
 
-  .workflow-section { margin-top: 40px; }
-  .workflow-step { margin-bottom: 32px; }
-  .workflow-step-num { font-family: monospace; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 4px; font-weight: 700; }
-  .workflow-step-title { font-size: 1.2rem; font-weight: 800; margin-bottom: 8px; }
-  .workflow-step-desc { font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px; }
+  .stat-highlight .big-number { 
+    font-size: 2.5rem; 
+    font-weight: 800; 
+    line-height: 1.1; 
+    letter-spacing: -0.03em; 
+  }
+
+  .stat-highlight .big-caption { 
+    font-size: 0.88rem; 
+    color: var(--text-secondary); 
+    margin-top: 8px; 
+    font-weight: 500; 
+  }
+  
+  .stat-takeaways { 
+    padding: 24px 32px; 
+    background: #ffffff; 
+  }
+
+  .takeaway-item { 
+    margin-bottom: 20px; 
+  }
+
+  .takeaway-item:last-child { 
+    margin-bottom: 0; 
+  }
+
+  .takeaway-num { 
+    font-family: monospace; 
+    font-size: 0.8rem; 
+    color: var(--text-muted); 
+    margin-bottom: 4px; 
+    font-weight: 700; 
+  }
+
+  .takeaway-title { 
+    font-weight: 700; 
+    font-size: 0.98rem; 
+    margin-bottom: 4px; 
+  }
+
+  .takeaway-desc { 
+    font-size: 0.88rem; 
+    color: var(--text-secondary); 
+    line-height: 1.5; 
+    margin: 0; 
+  }
+
+  .workflow-section { 
+    margin-top: 40px; 
+  }
+
+  .workflow-step { 
+    margin-bottom: 32px; 
+  }
+
+  .workflow-step-num { 
+    font-family: monospace; 
+    font-size: 0.8rem; 
+    color: var(--text-muted); 
+    margin-bottom: 4px; 
+    font-weight: 700; 
+  }
+
+  .workflow-step-title { 
+    font-size: 1.2rem; 
+    font-weight: 800; 
+    margin-bottom: 8px; 
+  }
+
+  .workflow-step-desc { 
+    font-size: 0.92rem; 
+    color: var(--text-secondary); 
+    line-height: 1.6; 
+    margin-bottom: 16px; 
+  }
   
   .workflow-img-wrap {
     width: 100%;
@@ -409,10 +597,24 @@ permalink: /
     border: 1px solid var(--border-subtle);
     background: var(--bg-accent);
   }
-  .workflow-img-wrap img { width: 100%; max-height: 420px; object-fit: cover; display: block; }
-  .workflow-img-caption { font-size: 0.8rem; color: var(--text-muted); text-align: center; padding: 10px; background: #ffffff; border-top: 1px solid var(--border-subtle); }
 
-  /* Responsive Adjustments */
+  .workflow-img-wrap img { 
+    width: 100%; 
+    max-height: 420px; 
+    object-fit: cover; 
+    display: block; 
+  }
+
+  .workflow-img-caption { 
+    font-size: 0.8rem; 
+    color: var(--text-muted); 
+    text-align: center; 
+    padding: 10px; 
+    background: #ffffff; 
+    border-top: 1px solid var(--border-subtle); 
+  }
+
+  /* --- Responsive Adjustments --- */
   @media (max-width: 960px) {
     .portfolio-grid-symmetric { grid-template-columns: repeat(2, 1fr); }
     .skills-grid-visual { grid-template-columns: repeat(2, 1fr); }
@@ -430,10 +632,17 @@ permalink: /
     nav.custom-navbar { padding: 16px 20px; }
   }
 
-  footer { border-top: 1px solid var(--border-subtle); padding: 60px 24px; text-align: center; color: var(--text-muted); font-size: 0.9rem; background: #ffffff; }
+  footer { 
+    border-top: 1px solid var(--border-subtle); 
+    padding: 60px 24px; 
+    text-align: center; 
+    color: var(--text-muted); 
+    font-size: 0.9rem; 
+    background: #ffffff; 
+  }
 </style>
 
-<!-- Clean Navigation -->
+<!-- Navigation -->
 <nav class="custom-navbar">
   <div class="brand">Luísa Mendes <span>| Portfolio</span></div>
   <div class="nav-links">
@@ -443,7 +652,7 @@ permalink: /
   </div>
 </nav>
 
-<!-- Symmetric Hero Section -->
+<!-- Hero Section -->
 <div class="hero-container">
   <div class="hero-text-content">
     <div class="status-badge">
@@ -468,16 +677,16 @@ permalink: /
   </div>
 </div>
 
-<!-- Symmetric Metrics Ribbon -->
+<!-- Metrics Ribbon -->
 <div class="metrics-ribbon-wrapper">
   <div class="metrics-ribbon">
     <div class="metric-card">
       <div class="value">5.96 → 0</div>
-      <div class="label">Defects/Unit Target (Toyota)[cite: 1]</div>
+      <div class="label">Defects/Unit Target (Toyota)</div>
     </div>
     <div class="metric-card">
       <div class="value">&euro;2,726/yr</div>
-      <div class="label">Net Payback Savings (TME)[cite: 1]</div>
+      <div class="label">Net Payback Savings (TME)</div>
     </div>
     <div class="metric-card">
       <div class="value">5 Lifters (8&deg;)</div>
@@ -523,7 +732,7 @@ permalink: /
           <span class="pill-tag">SPC &amp; Simscape</span>
         </div>
         <h3 class="card-title">Automotive Paint Booth Microclimate Control</h3>
-        <p class="card-summary">Industry 4.0 climate retrofit for the Land Cruiser 70 line[cite: 1]. Stabilized relative humidity without replacing primary HVAC infrastructure using TPS diagnostics and MATLAB dynamic simulation[cite: 1].</p>
+        <p class="card-summary">Industry 4.0 climate retrofit for the Land Cruiser 70 line. Stabilized relative humidity without replacing primary HVAC infrastructure using TPS diagnostics and MATLAB dynamic simulation.</p>
         <span class="card-action">Review STAR Case &rarr;</span>
       </div>
     </div>
@@ -569,7 +778,7 @@ permalink: /
   </div>
 </div>
 
-<!-- Symmetric Competencies Section -->
+<!-- Competencies Section -->
 <div id="competencies" class="section-wrapper" style="padding-top: 0;">
   <div class="mono-label" style="margin-bottom: 8px;">ENGINEERING TOOLSET &amp; METHODOLOGY</div>
   <h2 style="font-size: 2.1rem; font-weight: 800; letter-spacing: -0.02em; margin: 0 0 32px 0;">Technical Competencies</h2>
@@ -602,9 +811,9 @@ permalink: /
       <div class="skill-badge-cloud">
         <span class="skill-badge highlight">MATLAB Simscape</span>
         <span class="skill-badge">Simulink Modeling</span>
-        <span class="skill-badge">Thermal-Fluid Balances[cite: 1]</span>
-        <span class="skill-badge">Psychrometric Air Treatment[cite: 1]</span>
-        <span class="skill-badge">Polymer Rheology[cite: 1]</span>
+        <span class="skill-badge">Thermal-Fluid Balances</span>
+        <span class="skill-badge">Psychrometric Air Treatment</span>
+        <span class="skill-badge">Polymer Rheology</span>
       </div>
     </div>
 
@@ -615,11 +824,11 @@ permalink: /
         <div class="skill-title">Industrial Automation &amp; Safety</div>
       </div>
       <div class="skill-badge-cloud">
-        <span class="skill-badge highlight">Siemens ET200 PLC[cite: 1]</span>
-        <span class="skill-badge">VFD Pump Control[cite: 1]</span>
-        <span class="skill-badge">ATEX Safety (55% RH)[cite: 1]</span>
+        <span class="skill-badge highlight">Siemens ET200 PLC</span>
+        <span class="skill-badge">VFD Pump Control</span>
+        <span class="skill-badge">ATEX Safety (55% RH)</span>
         <span class="skill-badge">Siemens TIA Portal</span>
-        <span class="skill-badge">HMI Architecture[cite: 1]</span>
+        <span class="skill-badge">HMI Architecture</span>
         <span class="skill-badge">OPC UA Protocol</span>
       </div>
     </div>
@@ -631,12 +840,12 @@ permalink: /
         <div class="skill-title">Toyota Quality &amp; Problem Solving</div>
       </div>
       <div class="skill-badge-cloud">
-        <span class="skill-badge highlight">Gemba / Genchi Genbutsu[cite: 1]</span>
-        <span class="skill-badge highlight">Minitab SPC[cite: 1]</span>
-        <span class="skill-badge">AIAG-VDA FMEA[cite: 1]</span>
-        <span class="skill-badge">5 Whys &amp; Ishikawa[cite: 1]</span>
-        <span class="skill-badge">Laney U' Charts[cite: 1]</span>
-        <span class="skill-badge">CAPEX/OPEX Analysis[cite: 1]</span>
+        <span class="skill-badge highlight">Gemba / Genchi Genbutsu</span>
+        <span class="skill-badge highlight">Minitab SPC</span>
+        <span class="skill-badge">AIAG-VDA FMEA</span>
+        <span class="skill-badge">5 Whys &amp; Ishikawa</span>
+        <span class="skill-badge">Laney U' Charts</span>
+        <span class="skill-badge">CAPEX/OPEX Analysis</span>
       </div>
     </div>
 
@@ -646,60 +855,60 @@ permalink: /
 <!-- Backdrop Overlay -->
 <div id="drawer-overlay" class="drawer-overlay" onclick="closeAllDrawers()"></div>
 
-<!-- Dynamic Modal Drawers (STAR Structured) -->
+<!-- Toyota Drawer (STAR Methodology) -->
 <div id="drawer-toyota" class="drawer-panel">
   <button class="close-btn" onclick="closeAllDrawers()">Close &times;</button>
-  <div class="mono-label">Master's Thesis · Toyota Caetano Portugal · 2026[cite: 1]</div>
+  <div class="mono-label">Master's Thesis · Toyota Caetano Portugal · 2026</div>
   <h2 style="margin-top: 8px; font-size: 2.2rem; font-weight: 800; letter-spacing: -0.02em;">Automotive Paint Booth Microclimate Control (STAR)</h2>
   <p style="color: var(--text-secondary); font-size: 1.05rem; margin-top: 8px;">
-    Development and physical validation of an Industry 4.0 retrofit framework to stabilize microclimatic conditions in the Land Cruiser 70 top-coat line without replacing primary HVAC infrastructure[cite: 1].
+    Development and physical validation of an Industry 4.0 retrofit framework to stabilize microclimatic conditions in the Land Cruiser 70 top-coat line without replacing primary HVAC infrastructure.
   </p>
 
   <div class="modal-stat-block">
     <div class="stat-highlight">
-      <div class="mono-label" style="margin-bottom: 8px; color: var(--text-secondary);">KEY DELIVERABLE[cite: 1]</div>
+      <div class="mono-label" style="margin-bottom: 8px; color: var(--text-secondary);">KEY DELIVERABLE</div>
       <div class="big-number">86% → 0%</div>
-      <div class="big-caption">Eliminated seasonal RH out-of-spec conditions, delivering €2,726/yr in net operational payback[cite: 1].</div>
+      <div class="big-caption">Eliminated seasonal RH out-of-spec conditions, delivering €2,726/yr in net operational payback.</div>
     </div>
     <div class="stat-takeaways">
       <div class="takeaway-item">
-        <div class="takeaway-num">SITUATION[cite: 1]</div>
-        <div class="takeaway-title">Environmental Instability in Legacy Plant[cite: 1]</div>
-        <p class="takeaway-desc">Legacy spray booth experienced severe temperature and humidity drift (up to 86% monthly RH non-compliance), inducing paint sagging, overspray, and electrostatic shock hazards[cite: 1].</p>
+        <div class="takeaway-num">SITUATION</div>
+        <div class="takeaway-title">Environmental Instability in Legacy Plant</div>
+        <p class="takeaway-desc">Legacy spray booth experienced severe temperature and humidity drift (up to 86% monthly RH non-compliance), inducing paint sagging, overspray, and electrostatic shock hazards.</p>
       </div>
       <div class="takeaway-item">
-        <div class="takeaway-num">TASK[cite: 1]</div>
-        <div class="takeaway-title">Low-CAPEX Stabilization Strategy[cite: 1]</div>
-        <p class="takeaway-desc">Formulate and validate an automated retrofit architecture to stabilize microclimatic conditions within strict capital expenditure constraints[cite: 1].</p>
+        <div class="takeaway-num">TASK</div>
+        <div class="takeaway-title">Low-CAPEX Stabilization Strategy</div>
+        <p class="takeaway-desc">Formulate and validate an automated retrofit architecture to stabilize microclimatic conditions within strict capital expenditure constraints.</p>
       </div>
     </div>
   </div>
 
   <div class="workflow-section">
-    <div class="mono-label" style="margin-bottom: 16px;">ACTION &amp; RESULTS (STAR)[cite: 1]</div>
+    <div class="mono-label" style="margin-bottom: 16px;">ACTION &amp; RESULTS (STAR)</div>
     <div class="workflow-step">
-      <div class="workflow-step-num">ACTION 01[cite: 1]</div>
-      <div class="workflow-step-title">Root Cause Diagnostics &amp; Statistical Modeling (TPS / SPC)[cite: 1]</div>
+      <div class="workflow-step-num">ACTION 01</div>
+      <div class="workflow-step-title">Root Cause Diagnostics &amp; Statistical Modeling (TPS / SPC)</div>
       <div class="workflow-step-desc">
-        Conducted on-site Gemba mapping and diagnostic FMEA[cite: 1]. Used Minitab to build Laney U' control charts that handled defect overdispersion, while Pearson correlation proved direct links between temperature and paint sagging (r=0.788)[cite: 1].
+        Conducted on-site Gemba mapping and diagnostic FMEA. Used Minitab to build Laney U' control charts that handled defect overdispersion, while Pearson correlation proved direct links between temperature and paint sagging (r=0.788).
       </div>
     </div>
     <div class="workflow-step">
-      <div class="workflow-step-num">ACTION 02[cite: 1]</div>
-      <div class="workflow-step-title">Hardware Architecture &amp; Simscape Dynamic Validation[cite: 1]</div>
+      <div class="workflow-step-num">ACTION 02</div>
+      <div class="workflow-step-title">Hardware Architecture &amp; Simscape Dynamic Validation</div>
       <div class="workflow-step-desc">
-        Specified ATEX-certified instrumentation, VFD-driven pumps, and coordinated PLC logic[cite: 1]. Built a lumped-parameter psychrometric model in MATLAB/Simscape to validate multi-variable control boundaries under seasonal extreme loads prior to deployment[cite: 1].
+        Specified ATEX-certified instrumentation, VFD-driven pumps, and coordinated PLC logic. Built a lumped-parameter psychrometric model in MATLAB/Simscape to validate multi-variable control boundaries under seasonal extreme loads prior to deployment.
       </div>
       <div class="workflow-img-wrap">
         <img src="/images/toyota-diagram.png" alt="Toyota Paint Booth Automation Architecture" />
-        <div class="workflow-img-caption">Toyota Paint Booth Automation System Architecture &amp; PLC Control Topology[cite: 1]</div>
+        <div class="workflow-img-caption">Toyota Paint Booth Automation System Architecture &amp; PLC Control Topology</div>
       </div>
     </div>
     <div class="workflow-step" style="margin-top: 24px;">
-      <div class="workflow-step-num">RESULT[cite: 1]</div>
-      <div class="workflow-step-title">Validated Process Repeatability &amp; Risk Mitigation[cite: 1]</div>
+      <div class="workflow-step-num">RESULT</div>
+      <div class="workflow-step-title">Validated Process Repeatability &amp; Risk Mitigation</div>
       <div class="workflow-step-desc">
-        Simscape simulations verified that coordinated control eliminates transient humidity drops from sensible heating[cite: 1]. Delivered a fully scoped technical and investment roadmap directly to Toyota Motor Europe stakeholders[cite: 1].
+        Simscape simulations verified that coordinated control eliminates transient humidity drops from sensible heating. Delivered a fully scoped technical and investment roadmap directly to Toyota Motor Europe stakeholders.
       </div>
     </div>
   </div>
@@ -823,14 +1032,14 @@ permalink: /
   </div>
 </div>
 
-<!-- Symmetric Contact Footer -->
+<!-- Contact Footer -->
 <footer id="contact">
   <h2 style="margin-bottom: 8px; font-size: 1.6rem; font-weight: 800;">Contact Information</h2>
   <p style="margin-bottom: 24px; color: var(--text-secondary);">Open to engineering opportunities in automotive manufacturing, tooling design, and product engineering.</p>
 
   <div style="display: flex; justify-content: center; gap: 28px; font-weight: 600; margin-bottom: 32px;">
     <a href="mailto:mendesluisa1202@gmail.com" style="color: var(--accent-blue); text-decoration: none;">mendesluisa1202@gmail.com</a>
-    <a href="https://linkedin.com/in/luisa_mendes" target="_blank" style="color: var(--accent-blue); text-decoration: none;">LinkedIn Profile</a>
+    <a href="https://www.linkedin.com/in/luisa-mendes" target="_blank" style="color: var(--accent-blue); text-decoration: none;">LinkedIn Profile</a>
     <a href="https://github.com/engluisamendes" target="_blank" style="color: var(--accent-blue); text-decoration: none;">GitHub Profile</a>
   </div>
 
