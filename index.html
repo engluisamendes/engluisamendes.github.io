@@ -385,7 +385,7 @@ permalink: /
     flex-direction: column;
     justify-content: center;
   }
-  .stat-highlight .big-number { font-size: 3rem; font-weight: 800; line-height: 1; letter-spacing: -0.03em; }
+  .stat-highlight .big-number { font-size: 2.5rem; font-weight: 800; line-height: 1.1; letter-spacing: -0.03em; }
   .stat-highlight .big-caption { font-size: 0.88rem; color: var(--text-secondary); margin-top: 8px; font-weight: 500; }
   
   .stat-takeaways { padding: 24px 32px; background: #ffffff; }
@@ -480,7 +480,7 @@ permalink: /
     </div>
     <div class="metric-card">
       <div class="value">5 Lifters (8&deg;)</div>
-      <div class="label">Simoldes PP Mold Tooling[cite: 1]</div>
+      <div class="label">Simoldes PP Mold Tooling</div>
     </div>
     <div class="metric-card">
       <div class="value">&euro;6,000+</div>
@@ -505,7 +505,7 @@ permalink: /
     </div>
   </div>
 
-  <!-- Perfectly Symmetric 3-Card Grid -->
+  <!-- 3-Column Symmetric Grid -->
   <div class="portfolio-grid-symmetric">
 
     <!-- Card 1: Toyota -->
@@ -518,12 +518,12 @@ permalink: /
         <div class="mono-label" style="margin-bottom: 8px;">Thesis · Toyota Caetano</div>
         <div class="tag-group">
           <span class="pill-tag">Toyota Caetano</span>
-          <span class="pill-tag">Process Quality</span>
-          <span class="pill-tag">Laney U-Charts</span>
+          <span class="pill-tag">HVAC Retrofit</span>
+          <span class="pill-tag">SPC &amp; Simscape</span>
         </div>
-        <h3 class="card-title">Automatic Climate Control For Painting Booth</h3>
-        <p class="card-summary">Industry 4.0 climate retrofit for Land Cruiser 70 line (14 units/day)[cite: 1]. Analyzed baseline defects via Laney U-Charts, FMEA, and Simscape dynamics[cite: 1].</p>
-        <span class="card-action">Review Technical Details &rarr;</span>
+        <h3 class="card-title">Automotive Paint Booth Microclimate Control</h3>
+        <p class="card-summary">Engineered an Industry 4.0 climate retrofit for the Land Cruiser 70 line[cite: 1]. Stabilized relative humidity without replacing primary HVAC infrastructure[cite: 1].</p>
+        <span class="card-action">Review STAR Case &rarr;</span>
       </div>
     </div>
 
@@ -541,7 +541,7 @@ permalink: /
           <span class="pill-tag">Polypropylene</span>
         </div>
         <h3 class="card-title">Automotive Speaker Polypropylene Mold</h3>
-        <p class="card-summary">Complete polymer injection tool in Siemens NX[cite: 1]. Features 5 angled lifters (8&deg;), single/dual cam-pin sliders, DME 2A base, and 8mm cooling circuits[cite: 1].</p>
+        <p class="card-summary">Complete polymer injection tool in Siemens NX. Features 5 angled lifters (8&deg;), single/dual cam-pin sliders, DME 2A base, and 8mm cooling circuits.</p>
         <span class="card-action">Review Technical Details &rarr;</span>
       </div>
     </div>
@@ -602,8 +602,8 @@ permalink: /
         <span class="skill-badge highlight">MATLAB Simscape</span>
         <span class="skill-badge">Thermodynamic Simulation</span>
         <span class="skill-badge">Simulink System Modeling</span>
-        <span class="skill-badge">Rheology &amp; Gate Analysis</span>
-        <span class="skill-badge">Process Physics</span>
+        <span class="skill-badge">Psychrometric Balances[cite: 1]</span>
+        <span class="skill-badge">Process Physics[cite: 1]</span>
       </div>
     </div>
 
@@ -614,11 +614,11 @@ permalink: /
         <div class="skill-title">Industrial Controls</div>
       </div>
       <div class="skill-badge-cloud">
-        <span class="skill-badge highlight">Siemens ET200 PLC</span>
-        <span class="skill-badge">VFD Speed Control</span>
-        <span class="skill-badge">ATEX Safety (55% RH)</span>
+        <span class="skill-badge highlight">Siemens ET200 PLC[cite: 1]</span>
+        <span class="skill-badge">VFD Speed Control[cite: 1]</span>
+        <span class="skill-badge">ATEX Safety (55% RH)[cite: 1]</span>
         <span class="skill-badge">Siemens TIA Portal</span>
-        <span class="skill-badge">HMI Control Topology</span>
+        <span class="skill-badge">HMI Control Topology[cite: 1]</span>
         <span class="skill-badge">OPC UA Protocol</span>
       </div>
     </div>
@@ -630,12 +630,12 @@ permalink: /
         <div class="skill-title">Industrial Quality &amp; Leadership</div>
       </div>
       <div class="skill-badge-cloud">
-        <span class="skill-badge highlight">Minitab SPC</span>
-        <span class="skill-badge">Laney U-Charts</span>
-        <span class="skill-badge">FMEA &amp; 5 Whys</span>
-        <span class="skill-badge">Gemba &amp; Genchi Genbutsu</span>
-        <span class="skill-badge">Pearson Correlation</span>
-        <span class="skill-badge">CAPEX/OPEX Analysis</span>
+        <span class="skill-badge highlight">Minitab SPC[cite: 1]</span>
+        <span class="skill-badge">Laney U-Charts[cite: 1]</span>
+        <span class="skill-badge">FMEA &amp; 5 Whys[cite: 1]</span>
+        <span class="skill-badge">Gemba &amp; Genchi Genbutsu[cite: 1]</span>
+        <span class="skill-badge">Pearson Correlation[cite: 1]</span>
+        <span class="skill-badge">CAPEX/OPEX Analysis[cite: 1]</span>
       </div>
     </div>
 
@@ -645,48 +645,62 @@ permalink: /
 <!-- Dynamic Modal Drawers -->
 <div id="drawer-overlay" class="drawer-overlay" onclick="closeAllDrawers()">
 
-  <!-- Toyota Drawer -->
+  <!-- Toyota Drawer (STAR Methodology) -->
   <div id="drawer-toyota" class="drawer-panel" onclick="event.stopPropagation()">
     <button class="close-btn" onclick="closeAllDrawers()">Close &times;</button>
-    <div class="mono-label">Master's Thesis · Toyota Caetano Portugal · 2026</div>
-    <h2 style="margin-top: 8px; font-size: 2.2rem; font-weight: 800; letter-spacing: -0.02em;">Automatic Climate Control For Painting Booth</h2>
+    <div class="mono-label">Master's Thesis · Toyota Caetano Portugal · 2026[cite: 1]</div>
+    <h2 style="margin-top: 8px; font-size: 2.2rem; font-weight: 800; letter-spacing: -0.02em;">Automatic Climate Control Retrofit (STAR Breakdown)</h2>
     <p style="color: var(--text-secondary); font-size: 1.05rem; margin-top: 8px;">
-      Development of an Industry 4.0 climate control retrofit for Land Cruiser 70 assembly line (14 units/day)[cite: 1]—from root-cause defect diagnostics to physical Simscape model validation.
+      Engineering retrofit strategy to stabilize top-coat spray booth microclimates for the Land Cruiser 70 line without full HVAC infrastructure replacement[cite: 1].
     </p>
 
     <!-- Split Hero Section -->
     <div class="modal-stat-block">
       <div class="stat-highlight">
-        <div class="mono-label" style="margin-bottom: 8px; color: var(--text-secondary);">NET PAYBACK</div>
-        <div class="big-number">&euro;2,726/yr</div>
-        <div class="big-caption">Direct CAPEX/OPEX net savings presented directly to Toyota Motor Europe (TME) stakeholders[cite: 1].</div>
+        <div class="mono-label" style="margin-bottom: 8px; color: var(--text-secondary);">KEY DELIVERABLE[cite: 1]</div>
+        <div class="big-number">86% → 0%</div>
+        <div class="big-caption">Eliminated seasonal RH out-of-spec conditions, saving €2,726/yr in net operational payback[cite: 1].</div>
       </div>
       <div class="stat-takeaways">
         <div class="takeaway-item">
-          <div class="takeaway-num">01</div>
-          <div class="takeaway-title">Statistical Defect Diagnostics &amp; SPC</div>
-          <p class="takeaway-desc">Evaluated a baseline defect rate of 5.96 defects/unit (100% repair rate) using Laney U-Charts, FMEA, Gemba, Genchi Genbutsu, and 5 Whys[cite: 1]. Proved statistical correlation between paint sagging and temperature fluctuation via Pearson analysis[cite: 1].</p>
+          <div class="takeaway-num">SITUATION[cite: 1]</div>
+          <div class="takeaway-title">Environmental Drift in Brownfield Plant[cite: 1]</div>
+          <p class="takeaway-desc">Legacy spray booth experienced severe temperature and humidity drift (up to 86% monthly RH non-compliance), inducing paint sagging, overspray, and electrostatic shock hazards[cite: 1].</p>
         </div>
         <div class="takeaway-item">
-          <div class="takeaway-num">02</div>
-          <div class="takeaway-title">Automation &amp; Explosion-Proof ATEX Safety</div>
-          <p class="takeaway-desc">Architected an automated PLC/HMI control strategy (Siemens ET200 + VFD Pump) integrating a strict 55% RH safety threshold to ensure ATEX safety compliance inside spray booth environments[cite: 1].</p>
+          <div class="takeaway-num">TASK[cite: 1]</div>
+          <div class="takeaway-title">Low-CAPEX Stabilization Strategy[cite: 1]</div>
+          <p class="takeaway-desc">Formulate and validate an automated retrofit architecture to stabilize microclimatic conditions within strict capital expenditure constraints[cite: 1].</p>
         </div>
       </div>
     </div>
 
-    <!-- Detailed Technical Section -->
+    <!-- Detailed STAR Workflow Section -->
     <div class="workflow-section">
-      <div class="mono-label" style="margin-bottom: 16px;">TECHNICAL EXECUTION &amp; SIMULATION</div>
+      <div class="mono-label" style="margin-bottom: 16px;">ACTION &amp; RESULTS (STAR)[cite: 1]</div>
       <div class="workflow-step">
-        <div class="workflow-step-num">01</div>
-        <div class="workflow-step-title">Physical Dynamic Modeling (Simscape)</div>
+        <div class="workflow-step-num">ACTION 01[cite: 1]</div>
+        <div class="workflow-step-title">Root Cause Diagnostics &amp; Statistical Modeling[cite: 1]</div>
         <div class="workflow-step-desc">
-          Constructed a physical dynamic simulation model in MATLAB Simscape to predict thermal and humidity transients across dual Air Supply Units (ASU)[cite: 1], delivering actionable technical specifications and predictive maintenance roadmaps[cite: 1].
+          Conducted on-site Gemba mapping and diagnostic FMEA[cite: 1]. Used Minitab to build Laney U' control charts that handled defect overdispersion, while Pearson correlation proved direct links between temperature and paint sagging (r=0.788)[cite: 1].
+        </div>
+      </div>
+      <div class="workflow-step">
+        <div class="workflow-step-num">ACTION 02[cite: 1]</div>
+        <div class="workflow-step-title">Hardware Architecture &amp; Simscape Dynamic Validation[cite: 1]</div>
+        <div class="workflow-step-desc">
+          Specified ATEX-certified instrumentation, VFD-driven pumps, and coordinated PLC logic[cite: 1]. Built a lumped-parameter psychrometric model in MATLAB/Simscape to validate multi-variable control boundaries under seasonal extreme loads prior to deployment[cite: 1].
         </div>
         <div class="workflow-img-wrap">
           <img src="/images/toyota-diagram.png" alt="Toyota Paint Booth Automation Architecture" />
-          <div class="workflow-img-caption">Toyota Paint Booth Automation System Architecture &amp; PLC Control Topology</div>
+          <div class="workflow-img-caption">Toyota Paint Booth Automation System Architecture &amp; PLC Control Topology[cite: 1]</div>
+        </div>
+      </div>
+      <div class="workflow-step" style="margin-top: 24px;">
+        <div class="workflow-step-num">RESULT[cite: 1]</div>
+        <div class="workflow-step-title">Validated Process Repeatability &amp; Risk Mitigation[cite: 1]</div>
+        <div class="workflow-step-desc">
+          Simscape simulations verified that coordinated control eliminates transient humidity drops from sensible heating[cite: 1]. Delivered a fully scoped technical and investment roadmap directly to Toyota Motor Europe stakeholders[cite: 1].
         </div>
       </div>
     </div>
@@ -695,8 +709,8 @@ permalink: /
   <!-- Mold Drawer (Simoldes) -->
   <div id="drawer-mold" class="drawer-panel" onclick="event.stopPropagation()">
     <button class="close-btn" onclick="closeAllDrawers()">Close &times;</button>
-    <div class="mono-label">Tooling Engineering · Simoldes Group Collaboration</div>
-    <h2 style="margin-top: 8px; font-size: 2.2rem; font-weight: 800; letter-spacing: -0.02em;">Polypropylene Injection Mold Tool Design</h2>
+    <div class="mono-label">Tooling Engineering · Simoldes Group Collaboration[cite: 1]</div>
+    <h2 style="margin-top: 8px; font-size: 2.2rem; font-weight: 800; letter-spacing: -0.02em;">Polypropylene Injection Mold Tool Design[cite: 1]</h2>
     <p style="color: var(--text-secondary); font-size: 1.05rem; margin-top: 8px;">
       Engineering design of a complete polymer injection mold in Siemens NX for an automotive Polypropylene (PP) speaker component, ensuring zero mechanical interference during dynamic ejection[cite: 1].
     </p>
@@ -704,19 +718,19 @@ permalink: /
     <!-- Split Hero Section -->
     <div class="modal-stat-block">
       <div class="stat-highlight">
-        <div class="mono-label" style="margin-bottom: 8px; color: var(--text-secondary);">TOOL MECHANICS</div>
+        <div class="mono-label" style="margin-bottom: 8px; color: var(--text-secondary);">TOOL MECHANICS[cite: 1]</div>
         <div class="big-number">5 Lifters</div>
         <div class="big-caption">Configured 5 angled lifters set at an 8&deg; inclination to successfully release interior undercut features[cite: 1].</div>
       </div>
       <div class="stat-takeaways">
         <div class="takeaway-item">
-          <div class="takeaway-num">01</div>
-          <div class="takeaway-title">Surface &amp; Subsystem Modeling</div>
+          <div class="takeaway-num">01[cite: 1]</div>
+          <div class="takeaway-title">Surface &amp; Subsystem Modeling[cite: 1]</div>
           <p class="takeaway-desc">Executed Patch Surfaces, Isocline checks, Check Regions, and Trim Region modeling in Siemens NX[cite: 1]. Integrated single and dual cam-pin sliders with plungers for side-action geometries[cite: 1].</p>
         </div>
         <div class="takeaway-item">
-          <div class="takeaway-num">02</div>
-          <div class="takeaway-title">Standardized Tool Base &amp; Thermal Control</div>
+          <div class="takeaway-num">02[cite: 1]</div>
+          <div class="takeaway-title">Standardized Tool Base &amp; Thermal Control[cite: 1]</div>
           <p class="takeaway-desc">Standardized a DME 2A tool base with straight ejector sleeves[cite: 1]. Designed 8 mm cooling channels with internal baffles in high-heat core zones to optimize cycle time and manage Polypropylene rheology/shrinkage[cite: 1].</p>
         </div>
       </div>
@@ -724,10 +738,10 @@ permalink: /
 
     <!-- Detailed Technical Section -->
     <div class="workflow-section">
-      <div class="mono-label" style="margin-bottom: 16px;">TECHNICAL EXECUTION &amp; WORKAROUNDS</div>
+      <div class="mono-label" style="margin-bottom: 16px;">TECHNICAL EXECUTION &amp; WORKAROUNDS[cite: 1]</div>
       <div class="workflow-step">
-        <div class="workflow-step-num">01</div>
-        <div class="workflow-step-title">Rheology Analysis &amp; Solver Optimization</div>
+        <div class="workflow-step-num">01[cite: 1]</div>
+        <div class="workflow-step-title">Rheology Analysis &amp; Solver Optimization[cite: 1]</div>
         <div class="workflow-step-desc">
           Evaluated polymer filling behavior and gate locations to eliminate short shots and weld lines[cite: 1]. Overcame Siemens NX memory violation solver crashes by prioritizing theoretical 8 mm runner sizing and 2D tool detailing[cite: 1].
         </div>
