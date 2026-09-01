@@ -123,6 +123,14 @@ permalink: /
     align-items: center;
   }
 
+  .status-badge-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+
   .status-badge {
     display: inline-flex;
     align-items: center;
@@ -134,7 +142,6 @@ permalink: /
     border-radius: 30px;
     font-size: 0.82rem;
     font-weight: 600;
-    margin-bottom: 24px;
   }
 
   .status-badge .dot { 
@@ -701,8 +708,13 @@ permalink: /
 
 <!-- Clean Centered Hero Section -->
 <div class="hero-container">
-  <div class="status-badge">
-    <span class="dot"></span> Open to Mechanical &amp; Automotive Engineering Roles
+  <div class="status-badge-group">
+    <div class="status-badge">
+      <span class="dot"></span> Open to Mechanical &amp; Automotive Roles
+    </div>
+    <div class="status-badge">
+      Available for Relocation &amp; Travel (EEA)
+    </div>
   </div>
   
   <div class="mono-label">M.Sc. Mechanical Engineer · Porto / Aveiro</div>
@@ -763,7 +775,7 @@ permalink: /
     <div class="project-card" data-category="oem" onclick="openDrawer('drawer-toyota')">
       <div class="card-media-wrap">
         <span class="overlay-metric">Toyota Caetano Retrofit</span>
-        <img src="{{ '/images/LC70_back.jpg' | relative_url }}" alt="Toyota environmental control system architecture" onerror="this.src='images/toyota-diagram.png'" />
+        <img src="{{ '/images/toyota-diagram.png' | relative_url }}" alt="Toyota environmental control system architecture" onerror="this.src='images/toyota-diagram.png'" />
       </div>
       <div class="card-body">
         <div class="mono-label" style="margin-bottom: 8px;">Master's Thesis · Toyota Caetano</div>
@@ -1049,7 +1061,7 @@ permalink: /
     <div class="timeline-step">
       <div class="step-tag">Phase 03</div>
       <div class="step-title">Complete 3D Tooling Design (Siemens NX)</div>
-      <p class="step-desc">Modeled core/cavity parting lines, 5 angled lifters set at an 8&deg; inclination, dual cam sliders with plungers, and dedicated 8 mm cooling circuits with internal baffles to control part warpage.</p>
+      <p class="step-desc">Modeled core/cavity parting lines, 5 angled lifters set at an 8&deg; inclination, dual cam sliders with plungers, and dedicated 8 mm cooling channels with internal baffles to control part warpage.</p>
     </div>
     <div class="timeline-step">
       <div class="step-tag">Phase 04</div>
@@ -1147,7 +1159,7 @@ permalink: /
 <!-- Contact Footer -->
 <footer id="contact">
   <h2 style="margin-bottom: 8px; font-size: 1.6rem; font-weight: 800;">Contact Information</h2>
-  <p style="margin-bottom: 24px; color: var(--text-secondary);">Open to engineering opportunities in automotive manufacturing, tooling design, and product engineering.</p>
+  <p style="margin-bottom: 24px; color: var(--text-secondary);">Open to engineering opportunities in automotive manufacturing, tooling design, and product engineering across the EEA.</p>
 
   <div style="display: flex; justify-content: center; gap: 28px; font-weight: 600; margin-bottom: 32px;">
     <a href="mailto:mendesluisa1202@gmail.com" style="color: var(--accent-blue); text-decoration: none;">mendesluisa1202@gmail.com</a>
