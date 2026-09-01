@@ -112,34 +112,15 @@ permalink: /
     color: var(--text-primary); 
   }
 
-  /* --- Hero Layout --- */
+  /* --- Centered Hero Layout --- */
   .hero-container {
-    max-width: 1080px;
+    max-width: 860px;
     margin: 0 auto;
-    padding: 70px 24px 40px 24px;
-    display: grid;
-    grid-template-columns: 1.25fr 0.75fr;
-    gap: 48px;
+    padding: 80px 24px 50px 24px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-  }
-
-  .hero-avatar-wrap {
-    width: 100%;
-    max-width: 260px;
-    aspect-ratio: 1 / 1;
-    border-radius: 20px;
-    overflow: hidden;
-    border: 1px solid var(--border-subtle);
-    background-color: var(--bg-accent);
-    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.06);
-    justify-self: end;
-  }
-
-  .hero-avatar-wrap img { 
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover; 
-    display: block; 
   }
 
   .status-badge {
@@ -153,7 +134,7 @@ permalink: /
     border-radius: 30px;
     font-size: 0.82rem;
     font-weight: 600;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
   }
 
   .status-badge .dot { 
@@ -164,33 +145,35 @@ permalink: /
   }
 
   .hero-title {
-    font-size: 3rem;
+    font-size: 3.2rem;
     font-weight: 800;
     letter-spacing: -0.03em;
-    line-height: 1.1;
-    margin: 12px 0 18px 0;
+    line-height: 1.15;
+    margin: 12px 0 20px 0;
   }
 
   .hero-subtitle {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     color: var(--text-secondary);
     line-height: 1.6;
-    margin-bottom: 30px;
+    margin-bottom: 36px;
+    max-width: 740px;
   }
 
   .cta-group { 
     display: flex; 
     gap: 16px; 
+    justify-content: center;
     flex-wrap: wrap; 
   }
 
   .btn-primary {
     background: var(--text-primary);
     color: #ffffff;
-    padding: 12px 26px;
+    padding: 12px 28px;
     border-radius: 8px;
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 0.92rem;
     text-decoration: none;
     transition: transform 0.2s ease;
   }
@@ -203,10 +186,10 @@ permalink: /
     background: #ffffff;
     border: 1px solid var(--border-subtle);
     color: var(--text-primary);
-    padding: 12px 26px;
+    padding: 12px 28px;
     border-radius: 8px;
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 0.92rem;
     text-decoration: none;
     transition: border-color 0.2s ease;
   }
@@ -460,7 +443,7 @@ permalink: /
     border-color: var(--text-primary);
   }
 
-  /* --- Executive STAR Modal Drawers --- */
+  /* --- Case Study Modal Drawers --- */
   .drawer-overlay {
     position: fixed;
     top: 0;
@@ -634,13 +617,11 @@ permalink: /
     .portfolio-grid-symmetric { grid-template-columns: repeat(2, 1fr); }
     .skills-grid-visual { grid-template-columns: repeat(2, 1fr); }
     .metrics-ribbon { grid-template-columns: repeat(2, 1fr); }
-    .hero-container { grid-template-columns: 1fr; text-align: center; }
-    .hero-avatar-wrap { width: 180px; margin: 0 auto; justify-self: center; }
-    .cta-group { justify-content: center; }
     .section-header-clean { flex-direction: column; align-items: flex-start; gap: 16px; }
   }
 
   @media (max-width: 640px) {
+    .hero-title { font-size: 2.4rem; }
     .portfolio-grid-symmetric { grid-template-columns: 1fr; }
     .skills-grid-visual { grid-template-columns: 1fr; }
     .metrics-ribbon { grid-template-columns: 1fr; }
@@ -667,28 +648,22 @@ permalink: /
   </div>
 </nav>
 
-<!-- Hero Section -->
+<!-- Clean Centered Hero Section -->
 <div class="hero-container">
-  <div class="hero-text-content">
-    <div class="status-badge">
-      <span class="dot"></span> Open to Mechanical &amp; Automotive Roles
-    </div>
-    
-    <div class="mono-label">M.Sc. Mechanical Engineer · Porto / Aveiro</div>
-    <h1 class="hero-title">Automotive Quality, Tooling &amp; Process Engineering.</h1>
-    
-    <p class="hero-subtitle">
-      Mechanical Engineer with proven OEM shop-floor experience. Specialized in root-cause defect elimination (Toyota Production System / Minitab SPC), injection mold tooling (Siemens NX), and physical thermodynamic system modeling.
-    </p>
-
-    <div class="cta-group">
-      <a href="#experience" class="btn-primary">View Engineering Projects</a>
-      <a href="assets/Luisa_Mendes_CV.pdf" download class="btn-secondary">Download Resume (PDF)</a>
-    </div>
+  <div class="status-badge">
+    <span class="dot"></span> Open to Mechanical &amp; Automotive Engineering Roles
   </div>
+  
+  <div class="mono-label">M.Sc. Mechanical Engineer · Porto / Aveiro</div>
+  <h1 class="hero-title">Automotive Quality, Tooling &amp; Process Engineering.</h1>
+  
+  <p class="hero-subtitle">
+    Mechanical Engineer specializing in automotive manufacturing processes, injection mold tooling design (Siemens NX), Statistical Process Control &amp; Root Cause Diagnostics (Toyota Production System / Minitab), and dynamic thermodynamic physical systems modeling.
+  </p>
 
-  <div class="hero-avatar-wrap">
-    <img src="/images/luisa-photo.jpg" alt="Luísa Mendes, M.Sc. Mechanical Engineer" onerror="this.src='/images/uniraid-car.png'" />
+  <div class="cta-group">
+    <a href="#experience" class="btn-primary">View Engineering Projects</a>
+    <a href="{{ site.baseurl }}/assets/Luisa_Mendes_CV.pdf" download class="btn-secondary">Download Resume (PDF)</a>
   </div>
 </div>
 
@@ -737,7 +712,7 @@ permalink: /
     <div class="project-card" data-category="oem" onclick="openDrawer('drawer-toyota')">
       <div class="card-media-wrap">
         <span class="overlay-metric">Toyota Caetano Retrofit</span>
-        <img src="/images/toyota-diagram.png" alt="Toyota environmental control system architecture" />
+        <img src="{{ site.baseurl }}/images/toyota-diagram.png" alt="Toyota environmental control system architecture" onerror="this.src='images/toyota-diagram.png'" />
       </div>
       <div class="card-body">
         <div class="mono-label" style="margin-bottom: 8px;">Master's Thesis · Toyota Caetano</div>
@@ -747,7 +722,7 @@ permalink: /
           <span class="pill-tag">Simscape Modeling</span>
         </div>
         <h3 class="card-title">Paint Booth Microclimate Retrofit (Land Cruiser 70)</h3>
-        <p class="card-summary">Diagnosed legacy microclimate instability causing paint sagging and overspray. Engineered a low-CAPEX automated closed-loop retrofit validated in MATLAB/Simscape, ensuring ATEX compliance.</p>
+        <p class="card-summary">Addressed thermal-humidity drift in the Land Cruiser 70 top-coat line to ensure consistent surface finish. Engineered a low-CAPEX closed-loop retrofit validated in MATLAB/Simscape, ensuring ATEX compliance.</p>
         <span class="card-action">Review Case Study &rarr;</span>
       </div>
     </div>
@@ -756,7 +731,7 @@ permalink: /
     <div class="project-card" data-category="tooling" onclick="openDrawer('drawer-mold')">
       <div class="card-media-wrap">
         <span class="overlay-metric">Siemens NX Tooling</span>
-        <img src="/images/mold-drawing.png" alt="Siemens NX injection mold CAD design" />
+        <img src="{{ site.baseurl }}/images/mold-drawing.png" alt="Siemens NX injection mold CAD design" onerror="this.src='images/mold-drawing.png'" />
       </div>
       <div class="card-body">
         <div class="mono-label" style="margin-bottom: 8px;">Tooling Design · Simoldes Group</div>
@@ -775,7 +750,7 @@ permalink: /
     <div class="project-card" data-category="venture" onclick="openDrawer('drawer-uniraid')">
       <div class="card-media-wrap">
         <span class="overlay-metric">3,000 km Desert Rally</span>
-        <img src="/images/uniraid-car.png" alt="VW Golf II GTD UniRaid vehicle" />
+        <img src="{{ site.baseurl }}/images/uniraid-car.png" alt="VW Golf II GTD UniRaid vehicle" onerror="this.src='images/uniraid-car.png'" />
       </div>
       <div class="card-body">
         <div class="mono-label" style="margin-bottom: 8px;">Venture Leadership · Morocco Rally</div>
@@ -886,11 +861,11 @@ permalink: /
 <!-- Backdrop Overlay -->
 <div id="drawer-overlay" class="drawer-overlay" onclick="closeAllDrawers()"></div>
 
-<!-- Toyota Drawer (STAR Methodology) -->
+<!-- Toyota Drawer -->
 <div id="drawer-toyota" class="drawer-panel">
   <button class="close-btn" onclick="closeAllDrawers()">Close &times;</button>
   <div class="mono-label">Master's Thesis · Toyota Caetano Portugal · 2026</div>
-  <h2 style="margin-top: 8px; font-size: 2.2rem; font-weight: 800; letter-spacing: -0.02em;">Automotive Paint Booth Microclimate Control </h2>
+  <h2 style="margin-top: 8px; font-size: 2.2rem; font-weight: 800; letter-spacing: -0.02em;">Automotive Paint Booth Microclimate Control</h2>
   <p style="color: var(--text-secondary); font-size: 1.05rem; margin-top: 8px;">
     Development and physical validation of an Industry 4.0 retrofit framework to stabilize microclimatic conditions in the Land Cruiser 70 top-coat line without replacing primary HVAC infrastructure.
   </p>
@@ -916,7 +891,7 @@ permalink: /
   </div>
 
   <div class="workflow-section">
-    <div class="mono-label" style="margin-bottom: 16px;">ACTION &amp; RESULTS </div>
+    <div class="mono-label" style="margin-bottom: 16px;">ACTION &amp; RESULTS</div>
     <div class="workflow-step">
       <div class="workflow-step-num">ACTION 01</div>
       <div class="workflow-step-title">Root Cause Diagnostics &amp; Statistical Modeling (TPS / SPC)</div>
@@ -931,7 +906,7 @@ permalink: /
         Specified ATEX-certified instrumentation, VFD-driven pumps, and coordinated PLC logic. Built a lumped-parameter psychrometric model in MATLAB/Simscape to validate multi-variable control boundaries under seasonal extreme loads prior to deployment.
       </div>
       <div class="workflow-img-wrap">
-        <img src="/images/toyota-diagram.png" alt="Toyota Paint Booth Automation Architecture" />
+        <img src="{{ site.baseurl }}/images/toyota-diagram.png" alt="Toyota Paint Booth Automation Architecture" onerror="this.src='images/toyota-diagram.png'" />
         <div class="workflow-img-caption">Toyota Paint Booth Automation System Architecture &amp; PLC Control Topology</div>
       </div>
     </div>
@@ -945,11 +920,11 @@ permalink: /
   </div>
 </div>
 
-<!-- Mold Drawer (Simoldes - STAR Methodology) -->
+<!-- Mold Drawer -->
 <div id="drawer-mold" class="drawer-panel">
   <button class="close-btn" onclick="closeAllDrawers()">Close &times;</button>
   <div class="mono-label">Tooling Engineering · Simoldes Group Collaboration</div>
-  <h2 style="margin-top: 8px; font-size: 2.2rem; font-weight: 800; letter-spacing: -0.02em;">Automotive Speaker Injection Mold Design (STAR)</h2>
+  <h2 style="margin-top: 8px; font-size: 2.2rem; font-weight: 800; letter-spacing: -0.02em;">Automotive Speaker Injection Mold Design</h2>
   <p style="color: var(--text-secondary); font-size: 1.05rem; margin-top: 8px;">
     Design of a high-precision polymer injection mold in Siemens NX for a complex automotive Polypropylene (PP) speaker grille in collaboration with Tier-1 supplier Simoldes Plastics.
   </p>
@@ -975,7 +950,7 @@ permalink: /
   </div>
 
   <div class="workflow-section">
-    <div class="mono-label" style="margin-bottom: 16px;">ACTION &amp; RESULTS </div>
+    <div class="mono-label" style="margin-bottom: 16px;">ACTION &amp; RESULTS</div>
     <div class="workflow-step">
       <div class="workflow-step-num">ACTION 01</div>
       <div class="workflow-step-title">Advanced Surface Modeling &amp; Undercut Kinematics</div>
@@ -990,7 +965,7 @@ permalink: /
         Configured standardized DME 2A tool base with straight ejector sleeves. Designed 8 mm cooling channels with internal baffles in high-heat core zones to mitigate Polypropylene shrinkage warpage and shorten cycle time.
       </div>
       <div class="workflow-img-wrap">
-        <img src="/images/mold-drawing.png" alt="Siemens NX Mold Layout" />
+        <img src="{{ site.baseurl }}/images/mold-drawing.png" alt="Siemens NX Mold Layout" onerror="this.src='images/mold-drawing.png'" />
         <div class="workflow-img-caption">Siemens NX Mold Assembly (DME 2A Base &amp; Internal Kinematic Subsystems)</div>
       </div>
     </div>
@@ -1004,11 +979,11 @@ permalink: /
   </div>
 </div>
 
-<!-- UniRaid Drawer (STAR Methodology) -->
+<!-- UniRaid Drawer -->
 <div id="drawer-uniraid" class="drawer-panel">
   <button class="close-btn" onclick="closeAllDrawers()">Close &times;</button>
   <div class="mono-label">Venture Leadership · Morocco Desert Rally</div>
-  <h2 style="margin-top: 8px; font-size: 2.2rem; font-weight: 800; letter-spacing: -0.02em;">UniRaid Rally Leadership &amp; Field Mechanics </h2>
+  <h2 style="margin-top: 8px; font-size: 2.2rem; font-weight: 800; letter-spacing: -0.02em;">UniRaid Rally Leadership &amp; Field Mechanics</h2>
   <p style="color: var(--text-secondary); font-size: 1.05rem; margin-top: 8px;">
     Complete venture management and field engineering of a 3,000 km desert rally team—directing corporate sponsorship acquisition, financial accounting, supply chain logistics, and emergency roadside repairs.
   </p>
@@ -1049,7 +1024,7 @@ permalink: /
         Operated as driver/co-driver across complex terrain while performing real-time roadside mechanical repairs under extreme desert conditions, including diagnosing and resolving team fuel line leaks.
       </div>
       <div class="workflow-img-wrap">
-        <img src="/images/uniraid-car.png" alt="VW Golf II GTD Morocco Rally Operations" />
+        <img src="{{ site.baseurl }}/images/uniraid-car.png" alt="VW Golf II GTD Morocco Rally Operations" onerror="this.src='images/uniraid-car.png'" />
         <div class="workflow-img-caption">VW Golf II GTD - Morocco Desert Rally Operations &amp; Finishers</div>
       </div>
     </div>
