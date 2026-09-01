@@ -1,5 +1,4 @@
-
- ---
+---
 layout: default
 title: Luísa Mendes, M.Sc. | Mechanical & Automotive Manufacturing Engineer
 description: Mechanical Engineer (M.Sc.) portfolio showcasing Toyota Production System (TPS) methodologies, Siemens NX injection mold tooling, statistical process quality (SPC/FMEA), and technical project leadership.
@@ -7,17 +6,22 @@ permalink: /
 ---
 
 <style>
-  /* --- Global Reset & Hide Theme Header Overrides --- */
+  /* --- Strict Header Reset --- */
   header.site-header,
   .site-header,
   .site-title,
   .wrapper > header,
-  body > header:first-child {
+  body > header:first-child,
+  .site-nav,
+  .page-header,
+  .hero-header {
     display: none !important;
     visibility: hidden !important;
     height: 0 !important;
+    max-height: 0 !important;
     padding: 0 !important;
     margin: 0 !important;
+    overflow: hidden !important;
   }
 
   /* --- Design Tokens --- */
@@ -57,7 +61,7 @@ permalink: /
     color: var(--text-muted);
   }
 
-  /* --- Navigation Bar --- */
+  /* --- Top Sticky Glass Navbar --- */
   nav.custom-navbar {
     position: sticky;
     top: 0;
@@ -204,7 +208,7 @@ permalink: /
     border-color: var(--border-dark); 
   }
 
-  /* --- Metrics Ribbon --- */
+  /* --- Recruiter Value Metrics Ribbon --- */
   .metrics-ribbon-wrapper { 
     max-width: 1080px; 
     margin: 0 auto; 
@@ -657,18 +661,18 @@ permalink: /
 <div class="hero-container">
   <div class="hero-text-content">
     <div class="status-badge">
-      <span class="dot"></span> Open to Mechanical &amp; Automotive Engineering Roles
+      <span class="dot"></span> Open to Mechanical &amp; Manufacturing Roles
     </div>
     
     <div class="mono-label">M.Sc. Mechanical Engineer · Porto / Aveiro</div>
-    <h1 class="hero-title">Automotive Engineering, Tooling &amp; Lean Manufacturing.</h1>
+    <h1 class="hero-title">Automotive Quality, Tooling &amp; Process Engineering.</h1>
     
     <p class="hero-subtitle">
-      Mechanical Engineer specializing in automotive manufacturing processes, injection mold tooling design (Siemens NX), Statistical Process Control &amp; Root Cause Analysis (Toyota Production System / Minitab), and technical project leadership.
+      Mechanical Engineer with proven OEM shop-floor experience. Specialized in root-cause defect elimination (Toyota Production System / Minitab SPC), injection mold tooling (Siemens NX), and physical thermodynamic system modeling.
     </p>
 
     <div class="cta-group">
-      <a href="#experience" class="btn-primary">Explore Engineering Work</a>
+      <a href="#experience" class="btn-primary">View Engineering Projects</a>
       <a href="assets/Luisa_Mendes_CV.pdf" download class="btn-secondary">Download Resume (PDF)</a>
     </div>
   </div>
@@ -678,24 +682,24 @@ permalink: /
   </div>
 </div>
 
-<!-- Metrics Ribbon -->
+<!-- Clear Value-Add Metrics Ribbon -->
 <div class="metrics-ribbon-wrapper">
   <div class="metrics-ribbon">
     <div class="metric-card">
-      <div class="value">5.96 → 0</div>
-      <div class="label">Defects/Unit Target (Toyota)</div>
+      <div class="value">86% → 0%</div>
+      <div class="label">RH Drift Elimination (Toyota OEM)[cite: 1]</div>
     </div>
     <div class="metric-card">
       <div class="value">&euro;2,726/yr</div>
-      <div class="label">Net Payback Savings (TME)</div>
+      <div class="label">Net Operational Payback (TME)[cite: 1]</div>
     </div>
     <div class="metric-card">
       <div class="value">5 Lifters (8&deg;)</div>
-      <div class="label">Simoldes PP Mold Tooling</div>
+      <div class="label">Zero-Collision Tooling (Siemens NX)</div>
     </div>
     <div class="metric-card">
       <div class="value">&euro;6,000+</div>
-      <div class="label">UniRaid Venture Budget</div>
+      <div class="label">Venture Budget &amp; Logistics Delivered</div>
     </div>
   </div>
 </div>
@@ -722,57 +726,57 @@ permalink: /
     <!-- Card 1: Toyota -->
     <div class="project-card" data-category="oem" onclick="openDrawer('drawer-toyota')">
       <div class="card-media-wrap">
-        <span class="overlay-metric">&euro;2,726/yr Savings</span>
+        <span class="overlay-metric">86% RH Variance Fix</span>
         <img src="/images/toyota-diagram.png" alt="Toyota environmental control system architecture" />
       </div>
       <div class="card-body">
-        <div class="mono-label" style="margin-bottom: 8px;">Thesis · Toyota Caetano</div>
+        <div class="mono-label" style="margin-bottom: 8px;">Master's Thesis · Toyota Caetano[cite: 1]</div>
         <div class="tag-group">
           <span class="pill-tag">Toyota Production System</span>
-          <span class="pill-tag">AIAG-VDA FMEA</span>
-          <span class="pill-tag">SPC &amp; Simscape</span>
+          <span class="pill-tag">Minitab SPC</span>
+          <span class="pill-tag">Simscape Modeling</span>
         </div>
-        <h3 class="card-title">Automotive Paint Booth Microclimate Control</h3>
-        <p class="card-summary">Industry 4.0 climate retrofit for the Land Cruiser 70 line. Stabilized relative humidity without replacing primary HVAC infrastructure using TPS diagnostics and MATLAB dynamic simulation.</p>
-        <span class="card-action">Review STAR Case &rarr;</span>
+        <h3 class="card-title">Paint Booth Microclimate Retrofit (Land Cruiser 70)</h3>
+        <p class="card-summary">Diagnosed legacy microclimate instability causing paint sagging and overspray[cite: 1]. Engineered a low-CAPEX automated closed-loop retrofit validated in MATLAB/Simscape[cite: 1].</p>
+        <span class="card-action">Review STAR Case Study &rarr;</span>
       </div>
     </div>
 
     <!-- Card 2: Mold -->
     <div class="project-card" data-category="tooling" onclick="openDrawer('drawer-mold')">
       <div class="card-media-wrap">
-        <span class="overlay-metric">5 Lifters (8&deg;)</span>
+        <span class="overlay-metric">5 Lifters (8&deg;) Undercuts</span>
         <img src="/images/mold-drawing.png" alt="Siemens NX injection mold CAD design" />
       </div>
       <div class="card-body">
-        <div class="mono-label" style="margin-bottom: 8px;">Tooling · Simoldes Group</div>
+        <div class="mono-label" style="margin-bottom: 8px;">Tooling Design · Simoldes Group</div>
         <div class="tag-group">
           <span class="pill-tag">Siemens NX Mold Design</span>
-          <span class="pill-tag">DME 2A Standard</span>
+          <span class="pill-tag">DME 2A Base</span>
           <span class="pill-tag">DfM &amp; Rheology</span>
         </div>
         <h3 class="card-title">Automotive Speaker Polypropylene Mold</h3>
-        <p class="card-summary">Complete polymer injection tool in Siemens NX. Features 5 angled lifters (8&deg;), single/dual cam-pin sliders, DME 2A base, and 8mm cooling channels to eliminate undercut collision.</p>
-        <span class="card-action">Review STAR Case &rarr;</span>
+        <p class="card-summary">Complete 3D injection tool design in Siemens NX for an interior speaker component. Integrated 5 angled lifters and 8mm cooling channels to resolve undercuts and thermal shrinkage.</p>
+        <span class="card-action">Review STAR Case Study &rarr;</span>
       </div>
     </div>
 
     <!-- Card 3: UniRaid -->
     <div class="project-card" data-category="venture" onclick="openDrawer('drawer-uniraid')">
       <div class="card-media-wrap">
-        <span class="overlay-metric">&euro;6,000+ Budget</span>
+        <span class="overlay-metric">&euro;6,000+ Budget Raised</span>
         <img src="/images/uniraid-car.png" alt="VW Golf II GTD UniRaid vehicle" />
       </div>
       <div class="card-body">
-        <div class="mono-label" style="margin-bottom: 8px;">Leadership · Morocco Rally</div>
+        <div class="mono-label" style="margin-bottom: 8px;">Venture Leadership · Morocco Rally</div>
         <div class="tag-group">
           <span class="pill-tag">Venture Leadership</span>
           <span class="pill-tag">Supply Chain</span>
           <span class="pill-tag">Field Mechanics</span>
         </div>
         <h3 class="card-title">UniRaid Rally Leadership &amp; Field Mechanics</h3>
-        <p class="card-summary">Directed €6,000+ in corporate sponsorships, accounting, marketing, supply chain, and emergency on-road repairs to complete a 3,000 km Morocco rally.</p>
-        <span class="card-action">Review STAR Case &rarr;</span>
+        <p class="card-summary">Directed full venture lifecycle for a 3,000 km desert rally team: corporate sponsorships, accounting, spare-parts logistics, and dynamic roadside mechanical repairs.</p>
+        <span class="card-action">Review STAR Case Study &rarr;</span>
       </div>
     </div>
 
@@ -812,9 +816,9 @@ permalink: /
       <div class="skill-badge-cloud">
         <span class="skill-badge highlight">MATLAB Simscape</span>
         <span class="skill-badge">Simulink Modeling</span>
-        <span class="skill-badge">Thermal-Fluid Balances</span>
-        <span class="skill-badge">Psychrometric Air Treatment</span>
-        <span class="skill-badge">Polymer Rheology</span>
+        <span class="skill-badge">Thermal-Fluid Balances[cite: 1]</span>
+        <span class="skill-badge">Psychrometric Air Treatment[cite: 1]</span>
+        <span class="skill-badge">Polymer Rheology[cite: 1]</span>
       </div>
     </div>
 
@@ -825,11 +829,11 @@ permalink: /
         <div class="skill-title">Industrial Automation &amp; Safety</div>
       </div>
       <div class="skill-badge-cloud">
-        <span class="skill-badge highlight">Siemens ET200 PLC</span>
-        <span class="skill-badge">VFD Pump Control</span>
-        <span class="skill-badge">ATEX Safety (55% RH)</span>
+        <span class="skill-badge highlight">Siemens ET200 PLC[cite: 1]</span>
+        <span class="skill-badge">VFD Pump Control[cite: 1]</span>
+        <span class="skill-badge">ATEX Safety (55% RH)[cite: 1]</span>
         <span class="skill-badge">Siemens TIA Portal</span>
-        <span class="skill-badge">HMI Architecture</span>
+        <span class="skill-badge">HMI Architecture[cite: 1]</span>
         <span class="skill-badge">OPC UA Protocol</span>
       </div>
     </div>
@@ -841,12 +845,12 @@ permalink: /
         <div class="skill-title">Toyota Quality &amp; Problem Solving</div>
       </div>
       <div class="skill-badge-cloud">
-        <span class="skill-badge highlight">Gemba / Genchi Genbutsu</span>
-        <span class="skill-badge highlight">Minitab SPC</span>
-        <span class="skill-badge">AIAG-VDA FMEA</span>
-        <span class="skill-badge">5 Whys &amp; Ishikawa</span>
-        <span class="skill-badge">Laney U' Charts</span>
-        <span class="skill-badge">CAPEX/OPEX Analysis</span>
+        <span class="skill-badge highlight">Gemba / Genchi Genbutsu[cite: 1]</span>
+        <span class="skill-badge highlight">Minitab SPC[cite: 1]</span>
+        <span class="skill-badge">AIAG-VDA FMEA[cite: 1]</span>
+        <span class="skill-badge">5 Whys &amp; Ishikawa[cite: 1]</span>
+        <span class="skill-badge">Laney U' Charts[cite: 1]</span>
+        <span class="skill-badge">CAPEX/OPEX Analysis[cite: 1]</span>
       </div>
     </div>
 
@@ -859,57 +863,57 @@ permalink: /
 <!-- Toyota Drawer (STAR Methodology) -->
 <div id="drawer-toyota" class="drawer-panel">
   <button class="close-btn" onclick="closeAllDrawers()">Close &times;</button>
-  <div class="mono-label">Master's Thesis · Toyota Caetano Portugal · 2026</div>
+  <div class="mono-label">Master's Thesis · Toyota Caetano Portugal · 2026[cite: 1]</div>
   <h2 style="margin-top: 8px; font-size: 2.2rem; font-weight: 800; letter-spacing: -0.02em;">Automotive Paint Booth Microclimate Control (STAR)</h2>
   <p style="color: var(--text-secondary); font-size: 1.05rem; margin-top: 8px;">
-    Development and physical validation of an Industry 4.0 retrofit framework to stabilize microclimatic conditions in the Land Cruiser 70 top-coat line without replacing primary HVAC infrastructure.
+    Development and physical validation of an Industry 4.0 retrofit framework to stabilize microclimatic conditions in the Land Cruiser 70 top-coat line without replacing primary HVAC infrastructure[cite: 1].
   </p>
 
   <div class="modal-stat-block">
     <div class="stat-highlight">
-      <div class="mono-label" style="margin-bottom: 8px; color: var(--text-secondary);">KEY DELIVERABLE</div>
+      <div class="mono-label" style="margin-bottom: 8px; color: var(--text-secondary);">KEY DELIVERABLE[cite: 1]</div>
       <div class="big-number">86% → 0%</div>
-      <div class="big-caption">Eliminated seasonal RH out-of-spec conditions, delivering €2,726/yr in net operational payback.</div>
+      <div class="big-caption">Eliminated seasonal RH out-of-spec conditions, delivering €2,726/yr in net operational payback[cite: 1].</div>
     </div>
     <div class="stat-takeaways">
       <div class="takeaway-item">
-        <div class="takeaway-num">SITUATION</div>
-        <div class="takeaway-title">Environmental Instability in Legacy Plant</div>
-        <p class="takeaway-desc">Legacy spray booth experienced severe temperature and humidity drift (up to 86% monthly RH non-compliance), inducing paint sagging, overspray, and electrostatic shock hazards.</p>
+        <div class="takeaway-num">SITUATION[cite: 1]</div>
+        <div class="takeaway-title">Environmental Instability in Legacy Plant[cite: 1]</div>
+        <p class="takeaway-desc">Legacy spray booth experienced severe temperature and humidity drift (up to 86% monthly RH non-compliance), inducing paint sagging, overspray, and electrostatic shock hazards[cite: 1].</p>
       </div>
       <div class="takeaway-item">
-        <div class="takeaway-num">TASK</div>
-        <div class="takeaway-title">Low-CAPEX Stabilization Strategy</div>
-        <p class="takeaway-desc">Formulate and validate an automated retrofit architecture to stabilize microclimatic conditions within strict capital expenditure constraints.</p>
+        <div class="takeaway-num">TASK[cite: 1]</div>
+        <div class="takeaway-title">Low-CAPEX Stabilization Strategy[cite: 1]</div>
+        <p class="takeaway-desc">Formulate and validate an automated retrofit architecture to stabilize microclimatic conditions within strict capital expenditure constraints[cite: 1].</p>
       </div>
     </div>
   </div>
 
   <div class="workflow-section">
-    <div class="mono-label" style="margin-bottom: 16px;">ACTION &amp; RESULTS (STAR)</div>
+    <div class="mono-label" style="margin-bottom: 16px;">ACTION &amp; RESULTS (STAR)[cite: 1]</div>
     <div class="workflow-step">
-      <div class="workflow-step-num">ACTION 01</div>
-      <div class="workflow-step-title">Root Cause Diagnostics &amp; Statistical Modeling (TPS / SPC)</div>
+      <div class="workflow-step-num">ACTION 01[cite: 1]</div>
+      <div class="workflow-step-title">Root Cause Diagnostics &amp; Statistical Modeling (TPS / SPC)[cite: 1]</div>
       <div class="workflow-step-desc">
-        Conducted on-site Gemba mapping and diagnostic FMEA. Used Minitab to build Laney U' control charts that handled defect overdispersion, while Pearson correlation proved direct links between temperature and paint sagging (r=0.788).
+        Conducted on-site Gemba mapping and diagnostic FMEA[cite: 1]. Used Minitab to build Laney U' control charts that handled defect overdispersion, while Pearson correlation proved direct links between temperature and paint sagging (r=0.788)[cite: 1].
       </div>
     </div>
     <div class="workflow-step">
-      <div class="workflow-step-num">ACTION 02</div>
-      <div class="workflow-step-title">Hardware Architecture &amp; Simscape Dynamic Validation</div>
+      <div class="workflow-step-num">ACTION 02[cite: 1]</div>
+      <div class="workflow-step-title">Hardware Architecture &amp; Simscape Dynamic Validation[cite: 1]</div>
       <div class="workflow-step-desc">
-        Specified ATEX-certified instrumentation, VFD-driven pumps, and coordinated PLC logic. Built a lumped-parameter psychrometric model in MATLAB/Simscape to validate multi-variable control boundaries under seasonal extreme loads prior to deployment.
+        Specified ATEX-certified instrumentation, VFD-driven pumps, and coordinated PLC logic[cite: 1]. Built a lumped-parameter psychrometric model in MATLAB/Simscape to validate multi-variable control boundaries under seasonal extreme loads prior to deployment[cite: 1].
       </div>
       <div class="workflow-img-wrap">
         <img src="/images/toyota-diagram.png" alt="Toyota Paint Booth Automation Architecture" />
-        <div class="workflow-img-caption">Toyota Paint Booth Automation System Architecture &amp; PLC Control Topology</div>
+        <div class="workflow-img-caption">Toyota Paint Booth Automation System Architecture &amp; PLC Control Topology[cite: 1]</div>
       </div>
     </div>
     <div class="workflow-step" style="margin-top: 24px;">
-      <div class="workflow-step-num">RESULT</div>
-      <div class="workflow-step-title">Validated Process Repeatability &amp; Risk Mitigation</div>
+      <div class="workflow-step-num">RESULT[cite: 1]</div>
+      <div class="workflow-step-title">Validated Process Repeatability &amp; Risk Mitigation[cite: 1]</div>
       <div class="workflow-step-desc">
-        Simscape simulations verified that coordinated control eliminates transient humidity drops from sensible heating. Delivered a fully scoped technical and investment roadmap directly to Toyota Motor Europe stakeholders.
+        Simscape simulations verified that coordinated control eliminates transient humidity drops from sensible heating[cite: 1]. Delivered a fully scoped technical and investment roadmap directly to Toyota Motor Europe stakeholders[cite: 1].
       </div>
     </div>
   </div>
