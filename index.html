@@ -443,6 +443,84 @@ permalink: /
     border-color: var(--text-primary);
   }
 
+  /* --- Process Progression Flow & Timeline --- */
+  .process-track-pills {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin: 18px 0 24px 0;
+    padding: 14px 18px;
+    background: var(--bg-accent);
+    border-radius: 10px;
+    border: 1px solid var(--border-subtle);
+  }
+
+  .track-pill {
+    font-size: 0.76rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    background: #ffffff;
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: 1px solid var(--border-subtle);
+  }
+
+  .track-arrow {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    font-weight: 800;
+  }
+
+  .process-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    position: relative;
+    margin: 24px 0 32px 0;
+    padding-left: 24px;
+    border-left: 2px solid var(--border-subtle);
+  }
+
+  .timeline-step {
+    position: relative;
+  }
+
+  .timeline-step::before {
+    content: '';
+    position: absolute;
+    left: -31px;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--bg-card);
+    border: 2px solid var(--accent-blue);
+  }
+
+  .timeline-step .step-tag {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--accent-blue);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .timeline-step .step-title {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin: 2px 0 4px 0;
+  }
+
+  .timeline-step .step-desc {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin: 0;
+  }
+
   /* --- Case Study Modal Drawers --- */
   .drawer-overlay {
     position: fixed;
@@ -500,7 +578,7 @@ permalink: /
     grid-template-columns: 1fr 1.5fr;
     border-top: 1px solid var(--border-subtle);
     border-bottom: 1px solid var(--border-subtle);
-    margin: 32px 0;
+    margin: 28px 0;
   }
 
   .stat-highlight {
@@ -558,35 +636,6 @@ permalink: /
     line-height: 1.5; 
     margin: 0; 
   }
-
-  .workflow-section { 
-    margin-top: 40px; 
-  }
-
-  .workflow-step { 
-    margin-bottom: 32px; 
-  }
-
-  .workflow-step-num { 
-    font-family: monospace; 
-    font-size: 0.8rem; 
-    color: var(--text-muted); 
-    margin-bottom: 4px; 
-    font-weight: 700; 
-  }
-
-  .workflow-step-title { 
-    font-size: 1.2rem; 
-    font-weight: 800; 
-    margin-bottom: 8px; 
-  }
-
-  .workflow-step-desc { 
-    font-size: 0.92rem; 
-    color: var(--text-secondary); 
-    line-height: 1.6; 
-    margin-bottom: 16px; 
-  }
   
   .workflow-img-wrap {
     width: 100%;
@@ -594,6 +643,7 @@ permalink: /
     overflow: hidden;
     border: 1px solid var(--border-subtle);
     background: var(--bg-accent);
+    margin-top: 16px;
   }
 
   .workflow-img-wrap img { 
@@ -617,6 +667,7 @@ permalink: /
     .portfolio-grid-symmetric { grid-template-columns: repeat(2, 1fr); }
     .skills-grid-visual { grid-template-columns: repeat(2, 1fr); }
     .metrics-ribbon { grid-template-columns: repeat(2, 1fr); }
+    .modal-stat-block { grid-template-columns: 1fr; }
     .section-header-clean { flex-direction: column; align-items: flex-start; gap: 16px; }
   }
 
@@ -889,33 +940,55 @@ permalink: /
     </div>
   </div>
 
-  <div class="workflow-section">
-    <div class="mono-label" style="margin-bottom: 16px;">ACTION &amp; RESULTS</div>
-    <div class="workflow-step">
-      <div class="workflow-step-num">ACTION 01</div>
-      <div class="workflow-step-title">Root Cause Diagnostics &amp; Statistical Modeling (TPS / SPC)</div>
-      <div class="workflow-step-desc">
-        Conducted on-site Gemba mapping and diagnostic FMEA. Used Minitab to build Laney U' control charts that handled defect overdispersion, while Pearson correlation proved direct links between temperature and paint sagging (r=0.788).
-      </div>
+  <div class="mono-label" style="margin-top: 24px;">ENGINEERING LIFECYCLE &amp; EXECUTION WORKFLOW</div>
+
+  <!-- Quick Scan Progression Track -->
+  <div class="process-track-pills">
+    <span class="track-pill">1. Plant Gemba Diagnosis</span>
+    <span class="track-arrow">&rarr;</span>
+    <span class="track-pill">2. SPC &amp; Statistics</span>
+    <span class="track-arrow">&rarr;</span>
+    <span class="track-pill">3. Project Management</span>
+    <span class="track-arrow">&rarr;</span>
+    <span class="track-pill">4. Technical Specs &amp; Simscape</span>
+    <span class="track-arrow">&rarr;</span>
+    <span class="track-pill">5. Financial Analysis</span>
+    <span class="track-arrow">&rarr;</span>
+    <span class="track-pill">6. Supplier Procurement</span>
+  </div>
+
+  <!-- Detailed Step-by-Step Breakdown -->
+  <div class="process-timeline">
+    <div class="timeline-step">
+      <div class="step-tag">Phase 01</div>
+      <div class="step-title">Gemba Field Diagnostics &amp; Problem Framing</div>
+      <p class="step-desc">Mapped operational shop-floor conditions in the Land Cruiser 70 top-coat booth, identifying seasonal climate instability as the primary cause of thermal-humidity drift.</p>
     </div>
-    <div class="workflow-step">
-      <div class="workflow-step-num">ACTION 02</div>
-      <div class="workflow-step-title">Hardware Architecture &amp; Simscape Dynamic Validation</div>
-      <div class="workflow-step-desc">
-        Specified ATEX-certified instrumentation, VFD-driven pumps, and coordinated PLC logic. Built a lumped-parameter psychrometric model in MATLAB/Simscape to validate multi-variable control boundaries under seasonal extreme loads prior to deployment.
-      </div>
-      <div class="workflow-img-wrap">
-        <img src="{{ '/images/toyota-diagram.png' | relative_url }}" alt="Toyota Paint Booth Automation Architecture" onerror="this.src='images/toyota-diagram.png'" />
-        <div class="workflow-img-caption">Toyota Paint Booth Automation System Architecture &amp; PLC Control Topology</div>
-      </div>
+    <div class="timeline-step">
+      <div class="step-tag">Phase 02</div>
+      <div class="step-title">SPC &amp; Statistical Modeling (Minitab)</div>
+      <p class="step-desc">Constructed Laney U' control charts to handle defect overdispersion and used Pearson correlation analysis to establish the relationship between temperature drift and finish quality (r=0.788).</p>
     </div>
-    <div class="workflow-step" style="margin-top: 24px;">
-      <div class="workflow-step-num">RESULT</div>
-      <div class="workflow-step-title">Validated Process Repeatability &amp; Risk Mitigation</div>
-      <div class="workflow-step-desc">
-        Simscape simulations verified that coordinated control eliminates transient humidity drops from sensible heating. Delivered a fully scoped technical and investment roadmap directly to Toyota Motor Europe stakeholders.
-      </div>
+    <div class="timeline-step">
+      <div class="step-tag">Phase 03</div>
+      <div class="step-title">Project Management &amp; Critical Path Scheduling</div>
+      <p class="step-desc">Structured work breakdown schedules, milestone Gantt charts, and critical path analysis to ensure retrofit implementation fits within planned plant maintenance windows.</p>
     </div>
+    <div class="timeline-step">
+      <div class="step-tag">Phase 04</div>
+      <div class="step-title">Technical Specifications &amp; Simscape Dynamic Validation</div>
+      <p class="step-desc">Specified ATEX-certified instrumentation, VFD-driven water pumps, and coordinated PLC logic. Built a lumped-parameter psychrometric model in MATLAB/Simscape to validate closed-loop stability across seasonal loads.</p>
+    </div>
+    <div class="timeline-step">
+      <div class="step-tag">Phase 05 &amp; 06</div>
+      <div class="step-title">Financial Payback &amp; Supplier Procurement</div>
+      <p class="step-desc">Conducted CAPEX/OPEX viability analysis yielding a net payback of &euro;2,726/yr. Managed vendor requests for quotations (RFQs) and presented the complete deployment roadmap to Toyota Motor Europe stakeholders.</p>
+    </div>
+  </div>
+
+  <div class="workflow-img-wrap">
+    <img src="{{ '/images/toyota-diagram.png' | relative_url }}" alt="Toyota Paint Booth Automation Architecture" onerror="this.src='images/toyota-diagram.png'" />
+    <div class="workflow-img-caption">Toyota Paint Booth Automation System Architecture &amp; PLC Control Topology</div>
   </div>
 </div>
 
@@ -948,33 +1021,46 @@ permalink: /
     </div>
   </div>
 
-  <div class="workflow-section">
-    <div class="mono-label" style="margin-bottom: 16px;">ACTION &amp; RESULTS</div>
-    <div class="workflow-step">
-      <div class="workflow-step-num">ACTION 01</div>
-      <div class="workflow-step-title">Advanced Surface Modeling &amp; Undercut Kinematics</div>
-      <div class="workflow-step-desc">
-        Executed Patch Surfaces, Isocline parting line checks, and Trim Region operations in Siemens NX. Engineered 5 angled lifters set at an 8&deg; inclination and single/dual cam-pin sliders with plungers for side geometries.
-      </div>
+  <div class="mono-label" style="margin-top: 24px;">ENGINEERING LIFECYCLE &amp; EXECUTION WORKFLOW</div>
+
+  <!-- Quick Scan Progression Track -->
+  <div class="process-track-pills">
+    <span class="track-pill">1. Part Feasibility</span>
+    <span class="track-arrow">&rarr;</span>
+    <span class="track-pill">2. OEM Client Specs</span>
+    <span class="track-arrow">&rarr;</span>
+    <span class="track-pill">3. 3D Tool Design (NX)</span>
+    <span class="track-arrow">&rarr;</span>
+    <span class="track-pill">4. Mold Filling Simulation</span>
+  </div>
+
+  <!-- Detailed Step-by-Step Breakdown -->
+  <div class="process-timeline">
+    <div class="timeline-step">
+      <div class="step-tag">Phase 01</div>
+      <div class="step-title">Part Geometry &amp; Feasibility Analysis</div>
+      <p class="step-desc">Evaluated aesthetic surface constraints, wall thickness transitions, draft angles, and complex interior undercuts in Polypropylene (PP).</p>
     </div>
-    <div class="workflow-step">
-      <div class="workflow-step-num">ACTION 02</div>
-      <div class="workflow-step-title">Thermal Management &amp; Tool Standardization</div>
-      <div class="workflow-step-desc">
-        Configured standardized DME 2A tool base with straight ejector sleeves. Designed 8 mm cooling channels with internal baffles in high-heat core zones to mitigate Polypropylene shrinkage warpage and shorten cycle time.
-      </div>
-      <div class="workflow-img-wrap">
-        <img src="{{ '/images/mold-drawing.png' | relative_url }}" alt="Siemens NX Mold Layout" onerror="this.src='images/mold-drawing.png'" />
-        <div class="workflow-img-caption">Siemens NX Mold Assembly (DME 2A Base &amp; Internal Kinematic Subsystems)</div>
-      </div>
+    <div class="timeline-step">
+      <div class="step-tag">Phase 02</div>
+      <div class="step-title">Client Requirements &amp; Mold Base Selection</div>
+      <p class="step-desc">Integrated OEM supplier specifications into a standardized DME 2A tool base configuration with modular guiding and ejection mechanisms.</p>
     </div>
-    <div class="workflow-step" style="margin-top: 24px;">
-      <div class="workflow-step-num">RESULT</div>
-      <div class="workflow-step-title">Validated Tool Assembly &amp; DfM Compliance</div>
-      <div class="workflow-step-desc">
-        Delivered a fully validated, production-ready 3D CAD tool assembly adhering to tier-1 automotive manufacturing tolerances with fully detailed 2D manufacturing drawings.
-      </div>
+    <div class="timeline-step">
+      <div class="step-tag">Phase 03</div>
+      <div class="step-title">Complete 3D Tooling Design (Siemens NX)</div>
+      <p class="step-desc">Modeled core/cavity parting lines, 5 angled lifters set at an 8&deg; inclination, dual cam sliders with plungers, and dedicated 8 mm cooling circuits with internal baffles to control part warpage.</p>
     </div>
+    <div class="timeline-step">
+      <div class="step-tag">Phase 04</div>
+      <div class="step-title">Injection &amp; Filling Simulation (Temperature &amp; Pressure)</div>
+      <p class="step-desc">Simulated melt front advancement, injection pressure boundaries, thermal cooling uniformity, and clamping forces to ensure complete filling without weld line defects or shrinkage sink marks.</p>
+    </div>
+  </div>
+
+  <div class="workflow-img-wrap">
+    <img src="{{ '/images/mold-drawing.png' | relative_url }}" alt="Siemens NX Mold Layout" onerror="this.src='images/mold-drawing.png'" />
+    <div class="workflow-img-caption">Siemens NX Mold Assembly (DME 2A Base &amp; Internal Kinematic Subsystems)</div>
   </div>
 </div>
 
@@ -1007,33 +1093,54 @@ permalink: /
     </div>
   </div>
 
-  <div class="workflow-section">
-    <div class="mono-label" style="margin-bottom: 16px;">ACTION &amp; RESULTS</div>
-    <div class="workflow-step">
-      <div class="workflow-step-num">ACTION 01</div>
-      <div class="workflow-step-title">Corporate Pitching, Budgeting &amp; Supply Chain</div>
-      <div class="workflow-step-desc">
-        Pitched to corporate partners to raise over &euro;6,000 in funding and material sponsorships. Managed budget accounting and emergency spare parts procurement under strict time constraints.
-      </div>
+  <div class="mono-label" style="margin-top: 24px;">VENTURE &amp; FIELD OPERATIONS LIFECYCLE</div>
+
+  <!-- Quick Scan Progression Track -->
+  <div class="process-track-pills">
+    <span class="track-pill">1. Business Case</span>
+    <span class="track-arrow">&rarr;</span>
+    <span class="track-pill">2. Marketing Campaign</span>
+    <span class="track-arrow">&rarr;</span>
+    <span class="track-pill">3. Project Management</span>
+    <span class="track-arrow">&rarr;</span>
+    <span class="track-pill">4. Corporate Sponsors</span>
+    <span class="track-arrow">&rarr;</span>
+    <span class="track-pill">5. Budget Control</span>
+    <span class="track-arrow">&rarr;</span>
+    <span class="track-pill">6. Mechanical Prep</span>
+    <span class="track-arrow">&rarr;</span>
+    <span class="track-pill">7. Fleet Logistics</span>
+    <span class="track-arrow">&rarr;</span>
+    <span class="track-pill">8. Desert Raid Execution</span>
+  </div>
+
+  <!-- Detailed Step-by-Step Breakdown -->
+  <div class="process-timeline">
+    <div class="timeline-step">
+      <div class="step-tag">Phase 01 &amp; 02</div>
+      <div class="step-title">Business Case &amp; Digital Marketing Strategy</div>
+      <p class="step-desc">Formulated the team business case and executed an engaging digital campaign (Instagram) to build partner visibility and maximize investor outreach.</p>
     </div>
-    <div class="workflow-step">
-      <div class="workflow-step-num">ACTION 02</div>
-      <div class="workflow-step-title">Field Mechanical Troubleshooting &amp; Navigation</div>
-      <div class="workflow-step-desc">
-        Operated as driver/co-driver across complex terrain while performing real-time roadside mechanical repairs under extreme desert conditions, including diagnosing and resolving team fuel line leaks.
-      </div>
-      <div class="workflow-img-wrap">
-        <img src="{{ '/images/uniraid-car.png' | relative_url }}" alt="VW Golf II GTD Morocco Rally Operations" onerror="this.src='images/uniraid-car.png'" />
-        <div class="workflow-img-caption">VW Golf II GTD - Morocco Desert Rally Operations &amp; Finishers</div>
-      </div>
+    <div class="timeline-step">
+      <div class="step-tag">Phase 03 &amp; 04</div>
+      <div class="step-title">Project Management &amp; Corporate Sponsorship Acquisition</div>
+      <p class="step-desc">Organized timeline deliverables, conducted corporate partner outreach, delivered pitch presentations, and negotiated sponsor agreements, raising over &euro;6,000 in funding and technical materials.</p>
     </div>
-    <div class="workflow-step" style="margin-top: 24px;">
-      <div class="workflow-step-num">RESULT</div>
-      <div class="workflow-step-title">Rally Completion &amp; Humanitarian Mission Delivery</div>
-      <div class="workflow-step-desc">
-        Successfully completed the entire 3,000 km route without mechanical disqualification while safely transporting and delivering 100 kg of humanitarian supplies to isolated desert schools.
-      </div>
+    <div class="timeline-step">
+      <div class="step-tag">Phase 05 &amp; 06</div>
+      <div class="step-title">Budget Allocation &amp; Vehicle Mechanical Preparation</div>
+      <p class="step-desc">Administered the project accounting ledger, sourced critical spare components under budget constraints, and completed thorough mechanical overhauls on the VW Golf II GTD (suspension, cooling, and electrical reinforcement).</p>
     </div>
+    <div class="timeline-step">
+      <div class="step-tag">Phase 07 &amp; 08</div>
+      <div class="step-title">Cross-Border Logistics &amp; Desert Raid Execution</div>
+      <p class="step-desc">Managed supply chain and border logistics across 3,000 km of Moroccan terrain. Handled analog navigation (compass and roadbook), high-pressure teamwork coordination, and emergency field repairs (fuel line fixes) while delivering 100 kg of humanitarian supplies to isolated schools.</p>
+    </div>
+  </div>
+
+  <div class="workflow-img-wrap">
+    <img src="{{ '/images/uniraid-car.png' | relative_url }}" alt="VW Golf II GTD Morocco Rally Operations" onerror="this.src='images/uniraid-car.png'" />
+    <div class="workflow-img-caption">VW Golf II GTD - Morocco Desert Rally Operations &amp; Finishers</div>
   </div>
 </div>
 
